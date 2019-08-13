@@ -1,0 +1,272 @@
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib"
+$ echo "3" > "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/rust-installer-version"
+install: creating uninstall script at /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/uninstall.sh
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/install.sh /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/uninstall.sh
+install: installing component 'rustc'
+$ echo "rustc" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/components"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE
+install: backing up existing file at /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE
+$ mv -f /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE.old
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/share/doc/rust/LICENSE-APACHE /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT
+install: backing up existing file at /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT
+$ mv -f /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT.old
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/share/doc/rust/LICENSE-MIT /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md
+install: backing up existing file at /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md
+$ mv -f /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md.old
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/share/doc/rust/README.md /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/COPYRIGHT
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/share/doc/rust/COPYRIGHT /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/COPYRIGHT
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/COPYRIGHT
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/share/doc/rust/COPYRIGHT" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/share/man/man1/rustdoc.1 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustc.1
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/share/man/man1/rustc.1 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustc.1
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustc.1
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/share/man/man1/rustc.1" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_ext-e1274c7611bed711.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libsyntax_ext-e1274c7611bed711.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_ext-e1274c7611bed711.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_ext-e1274c7611bed711.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_ext-e1274c7611bed711.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc-9760a78d81041023.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc-9760a78d81041023.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc-9760a78d81041023.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc-9760a78d81041023.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc-9760a78d81041023.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_incremental-1538fecd4d9768cd.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_incremental-1538fecd4d9768cd.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_incremental-1538fecd4d9768cd.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_incremental-1538fecd4d9768cd.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_incremental-1538fecd4d9768cd.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_lint-65410828c83b09cc.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_lint-65410828c83b09cc.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_lint-65410828c83b09cc.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_lint-65410828c83b09cc.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_lint-65410828c83b09cc.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_metadata-cf0adb36848773b7.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_metadata-cf0adb36848773b7.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_metadata-cf0adb36848773b7.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_metadata-cf0adb36848773b7.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_metadata-cf0adb36848773b7.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_privacy-b679c8c38c4d1626.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_privacy-b679c8c38c4d1626.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_privacy-b679c8c38c4d1626.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_privacy-b679c8c38c4d1626.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_privacy-b679c8c38c4d1626.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_target-d93b5d86bc9ffbe3.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_target-d93b5d86bc9ffbe3.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_target-d93b5d86bc9ffbe3.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_target-d93b5d86bc9ffbe3.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_target-d93b5d86bc9ffbe3.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_borrowck-20e051b68b0080cd.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_borrowck-20e051b68b0080cd.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_borrowck-20e051b68b0080cd.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_borrowck-20e051b68b0080cd.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_borrowck-20e051b68b0080cd.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax-43bb704a9e1c5f3e.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libsyntax-43bb704a9e1c5f3e.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax-43bb704a9e1c5f3e.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax-43bb704a9e1c5f3e.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax-43bb704a9e1c5f3e.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_traits-bc7045a73c226ae1.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_traits-bc7045a73c226ae1.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_traits-bc7045a73c226ae1.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_traits-bc7045a73c226ae1.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_traits-bc7045a73c226ae1.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_errors-403d029e41f0a4fe.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_errors-403d029e41f0a4fe.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_errors-403d029e41f0a4fe.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_errors-403d029e41f0a4fe.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_errors-403d029e41f0a4fe.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_passes-082277969a44aaee.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_passes-082277969a44aaee.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_passes-082277969a44aaee.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_passes-082277969a44aaee.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_passes-082277969a44aaee.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_allocator-2860e266dea8d055.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_allocator-2860e266dea8d055.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_allocator-2860e266dea8d055.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_allocator-2860e266dea8d055.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_allocator-2860e266dea8d055.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libgraphviz-0e6d9373f73b1f85.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libgraphviz-0e6d9373f73b1f85.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libgraphviz-0e6d9373f73b1f85.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libgraphviz-0e6d9373f73b1f85.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libgraphviz-0e6d9373f73b1f85.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_save_analysis-2514bcee1433fcb7.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_save_analysis-2514bcee1433fcb7.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_save_analysis-2514bcee1433fcb7.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_save_analysis-2514bcee1433fcb7.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_save_analysis-2514bcee1433fcb7.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_plugin-10521e5bc2288563.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_plugin-10521e5bc2288563.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_plugin-10521e5bc2288563.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_plugin-10521e5bc2288563.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_plugin-10521e5bc2288563.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6c9079b0c9c1bd62.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_driver-6c9079b0c9c1bd62.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6c9079b0c9c1bd62.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6c9079b0c9c1bd62.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6c9079b0c9c1bd62.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libterm-a024e8bcf45cde32.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libterm-a024e8bcf45cde32.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libterm-a024e8bcf45cde32.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libterm-a024e8bcf45cde32.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libterm-a024e8bcf45cde32.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_mir-83b972844b51b6e4.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_mir-83b972844b51b6e4.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_mir-83b972844b51b6e4.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_mir-83b972844b51b6e4.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_mir-83b972844b51b6e4.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_interface-982800c364dffe5a.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_interface-982800c364dffe5a.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_interface-982800c364dffe5a.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_interface-982800c364dffe5a.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_interface-982800c364dffe5a.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_cratesio_shim-41bb1a313209c032.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_cratesio_shim-41bb1a313209c032.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_cratesio_shim-41bb1a313209c032.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_cratesio_shim-41bb1a313209c032.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_cratesio_shim-41bb1a313209c032.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-d90c1a6ed425fb74.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_macros-d90c1a6ed425fb74.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-d90c1a6ed425fb74.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-d90c1a6ed425fb74.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-d90c1a6ed425fb74.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libarena-82bd32b7b1cc8097.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libarena-82bd32b7b1cc8097.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libarena-82bd32b7b1cc8097.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libarena-82bd32b7b1cc8097.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libarena-82bd32b7b1cc8097.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_utils-f5be4220a61d9bab.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_codegen_utils-f5be4220a61d9bab.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_utils-f5be4220a61d9bab.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_utils-f5be4220a61d9bab.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_utils-f5be4220a61d9bab.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_data_structures-43963b1343ccc20c.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_data_structures-43963b1343ccc20c.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_data_structures-43963b1343ccc20c.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_data_structures-43963b1343ccc20c.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_data_structures-43963b1343ccc20c.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libtest-9bbfd564b2eb298a.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libtest-9bbfd564b2eb298a.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libtest-9bbfd564b2eb298a.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libtest-9bbfd564b2eb298a.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libtest-9bbfd564b2eb298a.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libstd-82e33bc21b9a2598.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libstd-82e33bc21b9a2598.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libstd-82e33bc21b9a2598.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libstd-82e33bc21b9a2598.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libstd-82e33bc21b9a2598.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libserialize-38112747f94a5a1f.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libserialize-38112747f94a5a1f.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libserialize-38112747f94a5a1f.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libserialize-38112747f94a5a1f.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libserialize-38112747f94a5a1f.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libfmt_macros-8550fdd443d21f4f.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libfmt_macros-8550fdd443d21f4f.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libfmt_macros-8550fdd443d21f4f.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libfmt_macros-8550fdd443d21f4f.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libfmt_macros-8550fdd443d21f4f.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libLLVM-8-rust-1.35.0-stable.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libLLVM-8-rust-1.35.0-stable.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libLLVM-8-rust-1.35.0-stable.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libLLVM-8-rust-1.35.0-stable.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libLLVM-8-rust-1.35.0-stable.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_pos-c9173fad01cc2e7a.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/libsyntax_pos-c9173fad01cc2e7a.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_pos-c9173fad01cc2e7a.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_pos-c9173fad01cc2e7a.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/libsyntax_pos-c9173fad01cc2e7a.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_fs_util-5c3f5f2905f34faa.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_fs_util-5c3f5f2905f34faa.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_fs_util-5c3f5f2905f34faa.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_fs_util-5c3f5f2905f34faa.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_fs_util-5c3f5f2905f34faa.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/debugger_pretty_printers_common.py
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/rustlib/etc/debugger_pretty_printers_common.py /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/debugger_pretty_printers_common.py
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/debugger_pretty_printers_common.py
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/debugger_pretty_printers_common.py" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/rustlib/etc/gdb_rust_pretty_printing.py /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/lldb_rust_formatters.py
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/rustlib/etc/lldb_rust_formatters.py /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/lldb_rust_formatters.py
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/lldb_rust_formatters.py
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/lldb_rust_formatters.py" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/rustlib/etc/gdb_load_rust_pretty_printers.py /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_load_rust_pretty_printers.py" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/lib/libLLVM-8-rust-1.35.0-stable.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/rustlib/x86_64-unknown-linux-gnu/lib/libLLVM-8-rust-1.35.0-stable.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/lib/libLLVM-8-rust-1.35.0-stable.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/lib/libLLVM-8-rust-1.35.0-stable.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/lib/libLLVM-8-rust-1.35.0-stable.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so
+$ chmod 755 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-unknown-linux-gnu/codegen-backends/librustc_codegen_llvm-llvm.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_ssa-d5d7df9d586b7779.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_codegen_ssa-d5d7df9d586b7779.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_ssa-d5d7df9d586b7779.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_ssa-d5d7df9d586b7779.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_codegen_ssa-d5d7df9d586b7779.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_resolve-bdcad81ddcca7213.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_resolve-bdcad81ddcca7213.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_resolve-bdcad81ddcca7213.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_resolve-bdcad81ddcca7213.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_resolve-bdcad81ddcca7213.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_typeck-50b5920c584bc68e.so
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/lib/librustc_typeck-50b5920c584bc68e.so /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_typeck-50b5920c584bc68e.so
+$ chmod 644 /usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_typeck-50b5920c584bc68e.so
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/librustc_typeck-50b5920c584bc68e.so" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/bin"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustdoc
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/bin/rustdoc /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustdoc
+$ chmod 755 /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustdoc
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustdoc" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/bin"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdb
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/bin/rust-gdb /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdb
+$ chmod 755 /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdb
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdb" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/bin"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdbgui
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/bin/rust-gdbgui /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdbgui
+$ chmod 755 /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdbgui
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-gdbgui" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/bin"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-lldb
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/bin/rust-lldb /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-lldb
+$ chmod 755 /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-lldb
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rust-lldb" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/usr/local/google/buildbot/src/android/rust-toolchain/out/bin"
+install: copying file /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustc
+$ cp /usr/local/google/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.35.0-x86_64-unknown-linux-gnu/rustc/bin/rustc /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustc
+$ chmod 755 /usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustc
+$ echo "file:/usr/local/google/buildbot/src/android/rust-toolchain/out/bin/rustc" >> "/usr/local/google/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
