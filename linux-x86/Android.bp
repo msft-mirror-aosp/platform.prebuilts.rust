@@ -1,0 +1,139 @@
+rust_prebuilt_dylib {
+    name: "libarena_x86_64-unknown-linux-gnu",
+    stem: "libarena",
+    suffix: "-82bd32b7b1cc8097",
+    crate_name: "arena",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libarena-82bd32b7b1cc8097.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libfmt_macros_x86_64-unknown-linux-gnu",
+    stem: "libfmt_macros",
+    suffix: "-8550fdd443d21f4f",
+    crate_name: "fmt_macros",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libfmt_macros-8550fdd443d21f4f.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libgraphviz_x86_64-unknown-linux-gnu",
+    stem: "libgraphviz",
+    suffix: "-0e6d9373f73b1f85",
+    crate_name: "grappviz",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libgraphviz-0e6d9373f73b1f85.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libserialize_x86_64-unknown-linux-gnu",
+    stem: "libserialize",
+    suffix: "-38112747f94a5a1f",
+    crate_name: "serialize",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libserialize-38112747f94a5a1f.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libstd_x86_64-unknown-linux-gnu",
+    stem: "libstd",
+    suffix: "-82e33bc21b9a2598",
+    crate_name: "std",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-82e33bc21b9a2598.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libsyntax_x86_64-unknown-linux-gnu",
+    stem: "libsyntax",
+    suffix: "-43bb704a9e1c5f3e",
+    crate_name: "syntax",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libsyntax-43bb704a9e1c5f3e.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libsyntax_ext_x86_64-unknown-linux-gnu",
+    stem: "libsyntax_ext",
+    suffix: "-e1274c7611bed711",
+    crate_name: "syntax_ext",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libsyntax_ext-e1274c7611bed711.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libsyntax_pos_x86_64-unknown-linux-gnu",
+    stem: "libsyntax_pos",
+    suffix: "-c9173fad01cc2e7a",
+    crate_name: "syntax_pos",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libsyntax_pos-c9173fad01cc2e7a.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libterm_x86_64-unknown-linux-gnu",
+    stem: "libterm",
+    suffix: "-a024e8bcf45cde32",
+    crate_name: "term",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libterm-a024e8bcf45cde32.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
+
+rust_prebuilt_dylib {
+    name: "libtest_x86_64-unknown-linux-gnu",
+    stem: "libtest",
+    suffix: "-9bbfd564b2eb298a",
+    crate_name: "test",
+    arch: {
+        x86_64: {
+            srcs: ["1.35.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-9bbfd564b2eb298a.so"],
+            enabled: true,
+        },
+    },
+    host_supported: true,
+}
