@@ -42,3 +42,87 @@ rust_prebuilt_dylib {
     enabled: false,
     host_supported: true,
 }
+
+rust_prebuilt_dylib {
+    name: "libstd_aarch64-linux-android",
+    stem: "libstd",
+    suffix: "-2040620258e05374",
+    crate_name: "std",
+    target: {
+        android_arm64: {
+            srcs: ["1.37.0/lib/rustlib/aarch64-linux-android/lib/libstd-2040620258e05374.so"],
+            enabled: true,
+        },
+    },
+    enabled: false,
+}
+
+rust_prebuilt_dylib {
+    name: "libterm_aarch64-linux-android",
+    stem: "libterm",
+    suffix: "-bfa24614affeb0e2",
+    crate_name: "term",
+    target: {
+        android_arm64: {
+            srcs: ["1.37.0/lib/rustlib/aarch64-linux-android/lib/libterm-bfa24614affeb0e2.so"],
+            enabled: true,
+        },
+    },
+    enabled: false,
+}
+
+rust_prebuilt_dylib {
+    name: "libtest_aarch64-linux-android",
+    stem: "libtest",
+    suffix: "-566799a50c9eabaf",
+    crate_name: "test",
+    target: {
+        android_arm64: {
+            srcs: ["1.37.0/lib/rustlib/aarch64-linux-android/lib/libtest-566799a50c9eabaf.so"],
+            enabled: true,
+        },
+    },
+    enabled: false,
+}
+
+rust_prebuilt_dylib {
+    name: "libstd_arm-linux-androideabi",
+    stem: "libstd",
+    suffix: "-2040620258e05374",
+    crate_name: "std",
+    target: {
+        android_arm: {
+            srcs: ["1.37.0/lib/rustlib/arm-linux-androideabi/lib/libstd-2040620258e05374.so"],
+            enabled: true,
+        },
+    },
+    enabled: false,
+}
+
+rust_prebuilt_dylib {
+    name: "libterm_arm-linux-androideabi",
+    stem: "libterm",
+    suffix: "-bfa24614affeb0e2",
+    crate_name: "term",
+    target: {
+        android_arm: {
+            srcs: ["1.37.0/lib/rustlib/arm-linux-androideabi/lib/libterm-bfa24614affeb0e2.so"],
+            enabled: true,
+        },
+    },
+    enabled: false,
+}
+
+rust_prebuilt_dylib {
+    name: "libtest_arm-linux-androideabi",
+    stem: "libtest",
+    suffix: "-566799a50c9eabaf",
+    crate_name: "test",
+    target: {
+        android_arm: {
+            srcs: ["1.37.0/lib/rustlib/arm-linux-androideabi/lib/libtest-566799a50c9eabaf.so"],
+            enabled: true,
+        },
+    },
+    enabled: false,
+}
