@@ -430,7 +430,7 @@ rust_library_dylib {
     edition: "2018",
 }
 
-rust_library_dylib {
+rust_library_rlib {
     name: "libtest.static",
     deny_warnings: false,
     crate_name: "test",
