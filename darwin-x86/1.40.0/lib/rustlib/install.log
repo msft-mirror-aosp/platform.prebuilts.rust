@@ -55,25 +55,25 @@ $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/
 $ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py
 $ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
-install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-0e15e5fd65f8de8a.dylib
-$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/libstd-0e15e5fd65f8de8a.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-0e15e5fd65f8de8a.dylib
-$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-0e15e5fd65f8de8a.dylib
-$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-0e15e5fd65f8de8a.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
-$ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
 install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-f6e2cdfd63a4c84a.dylib
 $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/librustc_macros-f6e2cdfd63a4c84a.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-f6e2cdfd63a4c84a.dylib
 $ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-f6e2cdfd63a4c84a.dylib
 $ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-f6e2cdfd63a4c84a.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
-install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-8d82881a983bc919.dylib
-$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/librustc_driver-8d82881a983bc919.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-8d82881a983bc919.dylib
-$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-8d82881a983bc919.dylib
-$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-8d82881a983bc919.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b0c6868e66d1bf41.dylib
+$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/libstd-b0c6868e66d1bf41.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b0c6868e66d1bf41.dylib
+$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b0c6868e66d1bf41.dylib
+$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b0c6868e66d1bf41.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
-install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-79ebf5ee17b0d2a6.dylib
-$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/libtest-79ebf5ee17b0d2a6.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-79ebf5ee17b0d2a6.dylib
-$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-79ebf5ee17b0d2a6.dylib
-$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-79ebf5ee17b0d2a6.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-fd9d62148f04a07b.dylib
+$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/libtest-fd9d62148f04a07b.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-fd9d62148f04a07b.dylib
+$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-fd9d62148f04a07b.dylib
+$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-fd9d62148f04a07b.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-4a0959d38311a68f.dylib
+$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/lib/librustc_driver-4a0959d38311a68f.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-4a0959d38311a68f.dylib
+$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-4a0959d38311a68f.dylib
+$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-4a0959d38311a68f.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1"
 install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
 $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/dist/rustc-1.40.0-dev-x86_64-apple-darwin/rustc/share/man/man1/rustdoc.1 /Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
