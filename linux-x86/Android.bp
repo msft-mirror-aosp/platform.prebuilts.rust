@@ -1,11 +1,11 @@
 rust_prebuilt_dylib {
     name: "libstd_x86_64-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-f70818e4c7c6b13a",
+    suffix: "-0322c10236bca08f",
     crate_name: "std",
     target: {
         linux_glibc_x86_64: {
-            srcs: ["1.40.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-f70818e4c7c6b13a.so"],
+            srcs: ["1.40.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-0322c10236bca08f.so"],
             enabled: true,
         },
     },
@@ -16,11 +16,11 @@ rust_prebuilt_dylib {
 rust_prebuilt_dylib {
     name: "libtest_x86_64-unknown-linux-gnu",
     stem: "libtest",
-    suffix: "-22a32942dbf4660b",
+    suffix: "-c1e6fb83f3eb04e6",
     crate_name: "test",
     target: {
         linux_glibc_x86_64: {
-            srcs: ["1.40.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-22a32942dbf4660b.so"],
+            srcs: ["1.40.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-c1e6fb83f3eb04e6.so"],
             enabled: true,
         },
     },
