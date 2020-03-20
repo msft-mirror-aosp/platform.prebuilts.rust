@@ -1,26 +1,11 @@
 rust_prebuilt_dylib {
     name: "libstd_x86_64-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-f0585f98b88b354a",
+    suffix: "-0322c10236bca08f",
     crate_name: "std",
     target: {
         linux_glibc_x86_64: {
-            srcs: ["1.37.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-f0585f98b88b354a.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-    host_supported: true,
-}
-
-rust_prebuilt_dylib {
-    name: "libterm_x86_64-unknown-linux-gnu",
-    stem: "libterm",
-    suffix: "-a387d5b8627c4860",
-    crate_name: "term",
-    target: {
-        linux_glibc_x86_64: {
-            srcs: ["1.37.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libterm-a387d5b8627c4860.so"],
+            srcs: ["1.40.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-0322c10236bca08f.so"],
             enabled: true,
         },
     },
@@ -31,11 +16,11 @@ rust_prebuilt_dylib {
 rust_prebuilt_dylib {
     name: "libtest_x86_64-unknown-linux-gnu",
     stem: "libtest",
-    suffix: "-566799a50c9eabaf",
+    suffix: "-c1e6fb83f3eb04e6",
     crate_name: "test",
     target: {
         linux_glibc_x86_64: {
-            srcs: ["1.37.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-afa95331386138f2.so"],
+            srcs: ["1.40.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-c1e6fb83f3eb04e6.so"],
             enabled: true,
         },
     },
@@ -43,92 +28,8 @@ rust_prebuilt_dylib {
     host_supported: true,
 }
 
-rust_prebuilt_dylib {
-    name: "libstd_aarch64-linux-android",
-    stem: "libstd",
-    suffix: "-46036f37767a079f",
-    crate_name: "std",
-    target: {
-        android_arm64: {
-            srcs: ["1.37.0/lib/rustlib/aarch64-linux-android/lib/libstd-46036f37767a079f.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-}
-
-rust_prebuilt_dylib {
-    name: "libterm_aarch64-linux-android",
-    stem: "libterm",
-    suffix: "-a387d5b8627c4860",
-    crate_name: "term",
-    target: {
-        android_arm64: {
-            srcs: ["1.37.0/lib/rustlib/aarch64-linux-android/lib/libterm-a387d5b8627c4860.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-}
-
-rust_prebuilt_dylib {
-    name: "libtest_aarch64-linux-android",
-    stem: "libtest",
-    suffix: "-afa95331386138f2",
-    crate_name: "test",
-    target: {
-        android_arm64: {
-            srcs: ["1.37.0/lib/rustlib/aarch64-linux-android/lib/libtest-afa95331386138f2.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-}
-
-rust_prebuilt_dylib {
-    name: "libstd_arm-linux-androideabi",
-    stem: "libstd",
-    suffix: "-46036f37767a079f",
-    crate_name: "std",
-    target: {
-        android_arm: {
-            srcs: ["1.37.0/lib/rustlib/arm-linux-androideabi/lib/libstd-46036f37767a079f.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-}
-
-rust_prebuilt_dylib {
-    name: "libterm_arm-linux-androideabi",
-    stem: "libterm",
-    suffix: "-a387d5b8627c4860",
-    crate_name: "term",
-    target: {
-        android_arm: {
-            srcs: ["1.37.0/lib/rustlib/arm-linux-androideabi/lib/libterm-a387d5b8627c4860.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-}
-
-rust_prebuilt_dylib {
-    name: "libtest_arm-linux-androideabi",
-    stem: "libtest",
-    suffix: "-afa95331386138f2",
-    crate_name: "test",
-    target: {
-        android_arm: {
-            srcs: ["1.37.0/lib/rustlib/arm-linux-androideabi/lib/libtest-afa95331386138f2.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-}
-
 // Sysroot Libraries
-rustc = "1.37.0/src/stdlibs"
+rustc = "1.40.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -139,6 +40,59 @@ rust_library_rlib {
     deny_warnings: false,
     crate_name: "core",
     srcs: [rustc + "/src/libcore/lib.rs"],
+    no_stdlibs: true,
+    edition: "2018",
+}
+
+rust_library_rlib {
+    name: "libbacktrace_sys.rust_sysroot",
+    deny_warnings: false,
+    crate_name: "backtrace_sys",
+    srcs: [rustc + "/vendor/backtrace-sys/src/lib.rs"],
+    features: [
+        "core", "compiler_builtins"
+    ],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+}
+
+rust_library_rlib {
+    name: "librustc_demangle.rust_sysroot",
+    deny_warnings: false,
+    crate_name: "rustc_demangle",
+    srcs: [rustc + "/vendor/rustc-demangle/src/lib.rs"],
+    features: [
+        "core", "compiler_builtins"
+    ],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2015",
+}
+
+rust_library_rlib {
+    name: "libbacktrace_rs.rust_sysroot",
+    deny_warnings: false,
+    crate_name: "backtrace_rs",
+    srcs: [rustc + "/vendor/backtrace/src/lib.rs"],
+    features: [
+        "core", "compiler_builtins"
+    ],
+    rlibs: [
+        "libbacktrace_sys.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "librustc_demangle.rust_sysroot",
+    ],
     no_stdlibs: true,
     edition: "2018",
 }
@@ -282,10 +236,11 @@ rust_library_rlib {
         "alloc",
         "compiler_builtins",
         "core",
-        "default",
         "nightly",
         "rustc-dep-of-std",
+        "rustc-internal-api",
     ],
+    flags: ["--cfg=has_extern_crate_alloc"],
     no_stdlibs: true,
     rlibs: [
         "libcore.rust_sysroot",
@@ -309,6 +264,7 @@ rust_library_dylib {
     ],
     no_stdlibs: true,
     rlibs: [
+        "libbacktrace_rs.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
         "liblibc.rust_sysroot",
@@ -338,6 +294,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     rlibs: [
+        "libbacktrace_rs.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
         "liblibc.rust_sysroot",
@@ -426,6 +383,9 @@ rust_library_dylib {
         "libgetopts",
         "libstd",
     ],
+    rlibs: [
+        "liblibc.rust_sysroot",
+    ],
     no_stdlibs: true,
     edition: "2018",
 }
@@ -436,6 +396,7 @@ rust_library_rlib {
     crate_name: "test",
     srcs: [rustc + "/src/libtest/lib.rs"],
     rlibs: [
+        "liblibc.rust_sysroot",
         "libterm.static",
         "libgetopts.static",
         "libstd.static",
