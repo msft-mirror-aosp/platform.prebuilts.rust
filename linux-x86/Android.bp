@@ -48,6 +48,7 @@ rust_library_rlib {
     srcs: [rustc + "/src/libcore/lib.rs"],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -62,7 +63,8 @@ rust_library_rlib {
     },
     srcs: [rustc + "/vendor/backtrace-sys/src/lib.rs"],
     features: [
-        "core", "compiler_builtins"
+        "core",
+        "compiler_builtins",
     ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
@@ -71,6 +73,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -85,7 +88,8 @@ rust_library_rlib {
     },
     srcs: [rustc + "/vendor/rustc-demangle/src/lib.rs"],
     features: [
-        "core", "compiler_builtins"
+        "core",
+        "compiler_builtins",
     ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
@@ -93,6 +97,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -107,7 +112,8 @@ rust_library_rlib {
     },
     srcs: [rustc + "/vendor/backtrace/src/lib.rs"],
     features: [
-        "core", "compiler_builtins"
+        "core",
+        "compiler_builtins",
     ],
     rlibs: [
         "libbacktrace_sys.rust_sysroot",
@@ -119,6 +125,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -144,6 +151,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -184,6 +192,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -203,6 +212,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -226,6 +236,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -246,6 +257,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -269,6 +281,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -290,6 +303,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -320,6 +334,7 @@ rust_library_rlib {
         "liballoc.rust_sysroot",
         "libunwind.rust_sysroot",
     ],
+    native_coverage: false,
 }
 
 // Top level sysroot libraries are available both as static and dynamic
@@ -339,6 +354,7 @@ rust_library_dylib {
         "default",
         "std_detect_dlsym_getauxval",
         "std_detect_file_io",
+        "profiler",
     ],
     no_stdlibs: true,
     rlibs: [
@@ -351,7 +367,9 @@ rust_library_dylib {
         "libhashbrown.rust_sysroot",
         "libunwind.rust_sysroot",
         "libpanic_unwind.rust_sysroot",
+        "libprofiler_builtins.rust_sysroot",
     ],
+    native_coverage: false,
 }
 
 // libstd does not actually need a separate .static version, as it statically
@@ -375,6 +393,7 @@ rust_library_rlib {
         "default",
         "std_detect_dlsym_getauxval",
         "std_detect_file_io",
+        "profiler",
     ],
     no_stdlibs: true,
     rlibs: [
@@ -387,7 +406,9 @@ rust_library_rlib {
         "libhashbrown.rust_sysroot",
         "libunwind.rust_sysroot",
         "libpanic_unwind.rust_sysroot",
+        "libprofiler_builtins.rust_sysroot",
     ],
+    native_coverage: false,
 }
 
 rust_library_dylib {
@@ -404,6 +425,7 @@ rust_library_dylib {
     no_stdlibs: true,
     dylibs: ["libstd"],
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -420,6 +442,7 @@ rust_library_rlib {
     no_stdlibs: true,
     rlibs: ["libstd.static"],
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_dylib {
@@ -440,6 +463,7 @@ rust_library_dylib {
     rlibs: ["libunicode_width"],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -459,6 +483,7 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -475,6 +500,7 @@ rust_library_rlib {
     dylibs: ["libstd"],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -491,6 +517,7 @@ rust_library_rlib {
     rlibs: ["libstd.static"],
     no_stdlibs: true,
     edition: "2015",
+    native_coverage: false,
 }
 
 rust_library_dylib {
@@ -514,6 +541,7 @@ rust_library_dylib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
 }
 
 rust_library_rlib {
@@ -535,4 +563,25 @@ rust_library_rlib {
     ],
     no_stdlibs: true,
     edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libprofiler_builtins.rust_sysroot",
+    deny_warnings: false,
+    crate_name: "profiler_builtins",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libprofiler_builtins/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
 }
