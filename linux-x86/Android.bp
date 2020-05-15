@@ -460,7 +460,7 @@ rust_library_dylib {
     // libunicode_width is a no_std crate. This means it can't build into a
     // shared object without explicit eh_personality etc. items which it
     // doesn't have. Link it in statically.
-    rlibs: ["libunicode_width"],
+    rlibs: ["libunicode_width.rust_sysroot"],
     no_stdlibs: true,
     edition: "2015",
     native_coverage: false,
@@ -487,7 +487,7 @@ rust_library_rlib {
 }
 
 rust_library_rlib {
-    name: "libunicode_width",
+    name: "libunicode_width.rust_sysroot",
     deny_warnings: false,
     crate_name: "unicode_width",
     host_supported: true,
