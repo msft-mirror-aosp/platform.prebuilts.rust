@@ -1,9 +1,0 @@
-rust-std-x86_64-unknown-linux-gnu
-rust-std-aarch64-linux-android
-rust-std-arm-linux-androideabi
-rust-std-x86_64-linux-android
-rust-std-i686-linux-android
-cargo
-rustfmt-preview
-clippy-preview
-rustc
