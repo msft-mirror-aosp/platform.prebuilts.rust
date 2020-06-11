@@ -7,10 +7,10 @@ file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gd
 file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/debugger_pretty_printers_common.py
 file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/lldb_rust_formatters.py
 file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py
-file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-33c65830207bada5.dylib
-file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-5fac5304e97c0f8f.dylib
-file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-37428d4a97cba1d3.dylib
-file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-9520202b1b444417.dylib
+file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-bc43585be4d6644b.dylib
+file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-c69a03d934c15518.dylib
+file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-43dcbad8d701398b.dylib
+file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-5087192d85a6ba35.dylib
 file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
 file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1/rustc.1
 file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/share/doc/rust/COPYRIGHT
