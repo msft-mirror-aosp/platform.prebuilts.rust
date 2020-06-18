@@ -1,35 +1,5 @@
-rust_prebuilt_dylib {
-    name: "libstd_x86_64-unknown-linux-gnu",
-    stem: "libstd",
-    suffix: "-5fb58836c260ef16",
-    crate_name: "std",
-    target: {
-        linux_glibc_x86_64: {
-            srcs: ["1.43.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-5fb58836c260ef16.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-    host_supported: true,
-}
-
-rust_prebuilt_dylib {
-    name: "libtest_x86_64-unknown-linux-gnu",
-    stem: "libtest",
-    suffix: "-714108b942216e53",
-    crate_name: "test",
-    target: {
-        linux_glibc_x86_64: {
-            srcs: ["1.43.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-714108b942216e53.so"],
-            enabled: true,
-        },
-    },
-    enabled: false,
-    host_supported: true,
-}
-
 // Sysroot Libraries
-rustc = "1.43.0/src/stdlibs"
+rustc = "linux-x86/1.43.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -42,6 +12,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -58,6 +31,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -85,6 +61,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/vendor/rustc-demangle/src/lib.rs"],
     features: [
@@ -107,6 +86,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -137,6 +119,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     features: [
         "compiler-builtins",
@@ -161,6 +146,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -204,6 +192,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/src/liballoc/lib.rs"],
     rlibs: [
@@ -222,6 +213,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -248,6 +242,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/src/libpanic_abort/lib.rs"],
     rlibs: [
@@ -267,6 +264,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -293,6 +293,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/src/libunwind/lib.rs"],
     rlibs: [
@@ -313,6 +316,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -345,6 +351,9 @@ rust_library_dylib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -387,6 +396,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/src/libstd/lib.rs"],
     features: [
@@ -419,6 +431,9 @@ rust_library_dylib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     crate_name: "term",
     srcs: [rustc + "/src/libterm/lib.rs"],
@@ -437,6 +452,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/src/libterm/lib.rs"],
     no_stdlibs: true,
@@ -452,6 +470,9 @@ rust_library_dylib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -475,6 +496,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/vendor/getopts/src/lib.rs"],
     rlibs: [
@@ -495,6 +519,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
     dylibs: ["libstd"],
@@ -512,6 +539,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
     rlibs: ["libstd.static"],
@@ -527,6 +557,9 @@ rust_library_dylib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
@@ -553,6 +586,9 @@ rust_library_rlib {
         linux_glibc_x86_64: {
             enabled: false,
         },
+        darwin: {
+            enabled: false,
+        },
     },
     srcs: [rustc + "/src/libtest/lib.rs"],
     rlibs: [
@@ -573,6 +609,9 @@ rust_library_rlib {
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
             enabled: false,
         },
     },
