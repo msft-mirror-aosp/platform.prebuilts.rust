@@ -1,5 +1,5 @@
 // Sysroot Libraries
-rustc = "linux-x86/1.43.0/src/stdlibs"
+rustc = "linux-x86/1.44.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
