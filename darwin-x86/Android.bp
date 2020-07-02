@@ -7,7 +7,7 @@ rust_prebuilt_library {
     target: {
         darwin: {
             dylib: {
-                srcs: ["1.44.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-abfbfbbc87b6c7f7.so"],
+                srcs: ["1.44.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-abfbfbbc87b6c7f7.dylib"],
             },
             rlib: {
                 srcs: ["1.44.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-abfbfbbc87b6c7f7.rlib"],
@@ -28,7 +28,7 @@ rust_prebuilt_library {
     target: {
         darwin: {
             dylib: {
-                srcs: ["1.44.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-a9a467b2cdbf56aa.so"],
+                srcs: ["1.44.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-a9a467b2cdbf56aa.dylib"],
             },
             rlib: {
                 srcs: ["1.44.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-a9a467b2cdbf56aa.rlib"],
