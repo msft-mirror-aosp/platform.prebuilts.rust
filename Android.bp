@@ -7,7 +7,6 @@ rustc = "linux-x86/1.44.0/src/stdlibs"
 // The most likely place for this to occur would be liblibc.
 rust_library_rlib {
     name: "libcore.rust_sysroot",
-    deny_warnings: false,
     crate_name: "core",
     host_supported: true,
     target: {
@@ -26,7 +25,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libbacktrace_sys.rust_sysroot",
-    deny_warnings: false,
     crate_name: "backtrace_sys",
     host_supported: true,
     target: {
@@ -54,7 +52,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "librustc_demangle.rust_sysroot",
-    deny_warnings: false,
     crate_name: "rustc_demangle",
     host_supported: true,
     target: {
@@ -81,7 +78,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libbacktrace_rs.rust_sysroot",
-    deny_warnings: false,
     crate_name: "backtrace_rs",
     host_supported: true,
     target: {
@@ -112,7 +108,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libcompiler_builtins.rust_sysroot",
-    deny_warnings: false,
     crate_name: "compiler_builtins",
     host_supported: true,
     target: {
@@ -141,7 +136,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "liblibc.rust_sysroot",
-    deny_warnings: false,
     crate_name: "libc",
     host_supported: true,
     target: {
@@ -185,7 +179,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "liballoc.rust_sysroot",
-    deny_warnings: false,
     crate_name: "alloc",
     host_supported: true,
     target: {
@@ -208,7 +201,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libcfg_if.rust_sysroot",
-    deny_warnings: false,
     crate_name: "cfg_if",
     host_supported: true,
     target: {
@@ -235,7 +227,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libpanic_abort.rust_sysroot",
-    deny_warnings: false,
     crate_name: "panic_abort",
     host_supported: true,
     target: {
@@ -259,7 +250,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libpanic_unwind.rust_sysroot",
-    deny_warnings: false,
     crate_name: "panic_unwind",
     host_supported: true,
     target: {
@@ -286,7 +276,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libunwind.rust_sysroot",
-    deny_warnings: false,
     crate_name: "unwind",
     host_supported: true,
     target: {
@@ -311,7 +300,6 @@ rust_library_rlib {
 
 rust_library_rlib {
     name: "libhashbrown.rust_sysroot",
-    deny_warnings: false,
     crate_name: "hashbrown",
     host_supported: true,
     target: {
@@ -344,9 +332,8 @@ rust_library_rlib {
 }
 
 // Top level sysroot libraries are available both as static and dynamic
-rust_library_dylib {
+rust_library {
     name: "libstd",
-    deny_warnings: false,
     crate_name: "std",
     host_supported: true,
     target: {
@@ -381,51 +368,8 @@ rust_library_dylib {
     native_coverage: false,
 }
 
-// libstd does not actually need a separate .static version, as it statically
-// links its dependencies whether compiled as rlib or dylib.
-// However, since libterm and libtest do need a separate .static version
-// until we have dynamic selection included, I'm splitting libstd for symmetry
-
-rust_library_rlib {
-    name: "libstd.static",
-    deny_warnings: false,
-    crate_name: "std",
-    edition: "2018",
-    host_supported: true,
-    target: {
-        linux_glibc_x86_64: {
-            enabled: false,
-        },
-        darwin: {
-            enabled: false,
-        },
-    },
-    srcs: [rustc + "/src/libstd/lib.rs"],
-    features: [
-        "default",
-        "std_detect_dlsym_getauxval",
-        "std_detect_file_io",
-        "profiler",
-    ],
-    no_stdlibs: true,
-    rlibs: [
-        "libbacktrace_rs.rust_sysroot",
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-        "liblibc.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-        "liballoc.rust_sysroot",
-        "libhashbrown.rust_sysroot",
-        "libunwind.rust_sysroot",
-        "libpanic_unwind.rust_sysroot",
-        "libprofiler_builtins.rust_sysroot",
-    ],
-    native_coverage: false,
-}
-
-rust_library_dylib {
+rust_library {
     name: "libterm",
-    deny_warnings: false,
     host_supported: true,
     target: {
         linux_glibc_x86_64: {
@@ -438,34 +382,13 @@ rust_library_dylib {
     crate_name: "term",
     srcs: [rustc + "/src/libterm/lib.rs"],
     no_stdlibs: true,
-    dylibs: ["libstd"],
+    rustlibs: ["libstd"],
     edition: "2018",
     native_coverage: false,
 }
 
-rust_library_rlib {
-    name: "libterm.static",
-    deny_warnings: false,
-    crate_name: "term",
-    host_supported: true,
-    target: {
-        linux_glibc_x86_64: {
-            enabled: false,
-        },
-        darwin: {
-            enabled: false,
-        },
-    },
-    srcs: [rustc + "/src/libterm/lib.rs"],
-    no_stdlibs: true,
-    rlibs: ["libstd.static"],
-    edition: "2018",
-    native_coverage: false,
-}
-
-rust_library_dylib {
+rust_library {
     name: "libgetopts",
-    deny_warnings: false,
     crate_name: "getopts",
     host_supported: true,
     target: {
@@ -477,42 +400,15 @@ rust_library_dylib {
         },
     },
     srcs: [rustc + "/vendor/getopts/src/lib.rs"],
-    dylibs: ["libstd"],
-    // libunicode_width is a no_std crate. This means it can't build into a
-    // shared object without explicit eh_personality etc. items which it
-    // doesn't have. Link it in statically.
+    no_stdlibs: true,
     rlibs: ["libunicode_width.rust_sysroot"],
-    no_stdlibs: true,
-    edition: "2015",
-    native_coverage: false,
-}
-
-rust_library_rlib {
-    name: "libgetopts.static",
-    deny_warnings: false,
-    crate_name: "getopts",
-    host_supported: true,
-    target: {
-        linux_glibc_x86_64: {
-            enabled: false,
-        },
-        darwin: {
-            enabled: false,
-        },
-    },
-    srcs: [rustc + "/vendor/getopts/src/lib.rs"],
-    rlibs: [
-        "libunicode_width.static",
-        "libstd.static",
-    ],
-    no_stdlibs: true,
+    rustlibs: ["libstd"],
     edition: "2015",
     native_coverage: false,
 }
 
 rust_library_rlib {
     name: "libunicode_width.rust_sysroot",
-    deny_warnings: false,
     crate_name: "unicode_width",
     host_supported: true,
     target: {
@@ -530,29 +426,8 @@ rust_library_rlib {
     native_coverage: false,
 }
 
-rust_library_rlib {
-    name: "libunicode_width.static",
-    deny_warnings: false,
-    crate_name: "unicode_width",
-    host_supported: true,
-    target: {
-        linux_glibc_x86_64: {
-            enabled: false,
-        },
-        darwin: {
-            enabled: false,
-        },
-    },
-    srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
-    rlibs: ["libstd.static"],
-    no_stdlibs: true,
-    edition: "2015",
-    native_coverage: false,
-}
-
-rust_library_dylib {
+rust_library {
     name: "libtest",
-    deny_warnings: false,
     crate_name: "test",
     host_supported: true,
     target: {
@@ -564,7 +439,7 @@ rust_library_dylib {
         },
     },
     srcs: [rustc + "/src/libtest/lib.rs"],
-    dylibs: [
+    rustlibs: [
         "libterm",
         "libgetopts",
         "libstd",
@@ -578,33 +453,7 @@ rust_library_dylib {
 }
 
 rust_library_rlib {
-    name: "libtest.static",
-    deny_warnings: false,
-    crate_name: "test",
-    host_supported: true,
-    target: {
-        linux_glibc_x86_64: {
-            enabled: false,
-        },
-        darwin: {
-            enabled: false,
-        },
-    },
-    srcs: [rustc + "/src/libtest/lib.rs"],
-    rlibs: [
-        "liblibc.rust_sysroot",
-        "libterm.static",
-        "libgetopts.static",
-        "libstd.static",
-    ],
-    no_stdlibs: true,
-    edition: "2018",
-    native_coverage: false,
-}
-
-rust_library_rlib {
     name: "libprofiler_builtins.rust_sysroot",
-    deny_warnings: false,
     crate_name: "profiler_builtins",
     host_supported: true,
     target: {
