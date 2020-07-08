@@ -9,11 +9,11 @@ file:/buildbot/src/android/rust-toolchain/out/share/doc/rust/COPYRIGHT
 file:/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-MIT
 file:/buildbot/src/android/rust-toolchain/out/share/doc/rust/LICENSE-APACHE
 file:/buildbot/src/android/rust-toolchain/out/share/doc/rust/README.md
-file:/buildbot/src/android/rust-toolchain/out/lib/libtest-0a797dca58e06aa8.so
-file:/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-31fce57b3783911e.so
+file:/buildbot/src/android/rust-toolchain/out/lib/librustc_macros-e6a364de8f86bffa.so
+file:/buildbot/src/android/rust-toolchain/out/lib/libstd-5fb58836c260ef16.so
 file:/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_rust_pretty_printing.py
 file:/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/lldb_rust_formatters.py
 file:/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 file:/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/debugger_pretty_printers_common.py
-file:/buildbot/src/android/rust-toolchain/out/lib/libstd-099ea4826d7e115e.so
-file:/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-21592fde41a3f894.so
+file:/buildbot/src/android/rust-toolchain/out/lib/libtest-714108b942216e53.so
+file:/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-91ff1652e7edbb56.so
