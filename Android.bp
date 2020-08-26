@@ -1,0 +1,475 @@
+// Sysroot Libraries
+rustc = "linux-x86/1.45.2/src/stdlibs"
+
+// The basic crates are only available as static libraries
+// .rust_sysroot is appended to the name to prevent accidental direct usage
+// of these crates by user code.
+// The most likely place for this to occur would be liblibc.
+rust_library_rlib {
+    name: "libcore.rust_sysroot",
+    crate_name: "core",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libcore/lib.rs"],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libbacktrace_sys.rust_sysroot",
+    crate_name: "backtrace_sys",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/vendor/backtrace-sys/src/lib.rs"],
+    features: [
+        "core",
+        "compiler_builtins",
+    ],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "librustc_demangle.rust_sysroot",
+    crate_name: "rustc_demangle",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/vendor/rustc-demangle/src/lib.rs"],
+    features: [
+        "core",
+        "compiler_builtins",
+    ],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2015",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libbacktrace_rs.rust_sysroot",
+    crate_name: "backtrace_rs",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/vendor/backtrace/src/lib.rs"],
+    features: [
+        "core",
+        "compiler_builtins",
+    ],
+    rlibs: [
+        "libbacktrace_sys.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "librustc_demangle.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libcompiler_builtins.rust_sysroot",
+    crate_name: "compiler_builtins",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    features: [
+        "compiler-builtins",
+        "core",
+        "default",
+    ],
+    srcs: [rustc + "/vendor/compiler_builtins/src/lib.rs"],
+    rlibs: ["libcore.rust_sysroot"],
+    flags: [
+        "-C",
+        "panic=abort",
+    ],
+    no_stdlibs: true,
+    edition: "2015",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "liblibc.rust_sysroot",
+    crate_name: "libc",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    features: ["align"],
+    srcs: [rustc + "/vendor/libc/src/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    // Generated via build.rs autodetect on compiler version. May need to be
+    // regenerated on compiler version bump.
+    flags: [
+        "--cfg",
+        "freebsd11",
+        "--cfg",
+        "libc_priv_mod_use",
+        "--cfg",
+        "libc_union",
+        "--cfg",
+        "libc_const_size_of",
+        "--cfg",
+        "libc_align",
+        "--cfg",
+        "libc_core_cvoid",
+        "--cfg",
+        "libc_packedN",
+        "--cfg",
+        "libc_thread_local",
+    ],
+    no_stdlibs: true,
+    edition: "2015",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "liballoc.rust_sysroot",
+    crate_name: "alloc",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/liballoc/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libcfg_if.rust_sysroot",
+    crate_name: "cfg_if",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    features: [
+        "compiler_builtins",
+        "core",
+    ],
+    srcs: [rustc + "/vendor/cfg-if/src/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libpanic_abort.rust_sysroot",
+    crate_name: "panic_abort",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libpanic_abort/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libpanic_unwind.rust_sysroot",
+    crate_name: "panic_unwind",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libpanic_unwind/lib.rs"],
+    rlibs: [
+        "liballoc.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "libunwind.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libunwind.rust_sysroot",
+    crate_name: "unwind",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libunwind/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libhashbrown.rust_sysroot",
+    crate_name: "hashbrown",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/vendor/hashbrown/src/lib.rs"],
+    edition: "2018",
+    features: [
+        "alloc",
+        "compiler_builtins",
+        "core",
+        "nightly",
+        "rustc-dep-of-std",
+        "rustc-internal-api",
+    ],
+    flags: ["--cfg=has_extern_crate_alloc"],
+    no_stdlibs: true,
+    rlibs: [
+        "libcore.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libunwind.rust_sysroot",
+    ],
+    native_coverage: false,
+}
+
+// Top level sysroot libraries are available both as static and dynamic
+rust_library {
+    name: "libstd",
+    crate_name: "std",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    edition: "2018",
+    srcs: [rustc + "/src/libstd/lib.rs"],
+    features: [
+        "default",
+        "std_detect_dlsym_getauxval",
+        "std_detect_file_io",
+        "profiler",
+    ],
+    no_stdlibs: true,
+    rlibs: [
+        "libbacktrace_rs.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libhashbrown.rust_sysroot",
+        "libunwind.rust_sysroot",
+        "libpanic_unwind.rust_sysroot",
+        "libprofiler_builtins.rust_sysroot",
+    ],
+    native_coverage: false,
+}
+
+rust_library {
+    name: "libterm",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    crate_name: "term",
+    srcs: [rustc + "/src/libterm/lib.rs"],
+    no_stdlibs: true,
+    rustlibs: ["libstd"],
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library {
+    name: "libgetopts",
+    crate_name: "getopts",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/vendor/getopts/src/lib.rs"],
+    no_stdlibs: true,
+    rlibs: ["libunicode_width.rust_sysroot"],
+    rustlibs: ["libstd"],
+    edition: "2015",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libunicode_width.rust_sysroot",
+    crate_name: "unicode_width",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
+    dylibs: ["libstd"],
+    no_stdlibs: true,
+    edition: "2015",
+    native_coverage: false,
+}
+
+rust_library {
+    name: "libtest",
+    crate_name: "test",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libtest/lib.rs"],
+    rustlibs: [
+        "libterm",
+        "libgetopts",
+        "libstd",
+    ],
+    rlibs: [
+        "liblibc.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
+
+rust_library_rlib {
+    name: "libprofiler_builtins.rust_sysroot",
+    crate_name: "profiler_builtins",
+    host_supported: true,
+    target: {
+        linux_glibc_x86_64: {
+            enabled: false,
+        },
+        darwin: {
+            enabled: false,
+        },
+    },
+    srcs: [rustc + "/src/libprofiler_builtins/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+}
