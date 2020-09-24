@@ -1,8 +1,9 @@
 rust-std-x86_64-apple-darwin
 rust-std-aarch64-linux-android
-rust-std-arm-linux-androideabi
+rust-std-armv7-linux-androideabi
 rust-std-x86_64-linux-android
 rust-std-i686-linux-android
+rust-std-arm-linux-androideabi
 cargo
 rustfmt-preview
 clippy-preview
