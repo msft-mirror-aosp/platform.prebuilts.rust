@@ -388,7 +388,7 @@ rust_library_rlib {
         },
     },
     srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
-    dylibs: ["libstd"],
+    rustlibs: ["libstd"],
     edition: "2015",
 }
 
