@@ -94,9 +94,9 @@ pub fn init() {
     unsafe fn reset_sigpipe() {}
 }
 
-#[cfg(target_os = "android")]
-pub use crate::sys::android::signal;
-#[cfg(not(target_os = "android"))]
+//#[cfg(target_os = "android")]
+//pub use crate::sys::android::signal;
+//#[cfg(not(target_os = "android"))]
 pub use libc::signal;
 
 pub fn decode_error_kind(errno: i32) -> ErrorKind {
