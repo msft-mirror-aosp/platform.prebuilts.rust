@@ -1,0 +1,42 @@
+From e66cbda268d7ea65a598319156718f06f689d90e Mon Sep 17 00:00:00 2001
+From: Ivan Lozano <ivanlozano@google.com>
+Date: Fri, 2 Oct 2020 08:58:34 -0400
+Subject: [PATCH] libstd: link 'signal' at compilation for Android.
+
+libstd links 'signal' for Android specifically at runtime since API
+levels prior to API 20 did not have 'signal' and used 'bsd_signal'
+instead. This prevents static compilation as the function is loaded at
+runtime using dlsym.
+
+Because this toolchain is building for platform, we know that our libc
+uses 'signal' and not 'bsd_signal'. This means we can safely remove this
+behavior and just link 'signal' in normally. This allows us to create
+static binaries.
+
+Bug: 169434439
+Test: Rust static binary works.
+Change-Id: I2829d7cb36dd54698458b9845ef33931df82c5e6
+---
+ linux-x86/1.46.0/src/stdlibs/src/libstd/sys/unix/mod.rs | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/linux-x86/1.46.0/src/stdlibs/src/libstd/sys/unix/mod.rs b/linux-x86/1.46.0/src/stdlibs/src/libstd/sys/unix/mod.rs
+index b1688e7..9de8542 100644
+--- a/linux-x86/1.46.0/src/stdlibs/src/libstd/sys/unix/mod.rs
++++ b/linux-x86/1.46.0/src/stdlibs/src/libstd/sys/unix/mod.rs
+@@ -94,9 +94,9 @@ pub fn init() {
+     unsafe fn reset_sigpipe() {}
+ }
+ 
+-#[cfg(target_os = "android")]
+-pub use crate::sys::android::signal;
+-#[cfg(not(target_os = "android"))]
++//#[cfg(target_os = "android")]
++//pub use crate::sys::android::signal;
++//#[cfg(not(target_os = "android"))]
+ pub use libc::signal;
+ 
+ pub fn decode_error_kind(errno: i32) -> ErrorKind {
+-- 
+2.28.0.806.g8561365e88-goog
+
