@@ -1,16 +1,16 @@
 rust_prebuilt_library {
     name: "libstd_x86_64-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-5bb8d211b33b8751",
+    suffix: "-bf9d8508e55753d8",
     crate_name: "std",
-    link_dirs: ["1.46.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.47.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86_64: {
             dylib: {
-                srcs: ["1.46.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-5bb8d211b33b8751.so"],
+                srcs: ["1.47.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-bf9d8508e55753d8.so"],
             },
             rlib: {
-                srcs: ["1.46.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-5bb8d211b33b8751.rlib"],
+                srcs: ["1.47.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-bf9d8508e55753d8.rlib"],
             },
             enabled: true,
         },
@@ -23,16 +23,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libtest_x86_64-unknown-linux-gnu",
     stem: "libtest",
-    suffix: "-ce16562b60567022",
+    suffix: "-5603131b6a1b0d2f",
     crate_name: "test",
-    link_dirs: ["1.46.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.47.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86_64: {
             dylib: {
-                srcs: ["1.46.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-ce16562b60567022.so"],
+                srcs: ["1.47.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-5603131b6a1b0d2f.so"],
             },
             rlib: {
-                srcs: ["1.46.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-ce16562b60567022.rlib"],
+                srcs: ["1.47.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-5603131b6a1b0d2f.rlib"],
             },
             enabled: true,
         },
