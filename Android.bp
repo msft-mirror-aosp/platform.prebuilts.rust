@@ -1,5 +1,5 @@
 // Sysroot Libraries
-rustc = "linux-x86/1.46.0/src/stdlibs"
+rustc = "linux-x86/1.47.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -26,7 +26,7 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libcore/lib.rs"],
+    srcs: [rustc + "/library/core/src/lib.rs"],
 }
 
 rust_library_rlib {
@@ -41,7 +41,7 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/vendor/backtrace-sys/src/lib.rs"],
+    srcs: [rustc + "/library/backtrace/crates/backtrace-sys/src/lib.rs"],
     features: [
         "core",
         "compiler_builtins",
@@ -183,7 +183,7 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/liballoc/lib.rs"],
+    srcs: [rustc + "/library/alloc/src/lib.rs"],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -225,10 +225,11 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libpanic_abort/lib.rs"],
+    srcs: [rustc + "/library/panic_abort/src/lib.rs"],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
+	"libcfg_if.rust_sysroot",
         "liblibc.rust_sysroot",
     ],
 }
@@ -245,7 +246,7 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libpanic_unwind/lib.rs"],
+    srcs: [rustc + "/library/panic_unwind/src/lib.rs"],
     rlibs: [
         "liballoc.rust_sysroot",
         "libcore.rust_sysroot",
@@ -268,7 +269,7 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libunwind/lib.rs"],
+    srcs: [rustc + "/library/unwind/src/lib.rs"],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -320,7 +321,7 @@ rust_library {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libstd/lib.rs"],
+    srcs: [rustc + "/library/std/src/lib.rs"],
     features: [
         "default",
         "std_detect_dlsym_getauxval",
@@ -331,6 +332,7 @@ rust_library {
         "libbacktrace_rs.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
+        "librustc_demangle.rust_sysroot",
         "liblibc.rust_sysroot",
         "libcfg_if.rust_sysroot",
         "liballoc.rust_sysroot",
@@ -353,7 +355,7 @@ rust_library {
         },
     },
     crate_name: "term",
-    srcs: [rustc + "/src/libterm/lib.rs"],
+    srcs: [rustc + "/library/term/src/lib.rs"],
     rustlibs: ["libstd"],
 }
 
@@ -404,7 +406,7 @@ rust_library {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libtest/lib.rs"],
+    srcs: [rustc + "/library/test/src/lib.rs"],
     rustlibs: [
         "libterm",
         "libgetopts",
@@ -412,6 +414,7 @@ rust_library {
     ],
     rlibs: [
         "liblibc.rust_sysroot",
+	"libcfg_if.rust_sysroot",
     ],
 }
 
@@ -427,7 +430,7 @@ rust_library_rlib {
             enabled: false,
         },
     },
-    srcs: [rustc + "/src/libprofiler_builtins/lib.rs"],
+    srcs: [rustc + "/library/profiler_builtins/src/lib.rs"],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
