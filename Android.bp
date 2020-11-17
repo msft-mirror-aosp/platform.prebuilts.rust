@@ -6,12 +6,16 @@ rustc = "linux-x86/1.47.0/src/stdlibs"
 // of these crates by user code.
 // The most likely place for this to occur would be liblibc.
 rust_defaults {
-   name: "rust_sysroot_defaults",
-   no_stdlibs: true,
-   edition: "2018",
-   native_coverage: false,
-   host_supported: true,
-   sysroot: true,
+    name: "rust_sysroot_defaults",
+    no_stdlibs: true,
+    edition: "2018",
+    native_coverage: false,
+    host_supported: true,
+    sysroot: true,
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
 }
 
 rust_library_rlib {
