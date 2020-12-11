@@ -12,6 +12,7 @@ rust_defaults {
     native_coverage: false,
     host_supported: true,
     sysroot: true,
+    vendor_available: true,
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
