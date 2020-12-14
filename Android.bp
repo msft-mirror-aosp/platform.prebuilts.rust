@@ -17,6 +17,7 @@ rust_defaults {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    min_sdk_version: "29",
 }
 
 rust_library_rlib {
