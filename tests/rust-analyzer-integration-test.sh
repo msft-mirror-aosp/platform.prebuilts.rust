@@ -38,9 +38,5 @@ build/soong/soong_ui.bash --make-mode SOONG_GEN_RUST_PROJECT=1 nothing
 ln -s "${RUST_PROJECT_PATH}" .
 trap "rm \"${ANDROID_TOP}\"/rust-project.json" EXIT
 
-# Gather Rust toolchain version from Soong configuration.
-readonly RUST_CONFIG_PATH=build/soong/rust/config/global.go
-readonly RUST_DEFAULT_VERSION=$(sed -n "s/^.*RustDefaultVersion = \"\(.*\)\".*$/\1/p" "${RUST_CONFIG_PATH}")
-
 # Run rust-analyzer analysis-stats. It will return 0 if rust-project.json can be found and parsed.
-prebuilts/rust/${OS}-x86/${RUST_DEFAULT_VERSION}/bin/rust-analyzer analysis-stats . 2>"${DIST_DIR}"/rust-analyzer-stats.log
+prebuilts/rust/${OS}-x86/stable/rust-analyzer analysis-stats . 2>"${DIST_DIR}"/rust-analyzer-stats.log
