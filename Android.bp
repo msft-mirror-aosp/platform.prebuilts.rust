@@ -326,10 +326,13 @@ rust_library {
         darwin: {
             enabled: false,
         },
+        linux_bionic: {
+            rlibs: ["libpanic_abort.rust_sysroot"],
+        },
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
-        host: {
+        linux_glibc: {
             rlibs: ["libpanic_unwind.rust_sysroot"],
         },
     },
