@@ -1,5 +1,5 @@
 // Sysroot Libraries
-rustc = "linux-x86/1.48.0/src/stdlibs"
+rustc = "linux-x86/1.49.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -12,10 +12,12 @@ rust_defaults {
     native_coverage: false,
     host_supported: true,
     sysroot: true,
+    vendor_available: true,
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    min_sdk_version: "29",
 }
 
 rust_library_rlib {
@@ -233,7 +235,7 @@ rust_library_rlib {
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
-	"libcfg_if.rust_sysroot",
+        "libcfg_if.rust_sysroot",
         "liblibc.rust_sysroot",
     ],
 }
@@ -324,6 +326,15 @@ rust_library {
         darwin: {
             enabled: false,
         },
+        linux_bionic: {
+            rlibs: ["libpanic_abort.rust_sysroot"],
+        },
+        android: {
+            rlibs: ["libpanic_abort.rust_sysroot"],
+        },
+        linux_glibc: {
+            rlibs: ["libpanic_unwind.rust_sysroot"],
+        },
     },
     srcs: [rustc + "/library/std/src/lib.rs"],
     features: [
@@ -342,7 +353,6 @@ rust_library {
         "liballoc.rust_sysroot",
         "libhashbrown.rust_sysroot",
         "libunwind.rust_sysroot",
-        "libpanic_unwind.rust_sysroot",
         "libprofiler_builtins.rust_sysroot",
     ],
 }
@@ -418,7 +428,7 @@ rust_library {
     ],
     rlibs: [
         "liblibc.rust_sysroot",
-	"libcfg_if.rust_sysroot",
+        "libcfg_if.rust_sysroot",
     ],
 }
 
