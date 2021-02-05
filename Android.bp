@@ -233,6 +233,7 @@ rust_library_rlib {
     },
     srcs: [rustc + "/library/panic_abort/src/lib.rs"],
     rlibs: [
+        "liballoc.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
         "libcfg_if.rust_sysroot",
