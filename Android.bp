@@ -13,6 +13,7 @@ rust_defaults {
     host_supported: true,
     sysroot: true,
     vendor_available: true,
+    vendor_ramdisk_available: true,
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
