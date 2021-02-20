@@ -18,16 +18,16 @@ package {
 rust_prebuilt_library {
     name: "libstd_x86_64-apple-darwin",
     stem: "libstd",
-    suffix: "-2f0ec55117b587c8",
+    suffix: "-2f4e11c6a19d82a4",
     crate_name: "std",
-    link_dirs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/"],
     target: {
         darwin: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-2f0ec55117b587c8.dylib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-2f4e11c6a19d82a4.dylib"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-2f0ec55117b587c8.rlib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-2f4e11c6a19d82a4.rlib"],
             },
             enabled: true,
         },
@@ -40,16 +40,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libtest_x86_64-apple-darwin",
     stem: "libtest",
-    suffix: "-81dd74760ce3d880",
+    suffix: "-8ee0c54e83748273",
     crate_name: "test",
-    link_dirs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/"],
     target: {
         darwin: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-81dd74760ce3d880.dylib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-8ee0c54e83748273.dylib"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-81dd74760ce3d880.rlib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-8ee0c54e83748273.rlib"],
             },
             enabled: true,
         },
