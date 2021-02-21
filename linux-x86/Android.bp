@@ -1,16 +1,36 @@
+package {
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "prebuilts_rust_license"
+    // to get the below license kinds:
+    //   SPDX-license-identifier-Apache-2.0
+    //   SPDX-license-identifier-BSD
+    //   SPDX-license-identifier-GPL
+    //   SPDX-license-identifier-GPL-2.0
+    //   SPDX-license-identifier-GPL-3.0
+    //   SPDX-license-identifier-LGPL
+    //   SPDX-license-identifier-MIT
+    //   SPDX-license-identifier-NCSA
+    //   SPDX-license-identifier-OpenSSL
+    //   legacy_notice
+    //   legacy_permissive
+    //   legacy_unencumbered
+    default_applicable_licenses: ["prebuilts_rust_license"],
+}
+
 rust_prebuilt_library {
     name: "libstd_x86_64-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-48da00d88fc936b3",
+    suffix: "-cc7dcf46ba75c1ca",
     crate_name: "std",
-    link_dirs: ["1.49.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86_64: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-48da00d88fc936b3.so"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-cc7dcf46ba75c1ca.so"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-48da00d88fc936b3.rlib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-cc7dcf46ba75c1ca.rlib"],
             },
             enabled: true,
         },
@@ -23,16 +43,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libtest_x86_64-unknown-linux-gnu",
     stem: "libtest",
-    suffix: "-af1c004e0f826f84",
+    suffix: "-bab0328538a8473d",
     crate_name: "test",
-    link_dirs: ["1.49.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86_64: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-af1c004e0f826f84.so"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-bab0328538a8473d.so"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-af1c004e0f826f84.rlib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-bab0328538a8473d.rlib"],
             },
             enabled: true,
         },
@@ -45,16 +65,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libstd_i686-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-f35d2c58cc463a39",
+    suffix: "-27239aadb53ecd60",
     crate_name: "std",
-    link_dirs: ["1.49.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-f35d2c58cc463a39.so"],
+                srcs: ["1.50.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-27239aadb53ecd60.so"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-f35d2c58cc463a39.rlib"],
+                srcs: ["1.50.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-27239aadb53ecd60.rlib"],
             },
             enabled: true,
         },
@@ -67,16 +87,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libtest_i686-unknown-linux-gnu",
     stem: "libtest",
-    suffix: "-2f4e11c6a19d82a4",
+    suffix: "-43d79c67728d4b03",
     crate_name: "test",
-    link_dirs: ["1.49.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/i686-unknown-linux-gnu/lib/libtest-2f4e11c6a19d82a4.so"],
+                srcs: ["1.50.0/lib/rustlib/i686-unknown-linux-gnu/lib/libtest-43d79c67728d4b03.so"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/i686-unknown-linux-gnu/lib/libtest-2f4e11c6a19d82a4.rlib"],
+                srcs: ["1.50.0/lib/rustlib/i686-unknown-linux-gnu/lib/libtest-43d79c67728d4b03.rlib"],
             },
             enabled: true,
         },
@@ -85,4 +105,3 @@ rust_prebuilt_library {
     host_supported: true,
     sysroot: true,
 }
-
