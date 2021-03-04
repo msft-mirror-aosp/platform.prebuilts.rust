@@ -1,16 +1,33 @@
+package {
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "prebuilts_rust_license"
+    // to get the below license kinds:
+    //   SPDX-license-identifier-Apache-2.0
+    //   SPDX-license-identifier-BSD
+    //   SPDX-license-identifier-GPL
+    //   SPDX-license-identifier-GPL-2.0
+    //   SPDX-license-identifier-LGPL
+    //   SPDX-license-identifier-MIT
+    //   SPDX-license-identifier-NCSA
+    //   SPDX-license-identifier-OpenSSL
+    //   legacy_permissive
+    default_applicable_licenses: ["prebuilts_rust_license"],
+}
+
 rust_prebuilt_library {
     name: "libstd_x86_64-apple-darwin",
     stem: "libstd",
-    suffix: "-2f0ec55117b587c8",
+    suffix: "-1533f5957b381f9d",
     crate_name: "std",
-    link_dirs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/"],
     target: {
         darwin: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-2f0ec55117b587c8.dylib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-1533f5957b381f9d.dylib"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-2f0ec55117b587c8.rlib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libstd-1533f5957b381f9d.rlib"],
             },
             enabled: true,
         },
@@ -23,16 +40,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libtest_x86_64-apple-darwin",
     stem: "libtest",
-    suffix: "-81dd74760ce3d880",
+    suffix: "-8ee0c54e83748273",
     crate_name: "test",
-    link_dirs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/"],
+    link_dirs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/"],
     target: {
         darwin: {
             dylib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-81dd74760ce3d880.dylib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-8ee0c54e83748273.dylib"],
             },
             rlib: {
-                srcs: ["1.49.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-81dd74760ce3d880.rlib"],
+                srcs: ["1.50.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-8ee0c54e83748273.rlib"],
             },
             enabled: true,
         },
