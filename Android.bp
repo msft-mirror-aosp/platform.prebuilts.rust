@@ -140,6 +140,8 @@ rust_library_rlib {
     flags: [
         "-C",
         "panic=abort",
+	"-C",
+	"overflow-checks=off",
     ],
     edition: "2015",
 }
