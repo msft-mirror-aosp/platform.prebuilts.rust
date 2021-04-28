@@ -29,6 +29,11 @@ install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/b
 $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/bin/rust-gdb /Volumes/Android/buildbot/src/android/rust-toolchain/out/bin/rust-gdb
 $ chmod 755 /Volumes/Android/buildbot/src/android/rust-toolchain/out/bin/rust-gdb
 $ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/bin/rust-gdb" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
+install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6b61c8e54057b50a.dylib
+$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/librustc_driver-6b61c8e54057b50a.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6b61c8e54057b50a.dylib
+$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6b61c8e54057b50a.dylib
+$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-6b61c8e54057b50a.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-apple-darwin/bin"
 install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-apple-darwin/bin/rust-llvm-dwp
 $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/rustlib/x86_64-apple-darwin/bin/rust-llvm-dwp /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/x86_64-apple-darwin/bin/rust-llvm-dwp
@@ -70,20 +75,15 @@ $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/
 $ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_lookup.py
 $ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/etc/gdb_lookup.py" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
-install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-a48bfb83b8f3a14c.dylib
-$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/libstd-a48bfb83b8f3a14c.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-a48bfb83b8f3a14c.dylib
-$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-a48bfb83b8f3a14c.dylib
-$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-a48bfb83b8f3a14c.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b7fb7394110e9327.dylib
+$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/libstd-b7fb7394110e9327.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b7fb7394110e9327.dylib
+$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b7fb7394110e9327.dylib
+$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libstd-b7fb7394110e9327.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
-install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-d794dacc7e835986.dylib
-$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/libtest-d794dacc7e835986.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-d794dacc7e835986.dylib
-$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-d794dacc7e835986.dylib
-$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-d794dacc7e835986.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
-$ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib"
-install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-3dde545787d2ec0e.dylib
-$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/librustc_driver-3dde545787d2ec0e.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-3dde545787d2ec0e.dylib
-$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-3dde545787d2ec0e.dylib
-$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/librustc_driver-3dde545787d2ec0e.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
+install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-14915b0897f7875e.dylib
+$ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/lib/libtest-14915b0897f7875e.dylib /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-14915b0897f7875e.dylib
+$ chmod 644 /Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-14915b0897f7875e.dylib
+$ echo "file:/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/libtest-14915b0897f7875e.dylib" >> "/Volumes/Android/buildbot/src/android/rust-toolchain/out/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1"
 install: copying file /Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
 $ cp /Volumes/Android/buildbot/src/android/rust-toolchain/toolchain/rustc/build/tmp/tarball/rustc/x86_64-apple-darwin/rustc-1.51.0-dev-x86_64-apple-darwin/rustc/share/man/man1/rustdoc.1 /Volumes/Android/buildbot/src/android/rust-toolchain/out/share/man/man1/rustdoc.1
