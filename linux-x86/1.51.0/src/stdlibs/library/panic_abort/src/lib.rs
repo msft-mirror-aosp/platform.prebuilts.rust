@@ -31,13 +31,12 @@ pub unsafe extern "C" fn __rust_panic_cleanup(_: *mut u8) -> *mut (dyn Any + Sen
     unreachable!()
 }
 
-// Use the relevant abort on the platform in question.
+// "Leak" the payload and shim to the relevant abort on the platform in question.
 #[rustc_std_internal_symbol]
 pub unsafe extern "C" fn __rust_start_panic(_payload: *mut &mut dyn BoxMeUp) -> u32 {
-
     // Android has the ability to attach a message as part of the abort.
     #[cfg(target_os = "android")]
-    android::android_set_abort_message(_payload as *mut &mut dyn BoxMeUp);
+    android::android_set_abort_message(_payload);
 
     abort();
 
