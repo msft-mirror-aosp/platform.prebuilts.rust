@@ -37,7 +37,7 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
-rustc = "linux-x86/1.50.0/src/stdlibs"
+rustc = "linux-x86/1.51.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -84,6 +84,7 @@ rust_library_rlib {
         "compiler_builtins",
     ],
     rlibs: [
+        "liballoc.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
         "liblibc.rust_sysroot",
@@ -139,6 +140,8 @@ rust_library_rlib {
     flags: [
         "-C",
         "panic=abort",
+	"-C",
+	"overflow-checks=off",
     ],
     edition: "2015",
 }
@@ -155,22 +158,14 @@ rust_library_rlib {
     ],
     // Generated via build.rs autodetect on compiler version. May need to be
     // regenerated on compiler version bump.
-    flags: [
-        "--cfg",
+    cfgs: [
         "freebsd11",
-        "--cfg",
         "libc_priv_mod_use",
-        "--cfg",
         "libc_union",
-        "--cfg",
         "libc_const_size_of",
-        "--cfg",
         "libc_align",
-        "--cfg",
         "libc_core_cvoid",
-        "--cfg",
         "libc_packedN",
-        "--cfg",
         "libc_thread_local",
     ],
     edition: "2015",
@@ -257,7 +252,7 @@ rust_library_rlib {
         "rustc-dep-of-std",
         "rustc-internal-api",
     ],
-    flags: ["--cfg=has_extern_crate_alloc"],
+    cfgs: ["has_extern_crate_alloc"],
     rlibs: [
         "libcore.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
