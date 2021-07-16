@@ -329,8 +329,8 @@ rust_library {
     host_supported: true,
     srcs: [rustc + "/library/test/src/lib.rs"],
     rlibs: [
-        "liblibc",
-        "libcfg_if",
+        "liblibc.rust_toolchain",
+        "libcfg_if.rust_toolchain",
         "libgetopts",
         "libterm",
     ],
@@ -341,5 +341,34 @@ rust_library_rlib {
     host_supported: true,
     crate_name: "unicode_width",
     srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
+    edition: "2015",
+}
+
+rust_library_rlib {
+    name: "libcfg_if.rust_toolchain",
+    crate_name: "cfg_if",
+    host_supported: true,
+    srcs: [rustc + "/vendor/cfg-if/src/lib.rs"],
+}
+
+rust_library_rlib {
+    name: "liblibc.rust_toolchain",
+    crate_name: "libc",
+    host_supported: true,
+    srcs: [rustc + "/vendor/libc/src/lib.rs"],
+    cfgs: [
+        "freebsd11",
+        "libc_priv_mod_use",
+        "libc_union",
+        "libc_const_size_of",
+        "libc_align",
+        "libc_core_cvoid",
+        "libc_packedN",
+        "libc_thread_local",
+    ],
+    features: [
+        "std",
+        "align",
+    ],
     edition: "2015",
 }
