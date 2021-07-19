@@ -312,6 +312,8 @@ rust_library {
     host_supported: true,
     crate_name: "term",
     srcs: [rustc + "/library/term/src/lib.rs"],
+    vendor_available: true,
+    vendor_ramdisk_available: true,
 }
 
 rust_library {
@@ -321,6 +323,8 @@ rust_library {
     srcs: [rustc + "/vendor/getopts/src/lib.rs"],
     rlibs: ["libunicode_width.rust_toolchain"],
     edition: "2015",
+    vendor_available: true,
+    vendor_ramdisk_available: true,
 }
 
 rust_library {
@@ -334,6 +338,8 @@ rust_library {
         "libgetopts",
         "libterm",
     ],
+    vendor_available: true,
+    vendor_ramdisk_available: true,
 }
 
 rust_library_rlib {
@@ -342,6 +348,8 @@ rust_library_rlib {
     crate_name: "unicode_width",
     srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
     edition: "2015",
+    vendor_available: true,
+    vendor_ramdisk_available: true,
 }
 
 rust_library_rlib {
@@ -349,6 +357,8 @@ rust_library_rlib {
     crate_name: "cfg_if",
     host_supported: true,
     srcs: [rustc + "/vendor/cfg-if/src/lib.rs"],
+    vendor_available: true,
+    vendor_ramdisk_available: true,
 }
 
 rust_library_rlib {
@@ -371,4 +381,6 @@ rust_library_rlib {
         "align",
     ],
     edition: "2015",
+    vendor_available: true,
+    vendor_ramdisk_available: true,
 }
