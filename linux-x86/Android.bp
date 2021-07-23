@@ -21,16 +21,16 @@ package {
 rust_prebuilt_library {
     name: "libstd_x86_64-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-94e3c598474e889d",
+    suffix: "-b84b0d3e0ef310a5",
     crate_name: "std",
-    link_dirs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.52.1/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86_64: {
             dylib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-94e3c598474e889d.so"],
+                srcs: ["1.52.1/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-b84b0d3e0ef310a5.so"],
             },
             rlib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-94e3c598474e889d.rlib"],
+                srcs: ["1.52.1/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-b84b0d3e0ef310a5.rlib"],
             },
             enabled: true,
         },
@@ -43,16 +43,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libstd_i686-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-320c5f6d1bdf6702",
+    suffix: "-616a9e7d15d26d10",
     crate_name: "std",
-    link_dirs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.52.1/lib/rustlib/i686-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86: {
             dylib: {
-                srcs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-320c5f6d1bdf6702.so"],
+                srcs: ["1.52.1/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-616a9e7d15d26d10.so"],
             },
             rlib: {
-                srcs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-320c5f6d1bdf6702.rlib"],
+                srcs: ["1.52.1/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-616a9e7d15d26d10.rlib"],
             },
             enabled: true,
         },
