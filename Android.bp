@@ -37,7 +37,7 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
-rustc = "linux-x86/1.52.1/src/stdlibs"
+rustc = "linux-x86/1.53.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -198,6 +198,24 @@ rust_library_rlib {
 }
 
 rust_library_rlib {
+    name: "libstd_detect.rust_sysroot",
+    defaults: ["rust_sysroot_defaults"],
+    crate_name: "std_detect",
+    features: [
+        "std_detect_file_io",
+        "std_detect_dlsym_getauxval",
+    ],
+    srcs: [rustc + "/library/stdarch/crates/std_detect/src/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+    ]
+}
+
+
+rust_library_rlib {
     name: "libpanic_abort.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "panic_abort",
@@ -292,6 +310,7 @@ rust_library {
         "libhashbrown.rust_sysroot",
         "libunwind.rust_sysroot",
         "libprofiler_builtins.rust_sysroot",
+        "libstd_detect.rust_sysroot",
     ],
 }
 
