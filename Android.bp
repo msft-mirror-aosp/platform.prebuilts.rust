@@ -72,6 +72,9 @@ rust_library_rlib {
     defaults: ["rust_sysroot_defaults"],
     crate_name: "core",
     srcs: [rustc + "/library/core/src/lib.rs"],
+    sanitize: {
+        never: true,
+    },
 }
 
 rust_library_rlib {
