@@ -37,7 +37,7 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
-rustc = "linux-x86/1.53.0/src/stdlibs"
+rustc = "linux-x86/1.54.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -108,25 +108,6 @@ rust_library_rlib {
         "libcore.rust_sysroot",
     ],
     edition: "2015",
-}
-
-rust_library_rlib {
-    name: "libbacktrace_rs.rust_sysroot",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "backtrace_rs",
-    srcs: [rustc + "/vendor/backtrace/src/lib.rs"],
-    features: [
-        "core",
-        "compiler_builtins",
-    ],
-    rlibs: [
-        "libbacktrace_sys.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-        "liblibc.rust_sysroot",
-        "librustc_demangle.rust_sysroot",
-    ],
 }
 
 rust_library_rlib {
@@ -303,7 +284,6 @@ rust_library {
         "profiler",
     ],
     rlibs: [
-        "libbacktrace_rs.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
         "librustc_demangle.rust_sysroot",
