@@ -37,7 +37,7 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
-rustc = "linux-x86/1.51.0/src/stdlibs"
+rustc = "linux-x86/1.54.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -72,6 +72,9 @@ rust_library_rlib {
     defaults: ["rust_sysroot_defaults"],
     crate_name: "core",
     srcs: [rustc + "/library/core/src/lib.rs"],
+    sanitize: {
+        never: true,
+    },
 }
 
 rust_library_rlib {
@@ -105,25 +108,6 @@ rust_library_rlib {
         "libcore.rust_sysroot",
     ],
     edition: "2015",
-}
-
-rust_library_rlib {
-    name: "libbacktrace_rs.rust_sysroot",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "backtrace_rs",
-    srcs: [rustc + "/vendor/backtrace/src/lib.rs"],
-    features: [
-        "core",
-        "compiler_builtins",
-    ],
-    rlibs: [
-        "libbacktrace_sys.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-        "liblibc.rust_sysroot",
-        "librustc_demangle.rust_sysroot",
-    ],
 }
 
 rust_library_rlib {
@@ -196,6 +180,24 @@ rust_library_rlib {
         "libcore.rust_sysroot",
     ],
 }
+
+rust_library_rlib {
+    name: "libstd_detect.rust_sysroot",
+    defaults: ["rust_sysroot_defaults"],
+    crate_name: "std_detect",
+    features: [
+        "std_detect_file_io",
+        "std_detect_dlsym_getauxval",
+    ],
+    srcs: [rustc + "/library/stdarch/crates/std_detect/src/lib.rs"],
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+    ]
+}
+
 
 rust_library_rlib {
     name: "libpanic_abort.rust_sysroot",
@@ -282,7 +284,6 @@ rust_library {
         "profiler",
     ],
     rlibs: [
-        "libbacktrace_rs.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
         "librustc_demangle.rust_sysroot",
@@ -292,49 +293,7 @@ rust_library {
         "libhashbrown.rust_sysroot",
         "libunwind.rust_sysroot",
         "libprofiler_builtins.rust_sysroot",
-    ],
-}
-
-rust_library {
-    name: "libterm",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "term",
-    srcs: [rustc + "/library/term/src/lib.rs"],
-    rustlibs: ["libstd"],
-}
-
-rust_library {
-    name: "libgetopts",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "getopts",
-    srcs: [rustc + "/vendor/getopts/src/lib.rs"],
-    rlibs: ["libunicode_width.rust_sysroot"],
-    rustlibs: ["libstd"],
-    edition: "2015",
-}
-
-rust_library_rlib {
-    name: "libunicode_width.rust_sysroot",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "unicode_width",
-    srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
-    rustlibs: ["libstd"],
-    edition: "2015",
-}
-
-rust_library {
-    name: "libtest",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "test",
-    srcs: [rustc + "/library/test/src/lib.rs"],
-    rustlibs: [
-        "libterm",
-        "libgetopts",
-        "libstd",
-    ],
-    rlibs: [
-        "liblibc.rust_sysroot",
-        "libcfg_if.rust_sysroot",
+        "libstd_detect.rust_sysroot",
     ],
 }
 
@@ -347,4 +306,79 @@ rust_library_rlib {
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
     ],
+}
+
+// These are not sysroots, though we are using the toolchain source.
+rust_library {
+    name: "libterm",
+    host_supported: true,
+    crate_name: "term",
+    srcs: [rustc + "/library/term/src/lib.rs"],
+}
+
+rust_library {
+    name: "libgetopts",
+    host_supported: true,
+    crate_name: "getopts",
+    srcs: [rustc + "/vendor/getopts/src/lib.rs"],
+    rlibs: ["libunicode_width.rust_toolchain"],
+    edition: "2015",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
+}
+
+rust_library {
+    name: "libtest",
+    crate_name: "test",
+    host_supported: true,
+    srcs: [rustc + "/library/test/src/lib.rs"],
+    rlibs: [
+        "liblibc.rust_toolchain",
+        "libcfg_if.rust_toolchain",
+        "libgetopts",
+        "libterm",
+    ],
+}
+
+rust_library_rlib {
+    name: "libunicode_width.rust_toolchain",
+    host_supported: true,
+    crate_name: "unicode_width",
+    srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
+    edition: "2015",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
+}
+
+rust_library_rlib {
+    name: "libcfg_if.rust_toolchain",
+    crate_name: "cfg_if",
+    host_supported: true,
+    srcs: [rustc + "/vendor/cfg-if/src/lib.rs"],
+}
+
+rust_library_rlib {
+    name: "liblibc.rust_toolchain",
+    crate_name: "libc",
+    host_supported: true,
+    srcs: [rustc + "/vendor/libc/src/lib.rs"],
+    cfgs: [
+        "freebsd11",
+        "libc_priv_mod_use",
+        "libc_union",
+        "libc_const_size_of",
+        "libc_align",
+        "libc_core_cvoid",
+        "libc_packedN",
+        "libc_thread_local",
+    ],
+    features: [
+        "std",
+        "align",
+    ],
+    edition: "2015",
 }
