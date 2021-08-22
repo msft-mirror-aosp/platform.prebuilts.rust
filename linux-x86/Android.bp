@@ -21,38 +21,16 @@ package {
 rust_prebuilt_library {
     name: "libstd_x86_64-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-94e3c598474e889d",
+    suffix: "-aaab3975206b8bfa",
     crate_name: "std",
-    link_dirs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.54.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86_64: {
             dylib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-94e3c598474e889d.so"],
+                srcs: ["1.54.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-aaab3975206b8bfa.so"],
             },
             rlib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-94e3c598474e889d.rlib"],
-            },
-            enabled: true,
-        },
-    },
-    enabled: false,
-    host_supported: true,
-    sysroot: true,
-}
-
-rust_prebuilt_library {
-    name: "libtest_x86_64-unknown-linux-gnu",
-    stem: "libtest",
-    suffix: "-3df1ba8b0c06678c",
-    crate_name: "test",
-    link_dirs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/"],
-    target: {
-        linux_glibc_x86_64: {
-            dylib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-3df1ba8b0c06678c.so"],
-            },
-            rlib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest-3df1ba8b0c06678c.rlib"],
+                srcs: ["1.54.0/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-aaab3975206b8bfa.rlib"],
             },
             enabled: true,
         },
@@ -65,38 +43,16 @@ rust_prebuilt_library {
 rust_prebuilt_library {
     name: "libstd_i686-unknown-linux-gnu",
     stem: "libstd",
-    suffix: "-320c5f6d1bdf6702",
+    suffix: "-a88f60f34df1c6b6",
     crate_name: "std",
-    link_dirs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
+    link_dirs: ["1.54.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
     target: {
         linux_glibc_x86: {
             dylib: {
-                srcs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-320c5f6d1bdf6702.so"],
+                srcs: ["1.54.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-a88f60f34df1c6b6.so"],
             },
             rlib: {
-                srcs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-320c5f6d1bdf6702.rlib"],
-            },
-            enabled: true,
-        },
-    },
-    enabled: false,
-    host_supported: true,
-    sysroot: true,
-}
-
-rust_prebuilt_library {
-    name: "libtest_i686-unknown-linux-gnu",
-    stem: "libtest",
-    suffix: "-3eaae440f50a95f0",
-    crate_name: "test",
-    link_dirs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/"],
-    target: {
-        linux_glibc_x86: {
-            dylib: {
-                srcs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/libtest-3eaae440f50a95f0.so"],
-            },
-            rlib: {
-                srcs: ["1.51.0/lib/rustlib/i686-unknown-linux-gnu/lib/libtest-3eaae440f50a95f0.rlib"],
+                srcs: ["1.54.0/lib/rustlib/i686-unknown-linux-gnu/lib/libstd-a88f60f34df1c6b6.rlib"],
             },
             enabled: true,
         },
