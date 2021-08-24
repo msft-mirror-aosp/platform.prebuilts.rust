@@ -50,6 +50,10 @@ rust_defaults {
     native_coverage: false,
     host_supported: true,
     sysroot: true,
+    native_bridge_supported: true,
+    product_available: true,
+    ramdisk_available: true,
+    recovery_available: true,
     vendor_available: true,
     vendor_ramdisk_available: true,
     apex_available: [
