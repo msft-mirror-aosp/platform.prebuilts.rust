@@ -37,7 +37,7 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
-rustc = "linux-x86/1.54.0/src/stdlibs"
+rustc = "linux-x86/1.55.0/src/stdlibs"
 
 // The basic crates are only available as static libraries
 // .rust_sysroot is appended to the name to prevent accidental direct usage
@@ -312,14 +312,6 @@ rust_library_rlib {
     ],
 }
 
-// These are not sysroots, though we are using the toolchain source.
-rust_library {
-    name: "libterm",
-    host_supported: true,
-    crate_name: "term",
-    srcs: [rustc + "/library/term/src/lib.rs"],
-}
-
 rust_library {
     name: "libgetopts",
     host_supported: true,
@@ -342,7 +334,6 @@ rust_library {
         "liblibc.rust_toolchain",
         "libcfg_if.rust_toolchain",
         "libgetopts",
-        "libterm",
     ],
 }
 
