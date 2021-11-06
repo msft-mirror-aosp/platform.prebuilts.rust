@@ -295,49 +295,6 @@ rust_library {
     ],
 }
 
-rust_library {
-    name: "libterm",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "term",
-    srcs: [rustc + "/library/term/src/lib.rs"],
-    rustlibs: ["libstd"],
-}
-
-rust_library {
-    name: "libgetopts",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "getopts",
-    srcs: [rustc + "/vendor/getopts/src/lib.rs"],
-    rlibs: ["libunicode_width.rust_sysroot"],
-    rustlibs: ["libstd"],
-    edition: "2015",
-}
-
-rust_library_rlib {
-    name: "libunicode_width.rust_sysroot",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "unicode_width",
-    srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
-    rustlibs: ["libstd"],
-    edition: "2015",
-}
-
-rust_library {
-    name: "libtest",
-    defaults: ["rust_sysroot_defaults"],
-    crate_name: "test",
-    srcs: [rustc + "/library/test/src/lib.rs"],
-    rustlibs: [
-        "libterm",
-        "libgetopts",
-        "libstd",
-    ],
-    rlibs: [
-        "liblibc.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-    ],
-}
-
 rust_library_rlib {
     name: "libprofiler_builtins.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
@@ -346,5 +303,51 @@ rust_library_rlib {
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
+    ],
+}
+
+// These are not sysroots, though we are using the toolchain source.
+rust_library {
+    name: "libterm",
+    host_supported: true,
+    crate_name: "term",
+    srcs: [rustc + "/library/term/src/lib.rs"],
+}
+
+rust_library {
+    name: "libgetopts",
+    host_supported: true,
+    crate_name: "getopts",
+    srcs: [rustc + "/vendor/getopts/src/lib.rs"],
+    rlibs: ["libunicode_width.rust_toolchain"],
+    edition: "2015",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
+}
+
+rust_library {
+    name: "libtest",
+    crate_name: "test",
+    host_supported: true,
+    srcs: [rustc + "/library/test/src/lib.rs"],
+    rlibs: [
+        "liblibc",
+        "libcfg_if",
+        "libgetopts",
+        "libterm",
+    ],
+}
+
+rust_library_rlib {
+    name: "libunicode_width.rust_toolchain",
+    host_supported: true,
+    crate_name: "unicode_width",
+    srcs: [rustc + "/vendor/unicode-width/src/lib.rs"],
+    edition: "2015",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
     ],
 }
