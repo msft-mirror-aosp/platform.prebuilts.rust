@@ -36,25 +36,3 @@ rust_prebuilt_library {
     host_supported: true,
     sysroot: true,
 }
-
-rust_prebuilt_library {
-    name: "libtest_x86_64-apple-darwin",
-    stem: "libtest",
-    suffix: "-14915b0897f7875e",
-    crate_name: "test",
-    link_dirs: ["1.51.0/lib/rustlib/x86_64-apple-darwin/lib/"],
-    target: {
-        darwin: {
-            dylib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-14915b0897f7875e.dylib"],
-            },
-            rlib: {
-                srcs: ["1.51.0/lib/rustlib/x86_64-apple-darwin/lib/libtest-14915b0897f7875e.rlib"],
-            },
-            enabled: true,
-        },
-    },
-    enabled: false,
-    host_supported: true,
-    sysroot: true,
-}
