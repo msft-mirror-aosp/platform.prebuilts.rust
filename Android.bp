@@ -37,6 +37,12 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
+rust_stdlib_prebuilt_host {
+	name: "libstd",
+	crate_name: "std",
+	sysroot: true,
+}
+
 rustc = "linux-x86/1.56.1/src/stdlibs"
 
 // The basic crates are only available as static libraries
