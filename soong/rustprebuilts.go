@@ -50,7 +50,8 @@ func getPrebuilt(ctx android.LoadHookContext, dir, lib, extension string) (strin
 	libMatches := ctx.Glob(globPath, nil)
 
 	if len(libMatches) != 1 {
-		ctx.ModuleErrorf("Unexpected number of matches for prebuilt libraries, found %u", len(libMatches))
+		ctx.ModuleErrorf("Unexpected number of matches for prebuilt libraries at path %q, found %d matches", globPath, len(libMatches))
+		return "", ""
 	}
 
 	// Collect the suffix by trimming the extension from the Base, then removing the library name and hyphen.
