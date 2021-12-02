@@ -67,20 +67,6 @@ func rustHostPrebuiltSysrootLibrary(ctx android.LoadHookContext) {
 	rustDir := getRustLibDir(ctx)
 	name := android.RemoveOptionalPrebuiltPrefix(ctx.ModuleName())
 
-	// The suffixes are the same between the dylib and the rlib,
-	// so we only need to collect this value once for each target.
-	linux64Dir := path.Join("linux-x86", rustDir, "x86_64-unknown-linux-gnu", "lib")
-	linux64Dylib, linux64Suffix := getPrebuilt(ctx, linux64Dir, name, ".so")
-	linux64Rlib, _ := getPrebuilt(ctx, linux64Dir, name, ".rlib")
-
-	linux32Dir := path.Join("linux-x86", rustDir, "i686-unknown-linux-gnu", "lib")
-	linux32Rlib, _ := getPrebuilt(ctx, linux32Dir, name, ".rlib")
-	linux32Dylib, linux32Suffix := getPrebuilt(ctx, linux32Dir, name, ".so")
-
-	darwinDir := path.Join("darwin-x86", rustDir, "x86_64-apple-darwin", "lib")
-	darwinDylib, darwinSuffix := getPrebuilt(ctx, darwinDir, name, ".dylib")
-	darwinRlib, _ := getPrebuilt(ctx, darwinDir, name, ".rlib")
-
 	type props struct {
 		Target struct {
 			Linux_glibc_x86_64 struct {
@@ -121,25 +107,43 @@ func rustHostPrebuiltSysrootLibrary(ctx android.LoadHookContext) {
 	}
 
 	p := &props{}
-	p.Target.Linux_glibc_x86_64.Suffix = proptools.StringPtr(linux64Suffix)
-	p.Target.Linux_glibc_x86_64.Dylib.Srcs = []string{linux64Dylib}
-	p.Target.Linux_glibc_x86_64.Rlib.Srcs = []string{linux64Rlib}
-	p.Target.Linux_glibc_x86_64.Link_dirs = []string{linux64Dir}
-	p.Target.Linux_glibc_x86_64.Enabled = proptools.BoolPtr(true)
-
-	p.Target.Linux_glibc_x86.Suffix = proptools.StringPtr(linux32Suffix)
-	p.Target.Linux_glibc_x86.Dylib.Srcs = []string{linux32Dylib}
-	p.Target.Linux_glibc_x86.Rlib.Srcs = []string{linux32Rlib}
-	p.Target.Linux_glibc_x86.Link_dirs = []string{linux32Dir}
-	p.Target.Linux_glibc_x86.Enabled = proptools.BoolPtr(true)
-
-	p.Target.Darwin_x86_64.Suffix = proptools.StringPtr(darwinSuffix)
-	p.Target.Darwin_x86_64.Dylib.Srcs = []string{darwinDylib}
-	p.Target.Darwin_x86_64.Rlib.Srcs = []string{darwinRlib}
-	p.Target.Darwin_x86_64.Link_dirs = []string{darwinDir}
-	p.Target.Darwin_x86_64.Enabled = proptools.BoolPtr(true)
-
 	p.Enabled = proptools.BoolPtr(false)
+
+	if ctx.Config().BuildOS == android.Linux {
+		// The suffixes are the same between the dylib and the rlib,
+		// so we only need to collect this value once for each target.
+		linux64Dir := path.Join("linux-x86", rustDir, "x86_64-unknown-linux-gnu", "lib")
+		linux64Dylib, linux64Suffix := getPrebuilt(ctx, linux64Dir, name, ".so")
+		linux64Rlib, _ := getPrebuilt(ctx, linux64Dir, name, ".rlib")
+
+		linux32Dir := path.Join("linux-x86", rustDir, "i686-unknown-linux-gnu", "lib")
+		linux32Rlib, _ := getPrebuilt(ctx, linux32Dir, name, ".rlib")
+		linux32Dylib, linux32Suffix := getPrebuilt(ctx, linux32Dir, name, ".so")
+
+		p.Target.Linux_glibc_x86_64.Suffix = proptools.StringPtr(linux64Suffix)
+		p.Target.Linux_glibc_x86_64.Dylib.Srcs = []string{linux64Dylib}
+		p.Target.Linux_glibc_x86_64.Rlib.Srcs = []string{linux64Rlib}
+		p.Target.Linux_glibc_x86_64.Link_dirs = []string{linux64Dir}
+		p.Target.Linux_glibc_x86_64.Enabled = proptools.BoolPtr(true)
+
+		p.Target.Linux_glibc_x86.Suffix = proptools.StringPtr(linux32Suffix)
+		p.Target.Linux_glibc_x86.Dylib.Srcs = []string{linux32Dylib}
+		p.Target.Linux_glibc_x86.Rlib.Srcs = []string{linux32Rlib}
+		p.Target.Linux_glibc_x86.Link_dirs = []string{linux32Dir}
+		p.Target.Linux_glibc_x86.Enabled = proptools.BoolPtr(true)
+
+	} else if ctx.Config().BuildOS == android.Darwin {
+		darwinDir := path.Join("darwin-x86", rustDir, "x86_64-apple-darwin", "lib")
+		darwinDylib, darwinSuffix := getPrebuilt(ctx, darwinDir, name, ".dylib")
+		darwinRlib, _ := getPrebuilt(ctx, darwinDir, name, ".rlib")
+
+		p.Target.Darwin_x86_64.Suffix = proptools.StringPtr(darwinSuffix)
+		p.Target.Darwin_x86_64.Dylib.Srcs = []string{darwinDylib}
+		p.Target.Darwin_x86_64.Rlib.Srcs = []string{darwinRlib}
+		p.Target.Darwin_x86_64.Link_dirs = []string{darwinDir}
+		p.Target.Darwin_x86_64.Enabled = proptools.BoolPtr(true)
+	}
+
 	ctx.AppendProperties(p)
 }
 
