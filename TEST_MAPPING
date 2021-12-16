@@ -355,19 +355,144 @@
       "name": "libsystem_properties_bindgen_test"
     },
     {
-      "name": "logger_device_test_config_log_level"
+      "name": "logger_device_unit_tests"
     },
     {
-      "name": "logger_device_test_default_init"
+      "name": "logger_test_config_log_level"
     },
     {
-      "name": "logger_device_test_env_log_level"
+      "name": "logger_test_default_init"
     },
     {
-      "name": "logger_device_test_multiple_init"
+      "name": "logger_test_env_log_level"
+    },
+    {
+      "name": "logger_test_multiple_init"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "open_then_run_module"
+    },
+    {
+      "name": "rustBinderTest"
+    },
+    {
+      "name": "rustBinderTestService"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
+  "presubmit-rust": [
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "apkdmverity.test"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
+      "name": "doh_unit_test"
+    },
+    {
+      "name": "keystore2_crypto_test_rust"
+    },
+    {
+      "name": "keystore2_km_compat_test"
+    },
+    {
+      "name": "keystore2_selinux_concurrency_test"
+    },
+    {
+      "name": "keystore2_selinux_test"
+    },
+    {
+      "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "keystore2_vintf_test"
+    },
+    {
+      "name": "legacykeystore_test"
+    },
+    {
+      "name": "libapkverify.integration_test"
+    },
+    {
+      "name": "libapkverify.test"
+    },
+    {
+      "name": "libauthfs_crypto_bindgen_test"
+    },
+    {
+      "name": "libavb_bindgen_test"
+    },
+    {
+      "name": "libbinder_ndk_bindgen_test"
+    },
+    {
+      "name": "libbinder_rpc_unstable_bindgen_test"
+    },
+    {
+      "name": "libbinder_rs-internal_test"
+    },
+    {
+      "name": "libcutils_bindgen_test"
+    },
+    {
+      "name": "libidsig.test"
+    },
+    {
+      "name": "libkeystore2_aaid_bindgen_test"
+    },
+    {
+      "name": "libkeystore2_apc_compat_bindgen_test"
+    },
+    {
+      "name": "libkeystore2_crypto_bindgen_test"
+    },
+    {
+      "name": "liblog_event_list_bindgen_test"
+    },
+    {
+      "name": "libopen_dice_bcc_bindgen_test"
+    },
+    {
+      "name": "libopen_dice_cbor_bindgen_test"
+    },
+    {
+      "name": "libselinux_bindgen_test"
+    },
+    {
+      "name": "libsimpleperf_profcollect_bindgen_test"
+    },
+    {
+      "name": "libstatspull_bindgen_test"
+    },
+    {
+      "name": "libsystem_properties_bindgen_test"
     },
     {
       "name": "logger_device_unit_tests"
+    },
+    {
+      "name": "logger_test_config_log_level"
+    },
+    {
+      "name": "logger_test_default_init"
+    },
+    {
+      "name": "logger_test_env_log_level"
+    },
+    {
+      "name": "logger_test_multiple_init"
     },
     {
       "name": "microdroid_manager_test"
