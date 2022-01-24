@@ -68,7 +68,7 @@ rust_defaults {
         "//apex_available:anyapex",
     ],
     target: {
-        linux_glibc: {
+        glibc: {
             enabled: false,
         },
         darwin: {
@@ -267,6 +267,9 @@ rust_toolchain_library {
         },
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
+        },
+        musl: {
+            rlibs: ["libpanic_unwind.rust_sysroot"],
         },
     },
     toolchain_src: stdlibs_src_path + "/library/std/src/lib.rs",
