@@ -40,9 +40,3 @@ trap "rm \"${ANDROID_TOP}\"/rust-project.json" EXIT
 
 # Run rust-analyzer analysis-stats. It will return 0 if rust-project.json can be found and parsed.
 prebuilts/rust/${OS}-x86/stable/rust-analyzer analysis-stats . 2>"${DIST_DIR}"/rust-analyzer-stats.log
-retval=$?
-if [[ "$retval" -ne 0 ]]; then
-  echo "Error returned by 'rust-analyzer analysis-stats .'"
-  echo "Check rust-analyzer-stats.log for more details."
-  exit "$retval"
-fi
