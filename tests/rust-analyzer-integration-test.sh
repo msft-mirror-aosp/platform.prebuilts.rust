@@ -30,6 +30,11 @@ export OUT_DIR="${OUT_DIR:-out}"
 readonly SOONG_OUT="${OUT_DIR}/soong"
 readonly RUST_PROJECT_PATH="${SOONG_OUT}/rust-project.json"
 
+# http://b/222532724
+# https://github.com/rust-analyzer/rust-analyzer/issues/11614
+# Set CHALK_OVERFLOW_DEPTH to work around current limits (300 isn't sufficient).
+export CHALK_OVERFLOW_DEPTH="${CHALK_OVERFLOW_DEPTH:-400}"
+
 # Generate rust-project.json.
 build/soong/soong_ui.bash --make-mode SOONG_GEN_RUST_PROJECT=1 nothing
 
