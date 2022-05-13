@@ -371,3 +371,21 @@ rust_toolchain_library_rlib {
     ],
     edition: "2015",
 }
+
+// Even though `rustfmt` is written in Rust, cc_prebuilt_binary works
+// fine to make it available for other modules.
+cc_prebuilt_binary {
+    name: "rustfmt",
+    enabled: false,
+    target: {
+        linux_x86_64: {
+            enabled: true,
+            srcs: ["linux-x86/stable/rustfmt"],
+        },
+        darwin_x86_64: {
+            enabled: true,
+            srcs: ["darwin-x86/stable/rustfmt"],
+        },
+    },
+    host_supported: true,
+}
