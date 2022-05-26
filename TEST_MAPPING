@@ -14,6 +14,9 @@
       "path": "external/rust/crates/arbitrary"
     },
     {
+      "path": "external/rust/crates/argh"
+    },
+    {
       "path": "external/rust/crates/ash"
     },
     {
@@ -24,6 +27,9 @@
     },
     {
       "path": "external/rust/crates/bitflags"
+    },
+    {
+      "path": "external/rust/crates/buddy_system_allocator"
     },
     {
       "path": "external/rust/crates/bytes"
@@ -218,6 +224,9 @@
       "path": "external/rust/crates/termcolor"
     },
     {
+      "path": "external/rust/crates/terminal-size"
+    },
+    {
       "path": "external/rust/crates/thread_local"
     },
     {
@@ -260,7 +269,13 @@
       "path": "external/rust/crates/xml-rs"
     }
   ],
-  "presubmit": [
+  "postsubmit": [
+    {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
     {
       "name": "ZipFuseTest"
     },
@@ -271,13 +286,34 @@
       "name": "authfs_device_test_src_lib"
     },
     {
+      "name": "diced_open_dice_cbor_test"
+    },
+    {
+      "name": "diced_sample_inputs_test"
+    },
+    {
+      "name": "diced_test"
+    },
+    {
+      "name": "diced_utils_test"
+    },
+    {
+      "name": "diced_vendor_test"
+    },
+    {
       "name": "doh_unit_test"
+    },
+    {
+      "name": "keystore2_client_tests"
     },
     {
       "name": "keystore2_crypto_test_rust"
     },
     {
       "name": "keystore2_km_compat_test"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_selinux_concurrency_test"
@@ -298,13 +334,13 @@
       "name": "legacykeystore_test"
     },
     {
+      "name": "libapexutil_rust.test"
+    },
+    {
       "name": "libapkverify.integration_test"
     },
     {
       "name": "libapkverify.test"
-    },
-    {
-      "name": "libauthfs_crypto_bindgen_test"
     },
     {
       "name": "libavb_bindgen_test"
@@ -317,6 +353,9 @@
     },
     {
       "name": "libbinder_rs-internal_test"
+    },
+    {
+      "name": "libcert_request_validator_tests"
     },
     {
       "name": "libcutils_bindgen_test"
@@ -343,6 +382,9 @@
       "name": "libopen_dice_cbor_bindgen_test"
     },
     {
+      "name": "librustutils_test"
+    },
+    {
       "name": "libselinux_bindgen_test"
     },
     {
@@ -353,6 +395,9 @@
     },
     {
       "name": "libsystem_properties_bindgen_test"
+    },
+    {
+      "name": "libtombstoned_client_rust_test"
     },
     {
       "name": "logger_device_unit_tests"
@@ -373,7 +418,162 @@
       "name": "microdroid_manager_test"
     },
     {
-      "name": "open_then_run_module"
+      "name": "rustBinderTest"
+    },
+    {
+      "name": "rustBinderTestService"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
+  "presubmit": [
+    {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "apkdmverity.test"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
+      "name": "diced_open_dice_cbor_test"
+    },
+    {
+      "name": "diced_sample_inputs_test"
+    },
+    {
+      "name": "diced_test"
+    },
+    {
+      "name": "diced_utils_test"
+    },
+    {
+      "name": "diced_vendor_test"
+    },
+    {
+      "name": "doh_unit_test"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_crypto_test_rust"
+    },
+    {
+      "name": "keystore2_km_compat_test"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
+      "name": "keystore2_selinux_concurrency_test"
+    },
+    {
+      "name": "keystore2_selinux_test"
+    },
+    {
+      "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "keystore2_vintf_test"
+    },
+    {
+      "name": "legacykeystore_test"
+    },
+    {
+      "name": "libapexutil_rust.test"
+    },
+    {
+      "name": "libapkverify.integration_test"
+    },
+    {
+      "name": "libapkverify.test"
+    },
+    {
+      "name": "libavb_bindgen_test"
+    },
+    {
+      "name": "libbinder_ndk_bindgen_test"
+    },
+    {
+      "name": "libbinder_rpc_unstable_bindgen_test"
+    },
+    {
+      "name": "libbinder_rs-internal_test"
+    },
+    {
+      "name": "libcert_request_validator_tests"
+    },
+    {
+      "name": "libcutils_bindgen_test"
+    },
+    {
+      "name": "libidsig.test"
+    },
+    {
+      "name": "libkeystore2_aaid_bindgen_test"
+    },
+    {
+      "name": "libkeystore2_apc_compat_bindgen_test"
+    },
+    {
+      "name": "libkeystore2_crypto_bindgen_test"
+    },
+    {
+      "name": "liblog_event_list_bindgen_test"
+    },
+    {
+      "name": "libopen_dice_bcc_bindgen_test"
+    },
+    {
+      "name": "libopen_dice_cbor_bindgen_test"
+    },
+    {
+      "name": "librustutils_test"
+    },
+    {
+      "name": "libselinux_bindgen_test"
+    },
+    {
+      "name": "libsimpleperf_profcollect_bindgen_test"
+    },
+    {
+      "name": "libstatspull_bindgen_test"
+    },
+    {
+      "name": "libsystem_properties_bindgen_test"
+    },
+    {
+      "name": "libtombstoned_client_rust_test"
+    },
+    {
+      "name": "logger_device_unit_tests"
+    },
+    {
+      "name": "logger_test_config_log_level"
+    },
+    {
+      "name": "logger_test_default_init"
+    },
+    {
+      "name": "logger_test_env_log_level"
+    },
+    {
+      "name": "logger_test_multiple_init"
+    },
+    {
+      "name": "microdroid_manager_test"
     },
     {
       "name": "rustBinderTest"
@@ -387,6 +587,12 @@
   ],
   "presubmit-rust": [
     {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
       "name": "ZipFuseTest"
     },
     {
@@ -396,13 +602,34 @@
       "name": "authfs_device_test_src_lib"
     },
     {
+      "name": "diced_open_dice_cbor_test"
+    },
+    {
+      "name": "diced_sample_inputs_test"
+    },
+    {
+      "name": "diced_test"
+    },
+    {
+      "name": "diced_utils_test"
+    },
+    {
+      "name": "diced_vendor_test"
+    },
+    {
       "name": "doh_unit_test"
+    },
+    {
+      "name": "keystore2_client_tests"
     },
     {
       "name": "keystore2_crypto_test_rust"
     },
     {
       "name": "keystore2_km_compat_test"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_selinux_concurrency_test"
@@ -423,13 +650,13 @@
       "name": "legacykeystore_test"
     },
     {
+      "name": "libapexutil_rust.test"
+    },
+    {
       "name": "libapkverify.integration_test"
     },
     {
       "name": "libapkverify.test"
-    },
-    {
-      "name": "libauthfs_crypto_bindgen_test"
     },
     {
       "name": "libavb_bindgen_test"
@@ -442,6 +669,9 @@
     },
     {
       "name": "libbinder_rs-internal_test"
+    },
+    {
+      "name": "libcert_request_validator_tests"
     },
     {
       "name": "libcutils_bindgen_test"
@@ -468,6 +698,9 @@
       "name": "libopen_dice_cbor_bindgen_test"
     },
     {
+      "name": "librustutils_test"
+    },
+    {
       "name": "libselinux_bindgen_test"
     },
     {
@@ -478,6 +711,9 @@
     },
     {
       "name": "libsystem_properties_bindgen_test"
+    },
+    {
+      "name": "libtombstoned_client_rust_test"
     },
     {
       "name": "logger_device_unit_tests"
@@ -496,9 +732,6 @@
     },
     {
       "name": "microdroid_manager_test"
-    },
-    {
-      "name": "open_then_run_module"
     },
     {
       "name": "rustBinderTest"
