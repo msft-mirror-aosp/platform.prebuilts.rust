@@ -388,3 +388,13 @@ cc_prebuilt_binary {
     host_supported: true,
     check_elf_files: false,
 }
+
+// Rustc and Clang have mismatched LLVM versions, cross language LTO may break when LLVM bitcode
+// format changes. Disallow LTO until we can synchronise the versions. http://b/240643019
+cc_defaults {
+    name: "rust_static_cc_lib_defaults",
+    visibility: ["//visibility:public"],
+    lto: {
+        never: true,
+    },
+}
