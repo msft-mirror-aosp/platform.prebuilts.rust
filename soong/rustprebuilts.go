@@ -91,6 +91,28 @@ func rustHostPrebuiltSysrootLibrary(ctx android.LoadHookContext) {
 				Link_dirs []string
 				Enabled   *bool
 			}
+			Linux_musl_x86_64 struct {
+				Suffix *string
+				Dylib  struct {
+					Srcs []string
+				}
+				Rlib struct {
+					Srcs []string
+				}
+				Link_dirs []string
+				Enabled   *bool
+			}
+			Linux_musl_x86 struct {
+				Suffix *string
+				Dylib  struct {
+					Srcs []string
+				}
+				Rlib struct {
+					Srcs []string
+				}
+				Link_dirs []string
+				Enabled   *bool
+			}
 			Darwin_x86_64 struct {
 				Suffix *string
 				Dylib  struct {
@@ -132,6 +154,26 @@ func rustHostPrebuiltSysrootLibrary(ctx android.LoadHookContext) {
 		p.Target.Linux_glibc_x86.Link_dirs = []string{linux32Dir}
 		p.Target.Linux_glibc_x86.Enabled = proptools.BoolPtr(true)
 
+	} else if ctx.Config().BuildOS == android.LinuxMusl {
+		muslLinux64Dir := path.Join("linux-musl-x86", rustDir, "x86_64-unknown-linux-musl", "lib")
+		muslLinux64Dylib, muslLinux64Suffix := getPrebuilt(ctx, muslLinux64Dir, name, ".so")
+		muslLinux64Rlib, _ := getPrebuilt(ctx, muslLinux64Dir, name, ".rlib")
+
+		muslLinux32Dir := path.Join("linux-musl-x86", rustDir, "i686-unknown-linux-musl", "lib")
+		muslLinux32Dylib, muslLinux32Suffix := getPrebuilt(ctx, muslLinux32Dir, name, ".so")
+		muslLinux32Rlib, _ := getPrebuilt(ctx, muslLinux32Dir, name, ".rlib")
+
+		p.Target.Linux_musl_x86_64.Suffix = proptools.StringPtr(muslLinux64Suffix)
+		p.Target.Linux_musl_x86_64.Dylib.Srcs = []string{muslLinux64Dylib}
+		p.Target.Linux_musl_x86_64.Rlib.Srcs = []string{muslLinux64Rlib}
+		p.Target.Linux_musl_x86_64.Link_dirs = []string{muslLinux64Dir}
+		p.Target.Linux_musl_x86_64.Enabled = proptools.BoolPtr(true)
+
+		p.Target.Linux_musl_x86.Suffix = proptools.StringPtr(muslLinux32Suffix)
+		p.Target.Linux_musl_x86.Dylib.Srcs = []string{muslLinux32Dylib}
+		p.Target.Linux_musl_x86.Rlib.Srcs = []string{muslLinux32Rlib}
+		p.Target.Linux_musl_x86.Link_dirs = []string{muslLinux32Dir}
+		p.Target.Linux_musl_x86.Enabled = proptools.BoolPtr(true)
 	} else if ctx.Config().BuildOS == android.Darwin {
 		darwinDir := path.Join("darwin-x86", rustDir, "x86_64-apple-darwin", "lib")
 		darwinDylib, darwinSuffix := getPrebuilt(ctx, darwinDir, name, ".dylib")
