@@ -74,6 +74,9 @@ rust_defaults {
         darwin: {
             enabled: false,
         },
+        musl: {
+            enabled: false,
+        },
     },
     min_sdk_version: "29",
 }
@@ -269,9 +272,6 @@ rust_toolchain_library {
         },
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
-        },
-        musl: {
-            rlibs: ["libpanic_unwind.rust_sysroot"],
         },
     },
     toolchain_src: stdlibs_src_path + "/library/std/src/lib.rs",
