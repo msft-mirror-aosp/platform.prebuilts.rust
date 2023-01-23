@@ -361,9 +361,6 @@
       "name": "libbssl_sys_raw_test"
     },
     {
-      "name": "libcert_request_validator_tests"
-    },
-    {
       "name": "libcutils_bindgen_test"
     },
     {
@@ -520,9 +517,6 @@
     },
     {
       "name": "libbssl_sys_raw_test"
-    },
-    {
-      "name": "libcert_request_validator_tests"
     },
     {
       "name": "libcutils_bindgen_test"
