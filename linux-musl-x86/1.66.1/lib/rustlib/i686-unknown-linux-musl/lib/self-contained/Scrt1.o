@@ -1,2 +1,0 @@
-GROUP ( libc_musl_linker_object.o )
-INCLUDE relinterp.script
