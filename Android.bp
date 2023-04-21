@@ -77,6 +77,9 @@ rust_defaults {
         musl: {
             enabled: false,
         },
+        musl_arm64: {
+            enabled: true,
+        },
     },
     min_sdk_version: "29",
 }
