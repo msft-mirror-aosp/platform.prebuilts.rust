@@ -386,7 +386,7 @@ cc_prebuilt_binary {
         },
         darwin_x86_64: {
             enabled: true,
-            srcs: ["darwin-x86/stable/rustfmt",],
+            srcs: ["darwin-x86/stable/rustfmt"],
         },
     },
     host_supported: true,
