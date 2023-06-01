@@ -273,6 +273,9 @@ rust_toolchain_library {
         linux_bionic: {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
+        linux_musl: {
+            rlibs: ["libpanic_unwind.rust_sysroot"],
+        },
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
@@ -374,23 +377,6 @@ rust_toolchain_library_rlib {
         "align",
     ],
     edition: "2015",
-}
-
-cc_prebuilt_binary {
-    name: "rustfmt",
-    enabled: false,
-    target: {
-        linux_x86_64: {
-            enabled: true,
-            srcs: ["linux-x86/stable/rustfmt"],
-        },
-        darwin_x86_64: {
-            enabled: true,
-            srcs: ["darwin-x86/stable/rustfmt"],
-        },
-    },
-    host_supported: true,
-    check_elf_files: false,
 }
 
 // Rustc and Clang have mismatched LLVM versions, cross language LTO may break when LLVM bitcode
