@@ -11,7 +11,7 @@
 
   <project path="toolchain/rustc" name="toolchain/rustc" revision="635618df8991b8a005e435895ea0b1eee7e3faf0" />
 
-  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="ead252d57889e78dd25735a474d5b554232a8c55" />
+  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="ade3ff0c350ac16cc4cfbcff05d1ab350b2f0acb" />
 
   <project path="toolchain/common" name="toolchain/common" revision="0bce8b062126242872e9f3fc66760d3f76773c49" />
 
@@ -19,7 +19,7 @@
 
   <project path="toolchain/cargo-vet" name="toolchain/cargo-vet" revision="ebf395f5b51bd124189ba16cfc355aca8206e87c" />
 
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="fab96d98127b722c4be452dfc24a1ff629d36f79" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="4010f18dc614c6235498c5e6b4fab05b1657ab38" />
 
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="97feb0d2628235a9f615bd9a9ff6067157b1fd05" />
 
@@ -57,11 +57,11 @@
 
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="7119932cd3cea23f16db62e683b69c23e415ff09" />
 
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="9225bc371974f970097f63e32cd67b42728a3473" />
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="6ae372ded14f5a9177011f175e64552116da43f4" />
 
   <project path="toolchain/prebuilts/ndk/r25" name="toolchain/prebuilts/ndk/r25" clone-depth="1" revision="1622e087e1b881a0c7c744091d314662d12f0997" />
 
-  <project path="build/soong" name="platform/build/soong" revision="cbaa0d6eb9705fcda7e28aedaea477e8a91408b1">
+  <project path="build/soong" name="platform/build/soong" revision="aa003b383388eb7730ee7df1bea4fa6442f74f0c">
     <linkfile dest="Android.bp" src="root.bp" />
 
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
