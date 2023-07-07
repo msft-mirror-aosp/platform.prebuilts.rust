@@ -2,6 +2,12 @@
 {
   "imports": [
     {
+      "path": "external/boringssl"
+    },
+    {
+      "path": "external/open-dice"
+    },
+    {
       "path": "external/rust/crates/aho-corasick"
     },
     {
@@ -14,10 +20,13 @@
       "path": "external/rust/crates/arbitrary"
     },
     {
+      "path": "external/rust/crates/argh"
+    },
+    {
       "path": "external/rust/crates/ash"
     },
     {
-      "path": "external/rust/crates/base64"
+      "path": "external/rust/crates/async-stream"
     },
     {
       "path": "external/rust/crates/bencher"
@@ -36,6 +45,15 @@
     },
     {
       "path": "external/rust/crates/cfg-if"
+    },
+    {
+      "path": "external/rust/crates/ciborium-ll"
+    },
+    {
+      "path": "external/rust/crates/clap/2.33.3"
+    },
+    {
+      "path": "external/rust/crates/coset"
     },
     {
       "path": "external/rust/crates/crc32fast"
@@ -65,10 +83,22 @@
       "path": "external/rust/crates/fallible-iterator"
     },
     {
+      "path": "external/rust/crates/flate2"
+    },
+    {
       "path": "external/rust/crates/fnv"
     },
     {
+      "path": "external/rust/crates/futures-channel"
+    },
+    {
+      "path": "external/rust/crates/futures-executor"
+    },
+    {
       "path": "external/rust/crates/futures-task"
+    },
+    {
+      "path": "external/rust/crates/futures-test"
     },
     {
       "path": "external/rust/crates/futures-util"
@@ -83,7 +113,16 @@
       "path": "external/rust/crates/grpcio-sys"
     },
     {
+      "path": "external/rust/crates/hashbrown"
+    },
+    {
+      "path": "external/rust/crates/hashlink"
+    },
+    {
       "path": "external/rust/crates/heck"
+    },
+    {
+      "path": "external/rust/crates/heck/0.3.3"
     },
     {
       "path": "external/rust/crates/itoa"
@@ -102,9 +141,6 @@
     },
     {
       "path": "external/rust/crates/libsqlite3-sys"
-    },
-    {
-      "path": "external/rust/crates/linked-hash-map"
     },
     {
       "path": "external/rust/crates/lru-cache"
@@ -135,6 +171,9 @@
     },
     {
       "path": "external/rust/crates/num_cpus"
+    },
+    {
+      "path": "external/rust/crates/octets"
     },
     {
       "path": "external/rust/crates/oid-registry"
@@ -218,6 +257,9 @@
       "path": "external/rust/crates/termcolor"
     },
     {
+      "path": "external/rust/crates/terminal-size"
+    },
+    {
       "path": "external/rust/crates/thread_local"
     },
     {
@@ -251,6 +293,9 @@
       "path": "external/rust/crates/url"
     },
     {
+      "path": "external/rust/crates/virtio-drivers"
+    },
+    {
       "path": "external/rust/crates/vulkano"
     },
     {
@@ -258,256 +303,81 @@
     },
     {
       "path": "external/rust/crates/xml-rs"
-    }
-  ],
-  "presubmit": [
-    {
-      "name": "ZipFuseTest"
-    },
-    {
-      "name": "apkdmverity.test"
-    },
-    {
-      "name": "authfs_device_test_src_lib"
-    },
-    {
-      "name": "doh_unit_test"
-    },
-    {
-      "name": "keystore2_crypto_test_rust"
-    },
-    {
-      "name": "keystore2_km_compat_test"
-    },
-    {
-      "name": "keystore2_selinux_concurrency_test"
-    },
-    {
-      "name": "keystore2_selinux_test"
-    },
-    {
-      "name": "keystore2_test"
-    },
-    {
-      "name": "keystore2_test_utils_test"
-    },
-    {
-      "name": "keystore2_vintf_test"
-    },
-    {
-      "name": "legacykeystore_test"
-    },
-    {
-      "name": "libapkverify.integration_test"
-    },
-    {
-      "name": "libapkverify.test"
-    },
-    {
-      "name": "libauthfs_crypto_bindgen_test"
-    },
-    {
-      "name": "libavb_bindgen_test"
-    },
-    {
-      "name": "libbinder_ndk_bindgen_test"
-    },
-    {
-      "name": "libbinder_rpc_unstable_bindgen_test"
-    },
-    {
-      "name": "libbinder_rs-internal_test"
-    },
-    {
-      "name": "libcutils_bindgen_test"
-    },
-    {
-      "name": "libidsig.test"
-    },
-    {
-      "name": "libkeystore2_aaid_bindgen_test"
-    },
-    {
-      "name": "libkeystore2_apc_compat_bindgen_test"
-    },
-    {
-      "name": "libkeystore2_crypto_bindgen_test"
-    },
-    {
-      "name": "liblog_event_list_bindgen_test"
-    },
-    {
-      "name": "libopen_dice_bcc_bindgen_test"
-    },
-    {
-      "name": "libopen_dice_cbor_bindgen_test"
-    },
-    {
-      "name": "libselinux_bindgen_test"
-    },
-    {
-      "name": "libsimpleperf_profcollect_bindgen_test"
-    },
-    {
-      "name": "libstatspull_bindgen_test"
-    },
-    {
-      "name": "libsystem_properties_bindgen_test"
-    },
-    {
-      "name": "logger_device_unit_tests"
-    },
-    {
-      "name": "logger_test_config_log_level"
-    },
-    {
-      "name": "logger_test_default_init"
-    },
-    {
-      "name": "logger_test_env_log_level"
-    },
-    {
-      "name": "logger_test_multiple_init"
-    },
-    {
-      "name": "microdroid_manager_test"
-    },
-    {
-      "name": "open_then_run_module"
-    },
-    {
-      "name": "rustBinderTest"
-    },
-    {
-      "name": "rustBinderTestService"
-    },
-    {
-      "name": "virtualizationservice_device_test"
-    }
-  ],
-  "presubmit-rust": [
-    {
-      "name": "ZipFuseTest"
-    },
-    {
-      "name": "apkdmverity.test"
-    },
-    {
-      "name": "authfs_device_test_src_lib"
-    },
-    {
-      "name": "doh_unit_test"
-    },
-    {
-      "name": "keystore2_crypto_test_rust"
-    },
-    {
-      "name": "keystore2_km_compat_test"
-    },
-    {
-      "name": "keystore2_selinux_concurrency_test"
-    },
-    {
-      "name": "keystore2_selinux_test"
-    },
-    {
-      "name": "keystore2_test"
-    },
-    {
-      "name": "keystore2_test_utils_test"
-    },
-    {
-      "name": "keystore2_vintf_test"
-    },
-    {
-      "name": "legacykeystore_test"
-    },
-    {
-      "name": "libapkverify.integration_test"
-    },
-    {
-      "name": "libapkverify.test"
-    },
-    {
-      "name": "libauthfs_crypto_bindgen_test"
-    },
-    {
-      "name": "libavb_bindgen_test"
     },
     {
-      "name": "libbinder_ndk_bindgen_test"
+      "path": "external/rust/crates/zerocopy"
     },
     {
-      "name": "libbinder_rpc_unstable_bindgen_test"
+      "path": "external/rust/crates/zeroize"
     },
     {
-      "name": "libbinder_rs-internal_test"
+      "path": "external/uwb/src"
     },
     {
-      "name": "libcutils_bindgen_test"
+      "path": "packages/modules/DnsResolver"
     },
     {
-      "name": "libidsig.test"
+      "path": "packages/modules/Virtualization/apkdmverity"
     },
     {
-      "name": "libkeystore2_aaid_bindgen_test"
+      "path": "packages/modules/Virtualization/authfs"
     },
     {
-      "name": "libkeystore2_apc_compat_bindgen_test"
+      "path": "packages/modules/Virtualization/avmd"
     },
     {
-      "name": "libkeystore2_crypto_bindgen_test"
+      "path": "packages/modules/Virtualization/encryptedstore"
     },
     {
-      "name": "liblog_event_list_bindgen_test"
+      "path": "packages/modules/Virtualization/libs/apexutil"
     },
     {
-      "name": "libopen_dice_bcc_bindgen_test"
+      "path": "packages/modules/Virtualization/libs/apkverify"
     },
     {
-      "name": "libopen_dice_cbor_bindgen_test"
+      "path": "packages/modules/Virtualization/libs/avb"
     },
     {
-      "name": "libselinux_bindgen_test"
+      "path": "packages/modules/Virtualization/libs/capabilities"
     },
     {
-      "name": "libsimpleperf_profcollect_bindgen_test"
+      "path": "packages/modules/Virtualization/libs/devicemapper"
     },
     {
-      "name": "libstatspull_bindgen_test"
+      "path": "packages/modules/Virtualization/microdroid_manager"
     },
     {
-      "name": "libsystem_properties_bindgen_test"
+      "path": "packages/modules/Virtualization/virtualizationmanager"
     },
     {
-      "name": "logger_device_unit_tests"
+      "path": "packages/modules/Virtualization/vm"
     },
     {
-      "name": "logger_test_config_log_level"
+      "path": "packages/modules/Virtualization/zipfuse"
     },
     {
-      "name": "logger_test_default_init"
+      "path": "system/keymint/derive"
     },
     {
-      "name": "logger_test_env_log_level"
+      "path": "system/keymint/hal"
     },
     {
-      "name": "logger_test_multiple_init"
+      "path": "system/logging/rust"
     },
     {
-      "name": "microdroid_manager_test"
+      "path": "system/security/diced"
     },
     {
-      "name": "open_then_run_module"
+      "path": "system/security/keystore2"
     },
     {
-      "name": "rustBinderTest"
+      "path": "system/security/keystore2/legacykeystore"
     },
     {
-      "name": "rustBinderTestService"
+      "path": "system/security/keystore2/selinux"
     },
     {
-      "name": "virtualizationservice_device_test"
+      "path": "system/security/keystore2/src/crypto"
     }
   ]
 }
