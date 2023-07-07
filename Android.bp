@@ -74,6 +74,12 @@ rust_defaults {
         darwin: {
             enabled: false,
         },
+        musl: {
+            enabled: false,
+        },
+        musl_arm64: {
+            enabled: true,
+        },
     },
     min_sdk_version: "29",
 }
@@ -86,6 +92,7 @@ rust_toolchain_library_rlib {
     sanitize: {
         never: true,
     },
+    edition: "2021",
 }
 
 rust_toolchain_library_rlib {
@@ -158,6 +165,7 @@ rust_toolchain_library_rlib {
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
     ],
+    edition: "2021",
 }
 
 rust_toolchain_library_rlib {
@@ -268,9 +276,6 @@ rust_toolchain_library {
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
-        musl: {
-            rlibs: ["libpanic_unwind.rust_sysroot"],
-        },
     },
     toolchain_src: stdlibs_src_path + "/library/std/src/lib.rs",
     cfgs: ["backtrace_in_libstd"],
@@ -369,4 +374,31 @@ rust_toolchain_library_rlib {
         "align",
     ],
     edition: "2015",
+}
+
+cc_prebuilt_binary {
+    name: "rustfmt",
+    enabled: false,
+    target: {
+        linux_x86_64: {
+            enabled: true,
+            srcs: ["linux-x86/stable/rustfmt"],
+        },
+        darwin_x86_64: {
+            enabled: true,
+            srcs: ["darwin-x86/stable/rustfmt"],
+        },
+    },
+    host_supported: true,
+    check_elf_files: false,
+}
+
+// Rustc and Clang have mismatched LLVM versions, cross language LTO may break when LLVM bitcode
+// format changes. Disallow LTO until we can synchronise the versions. http://b/240643019
+cc_defaults {
+    name: "rust_static_cc_lib_defaults",
+    visibility: ["//visibility:public"],
+    lto: {
+        never: true,
+    },
 }
