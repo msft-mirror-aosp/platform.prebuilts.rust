@@ -1,0 +1,4 @@
+file:/buildbot/src/android/rust-toolchain/out/package/lib/rustlib/aarch64-unknown-none/lib/libcore-250b846f708783c9.rlib
+file:/buildbot/src/android/rust-toolchain/out/package/lib/rustlib/aarch64-unknown-none/lib/liballoc-84460d1d1a5981ef.rlib
+file:/buildbot/src/android/rust-toolchain/out/package/lib/rustlib/aarch64-unknown-none/lib/librustc_std_workspace_core-179f13bb535583d6.rlib
+file:/buildbot/src/android/rust-toolchain/out/package/lib/rustlib/aarch64-unknown-none/lib/libcompiler_builtins-86beadd2d2eca6ff.rlib
