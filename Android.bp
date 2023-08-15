@@ -316,6 +316,7 @@ rust_toolchain_library_rlib {
 rust_toolchain_library {
     name: "libgetopts",
     host_supported: true,
+    vendor_available: true,
     crate_name: "getopts",
     toolchain_src: stdlibs_src_path + "/vendor/getopts/src/lib.rs",
     rlibs: ["libunicode_width.rust_toolchain"],
@@ -330,6 +331,7 @@ rust_toolchain_library {
     name: "libtest",
     crate_name: "test",
     host_supported: true,
+    vendor_available: true,
     toolchain_src: stdlibs_src_path + "/library/test/src/lib.rs",
     rlibs: [
         "liblibc.rust_toolchain",
@@ -341,6 +343,7 @@ rust_toolchain_library {
 rust_toolchain_library_rlib {
     name: "libunicode_width.rust_toolchain",
     host_supported: true,
+    vendor_available: true,
     crate_name: "unicode_width",
     toolchain_src: stdlibs_src_path + "/vendor/unicode-width/src/lib.rs",
     edition: "2015",
@@ -354,6 +357,7 @@ rust_toolchain_library_rlib {
     name: "libcfg_if.rust_toolchain",
     crate_name: "cfg_if",
     host_supported: true,
+    vendor_available: true,
     toolchain_src: stdlibs_src_path + "/vendor/cfg-if/src/lib.rs",
 }
 
@@ -361,6 +365,7 @@ rust_toolchain_library_rlib {
     name: "liblibc.rust_toolchain",
     crate_name: "libc",
     host_supported: true,
+    vendor_available: true,
     toolchain_src: stdlibs_src_path + "/vendor/libc/src/lib.rs",
     cfgs: [
         "freebsd11",
