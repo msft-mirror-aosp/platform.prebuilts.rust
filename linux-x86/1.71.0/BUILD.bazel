@@ -1,3 +1,5 @@
+load("@rules_rust//rust:defs.bzl", "rust_stdlib_filegroup")
+
 package(default_visibility = ["//visibility:public"])
 
 filegroup(
@@ -7,4 +9,9 @@ filegroup(
         "lib/*",
         "lib64/*",
     ]),
+)
+
+rust_stdlib_filegroup(
+    name = "prebuilt_stdlibs",
+    srcs = glob(["lib/rustlib/x86_64_unknown-linux-gnu/*"]),
 )
