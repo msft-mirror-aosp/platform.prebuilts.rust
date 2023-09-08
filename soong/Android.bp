@@ -24,6 +24,7 @@ bootstrap_go_package {
     deps: [
         "blueprint",
         "soong-android",
+        "soong-cc",
         "soong-rust",
         "soong-rust-config",
     ],
@@ -32,4 +33,3 @@ bootstrap_go_package {
     ],
     pluginFor: ["soong_build"],
 }
-
