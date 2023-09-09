@@ -23,6 +23,7 @@ import (
 	"github.com/google/blueprint/proptools"
 
 	"android/soong/android"
+	"android/soong/cc"
 	"android/soong/rust"
 	"android/soong/rust/config"
 )
@@ -33,6 +34,10 @@ import (
 func init() {
 	android.RegisterModuleType("rust_stdlib_prebuilt_host",
 		rustHostPrebuiltSysrootLibraryFactory)
+	android.RegisterModuleType("rust_stdlib_prebuilt_rlib_host",
+		rustHostPrebuiltSysrootRlibFactory)
+	android.RegisterModuleType("rust_stdlib_prebuilt_static_lib_host",
+		rustHostPrebuiltSysrootStaticLibFactory)
 }
 
 func getRustPrebuiltVersion(ctx android.LoadHookContext) string {
@@ -63,134 +68,126 @@ func getPrebuilt(ctx android.LoadHookContext, dir, lib, extension string) (strin
 	return relPath, suffix
 }
 
-func rustHostPrebuiltSysrootLibrary(ctx android.LoadHookContext) {
+type targetProps struct {
+	Suffix *string
+	Dylib  struct {
+		Srcs []string
+	}
+	Rlib struct {
+		Srcs []string
+	}
+	Link_dirs []string
+	Enabled   *bool
+}
+
+type props struct {
+	Enabled *bool
+	Target  struct {
+		Linux_glibc_x86_64 targetProps
+		Linux_glibc_x86    targetProps
+		Linux_musl_x86_64  targetProps
+		Linux_musl_x86     targetProps
+		Darwin_x86_64      targetProps
+	}
+}
+
+func (target *targetProps) addPrebuiltToTarget(ctx android.LoadHookContext, libName, rustDir, platform, arch string, rlib, solib bool) {
+	dir := path.Join(platform, rustDir, arch, "lib")
+	target.Link_dirs = []string{dir}
+	target.Enabled = proptools.BoolPtr(true)
+	if rlib {
+		rlib, suffix := getPrebuilt(ctx, dir, libName, ".rlib")
+		target.Rlib.Srcs = []string{rlib}
+		target.Suffix = proptools.StringPtr(suffix)
+	}
+	if solib {
+		// The suffixes are the same between the dylib and the rlib,
+		// so it's okay if we overwrite the rlib suffix
+		dylib, suffix := getPrebuilt(ctx, dir, libName, ".so")
+		target.Dylib.Srcs = []string{dylib}
+		target.Suffix = proptools.StringPtr(suffix)
+	}
+}
+
+func constructLibProps(rlib, solib bool) func(ctx android.LoadHookContext) {
+	return func(ctx android.LoadHookContext) {
+		rustDir := getRustLibDir(ctx)
+		name := android.RemoveOptionalPrebuiltPrefix(ctx.ModuleName())
+		name = strings.Replace(name, ".rust_sysroot", "", -1)
+
+		p := props{}
+		p.Enabled = proptools.BoolPtr(false)
+
+		if ctx.Config().BuildOS == android.Linux {
+			p.Target.Linux_glibc_x86_64.addPrebuiltToTarget(ctx, name, rustDir, "linux-x86", "x86_64-unknown-linux-gnu", rlib, solib)
+			p.Target.Linux_glibc_x86.addPrebuiltToTarget(ctx, name, rustDir, "linux-x86", "i686-unknown-linux-gnu", rlib, solib)
+		} else if ctx.Config().BuildOS == android.LinuxMusl {
+			p.Target.Linux_musl_x86_64.addPrebuiltToTarget(ctx, name, rustDir, "linux-musl-x86", "x86_64-unknown-linux-musl", rlib, solib)
+			p.Target.Linux_musl_x86.addPrebuiltToTarget(ctx, name, rustDir, "linux-musl-x86", "i686-unknown-linux-musl", rlib, solib)
+		} else if ctx.Config().BuildOS == android.Darwin {
+			p.Target.Darwin_x86_64.addPrebuiltToTarget(ctx, name, rustDir, "darwin-x86", "x86_64-apple-darwin", rlib, solib)
+		}
+
+		ctx.AppendProperties(&p)
+	}
+}
+
+func constructStaticLibProps(ctx android.LoadHookContext) {
 	rustDir := getRustLibDir(ctx)
 	name := android.RemoveOptionalPrebuiltPrefix(ctx.ModuleName())
+	name = strings.Replace(name, ".rust_sysroot_static", "", -1)
 
-	type props struct {
-		Target struct {
-			Linux_glibc_x86_64 struct {
-				Suffix *string
-				Dylib  struct {
-					Srcs []string
-				}
-				Rlib struct {
-					Srcs []string
-				}
-				Link_dirs []string
-				Enabled   *bool
-			}
-			Linux_glibc_x86 struct {
-				Suffix *string
-				Dylib  struct {
-					Srcs []string
-				}
-				Rlib struct {
-					Srcs []string
-				}
-				Link_dirs []string
-				Enabled   *bool
-			}
-			Linux_musl_x86_64 struct {
-				Suffix *string
-				Dylib  struct {
-					Srcs []string
-				}
-				Rlib struct {
-					Srcs []string
-				}
-				Link_dirs []string
-				Enabled   *bool
-			}
-			Linux_musl_x86 struct {
-				Suffix *string
-				Dylib  struct {
-					Srcs []string
-				}
-				Rlib struct {
-					Srcs []string
-				}
-				Link_dirs []string
-				Enabled   *bool
-			}
-			Darwin_x86_64 struct {
-				Suffix *string
-				Dylib  struct {
-					Srcs []string
-				}
-				Rlib struct {
-					Srcs []string
-				}
-				Link_dirs []string
-				Enabled   *bool
-			}
-		}
+	type ccTargetProps struct {
 		Enabled *bool
+		Srcs    []string
 	}
-
-	p := &props{}
+	p := struct {
+		Enabled *bool
+		Target  struct {
+			Linux_glibc_x86_64 ccTargetProps
+			Linux_glibc_x86    ccTargetProps
+			Linux_musl_x86_64  ccTargetProps
+			Linux_musl_x86     ccTargetProps
+			Darwin_x86_64      ccTargetProps
+		}
+	}{}
 	p.Enabled = proptools.BoolPtr(false)
 
-	if ctx.Config().BuildOS == android.Linux {
-		// The suffixes are the same between the dylib and the rlib,
-		// so we only need to collect this value once for each target.
-		linux64Dir := path.Join("linux-x86", rustDir, "x86_64-unknown-linux-gnu", "lib")
-		linux64Dylib, linux64Suffix := getPrebuilt(ctx, linux64Dir, name, ".so")
-		linux64Rlib, _ := getPrebuilt(ctx, linux64Dir, name, ".rlib")
-
-		linux32Dir := path.Join("linux-x86", rustDir, "i686-unknown-linux-gnu", "lib")
-		linux32Rlib, _ := getPrebuilt(ctx, linux32Dir, name, ".rlib")
-		linux32Dylib, linux32Suffix := getPrebuilt(ctx, linux32Dir, name, ".so")
-
-		p.Target.Linux_glibc_x86_64.Suffix = proptools.StringPtr(linux64Suffix)
-		p.Target.Linux_glibc_x86_64.Dylib.Srcs = []string{linux64Dylib}
-		p.Target.Linux_glibc_x86_64.Rlib.Srcs = []string{linux64Rlib}
-		p.Target.Linux_glibc_x86_64.Link_dirs = []string{linux64Dir}
-		p.Target.Linux_glibc_x86_64.Enabled = proptools.BoolPtr(true)
-
-		p.Target.Linux_glibc_x86.Suffix = proptools.StringPtr(linux32Suffix)
-		p.Target.Linux_glibc_x86.Dylib.Srcs = []string{linux32Dylib}
-		p.Target.Linux_glibc_x86.Rlib.Srcs = []string{linux32Rlib}
-		p.Target.Linux_glibc_x86.Link_dirs = []string{linux32Dir}
-		p.Target.Linux_glibc_x86.Enabled = proptools.BoolPtr(true)
-
-	} else if ctx.Config().BuildOS == android.LinuxMusl {
-		muslLinux64Dir := path.Join("linux-musl-x86", rustDir, "x86_64-unknown-linux-musl", "lib")
-		muslLinux64Dylib, muslLinux64Suffix := getPrebuilt(ctx, muslLinux64Dir, name, ".so")
-		muslLinux64Rlib, _ := getPrebuilt(ctx, muslLinux64Dir, name, ".rlib")
-
-		muslLinux32Dir := path.Join("linux-musl-x86", rustDir, "i686-unknown-linux-musl", "lib")
-		muslLinux32Dylib, muslLinux32Suffix := getPrebuilt(ctx, muslLinux32Dir, name, ".so")
-		muslLinux32Rlib, _ := getPrebuilt(ctx, muslLinux32Dir, name, ".rlib")
-
-		p.Target.Linux_musl_x86_64.Suffix = proptools.StringPtr(muslLinux64Suffix)
-		p.Target.Linux_musl_x86_64.Dylib.Srcs = []string{muslLinux64Dylib}
-		p.Target.Linux_musl_x86_64.Rlib.Srcs = []string{muslLinux64Rlib}
-		p.Target.Linux_musl_x86_64.Link_dirs = []string{muslLinux64Dir}
-		p.Target.Linux_musl_x86_64.Enabled = proptools.BoolPtr(true)
-
-		p.Target.Linux_musl_x86.Suffix = proptools.StringPtr(muslLinux32Suffix)
-		p.Target.Linux_musl_x86.Dylib.Srcs = []string{muslLinux32Dylib}
-		p.Target.Linux_musl_x86.Rlib.Srcs = []string{muslLinux32Rlib}
-		p.Target.Linux_musl_x86.Link_dirs = []string{muslLinux32Dir}
-		p.Target.Linux_musl_x86.Enabled = proptools.BoolPtr(true)
-	} else if ctx.Config().BuildOS == android.Darwin {
-		darwinDir := path.Join("darwin-x86", rustDir, "x86_64-apple-darwin", "lib")
-		darwinDylib, darwinSuffix := getPrebuilt(ctx, darwinDir, name, ".dylib")
-		darwinRlib, _ := getPrebuilt(ctx, darwinDir, name, ".rlib")
-
-		p.Target.Darwin_x86_64.Suffix = proptools.StringPtr(darwinSuffix)
-		p.Target.Darwin_x86_64.Dylib.Srcs = []string{darwinDylib}
-		p.Target.Darwin_x86_64.Rlib.Srcs = []string{darwinRlib}
-		p.Target.Darwin_x86_64.Link_dirs = []string{darwinDir}
-		p.Target.Darwin_x86_64.Enabled = proptools.BoolPtr(true)
+	addPrebuiltToTarget := func(platform, arch string) ccTargetProps {
+		lib := path.Join(platform, rustDir, arch, "lib", name+".a")
+		return ccTargetProps{
+			Enabled: proptools.BoolPtr(true),
+			Srcs:    []string{lib},
+		}
 	}
 
-	ctx.AppendProperties(p)
+	if ctx.Config().BuildOS == android.Linux {
+		p.Target.Linux_glibc_x86_64 = addPrebuiltToTarget("linux-x86", "x86_64-unknown-linux-gnu")
+		p.Target.Linux_glibc_x86 = addPrebuiltToTarget("linux-x86", "i686-unknown-linux-gnu")
+	} else if ctx.Config().BuildOS == android.LinuxMusl {
+		p.Target.Linux_musl_x86_64 = addPrebuiltToTarget("linux-musl-x86", "x86_64-unknown-linux-musl")
+		p.Target.Linux_musl_x86 = addPrebuiltToTarget("linux-musl-x86", "i686-unknown-linux-musl")
+	} else if ctx.Config().BuildOS == android.Darwin {
+		p.Target.Darwin_x86_64 = addPrebuiltToTarget("darwin-x86", "x86_64-apple-darwin")
+	}
+
+	ctx.AppendProperties(&p)
 }
 
 func rustHostPrebuiltSysrootLibraryFactory() android.Module {
 	module, _ := rust.NewPrebuiltLibrary(android.HostSupported)
-	android.AddLoadHook(module, rustHostPrebuiltSysrootLibrary)
+	android.AddLoadHook(module, constructLibProps( /*rlib=*/ true /*solib=*/, true))
+	return module.Init()
+}
+
+func rustHostPrebuiltSysrootRlibFactory() android.Module {
+	module, _ := rust.NewPrebuiltRlib(android.HostSupported)
+	android.AddLoadHook(module, constructLibProps( /*rlib=*/ true /*solib=*/, false))
+	return module.Init()
+}
+
+func rustHostPrebuiltSysrootStaticLibFactory() android.Module {
+	module, _ := cc.NewPrebuiltStaticLibrary(android.HostSupported)
+	android.AddLoadHook(module, constructStaticLibProps)
 	return module.Init()
 }
