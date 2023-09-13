@@ -11,7 +11,7 @@
 
   <project path="toolchain/rustc" name="toolchain/rustc" revision="91b821d96f6445f3d5cdab0dba9e427cd180884e" />
 
-  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="7d500a2b14e1a67ac32f5bb1d03c7d85108aa61e" />
+  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="6d7611746efe5ffb1a0186f60c619b07dd8ac3e6" />
 
   <project path="toolchain/common" name="toolchain/common" revision="0bce8b062126242872e9f3fc66760d3f76773c49" />
 
@@ -19,13 +19,13 @@
 
   <project path="toolchain/cargo-vet" name="toolchain/cargo-vet" revision="464066581e19c9786440c33675de450ae30fd1c1" />
 
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="646296f496bc3b3898cec7f34047a682032a2a15" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="20fec249b6dd43e332458f508515dd0e4534fe1f" />
 
   <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" revision="da6db0cf1149f9011eaa0c54e9461ec7fa8d294b" />
 
   <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="c9a0adf8d1c9ab2ebba62018fd0a16f2215ddc9a" />
 
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="6c28ba8bdf3bbcc8353a37ec6910b09d1e175434" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="b93407f40a7bf5b0b5c9a0d30232f6f2bac6a4f4" />
 
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" revision="e5c0fcb284a3a60be094b51ede81cb66459419d9" />
 
@@ -49,7 +49,7 @@
 
   <project path="prebuilts/ninja/windows-x86" name="platform/prebuilts/ninja/windows-x86" clone-depth="1" revision="4d526002f0158a5d103bb6e54d43943c0e1c2778" />
 
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="f4860837e5896f36b85c54227c83cc70dba57ee8" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="26a146b347379a9391e49f645636674f58c39edf" />
 
   <project path="prebuilts/python/linux-x86" name="platform/prebuilts/python/linux-x86" clone-depth="1" revision="3665e3a3bd0cd0d93f6247eb596938cea48268be" />
 
@@ -57,11 +57,11 @@
 
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="7119932cd3cea23f16db62e683b69c23e415ff09" />
 
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="97892fe89b519ac8f1efae57c2ebff2f7bd2b138" />
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="f10d7c6eec238e3a982faea59e19f927b52cf426" />
 
   <project path="toolchain/prebuilts/ndk/r25" name="toolchain/prebuilts/ndk/r25" clone-depth="1" revision="1622e087e1b881a0c7c744091d314662d12f0997" />
 
-  <project path="build/soong" name="platform/build/soong" revision="08e1792144fb28c41982713206cc6128735ec6fc">
+  <project path="build/soong" name="platform/build/soong" revision="748f8fb624e0e4032e9c6c2c0cef70ac689ee7d7">
     <linkfile dest="Android.bp" src="root.bp" />
 
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
