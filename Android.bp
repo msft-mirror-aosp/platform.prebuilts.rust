@@ -37,10 +37,184 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
+rust_stdlib_prebuilt_rlib_host {
+    name: "libaddr2line.rust_sysroot",
+    crate_name: "addr2line",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libadler.rust_sysroot",
+    crate_name: "aadler",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "liballoc.rust_sysroot",
+    crate_name: "aalloc",
+    sysroot: true,
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libcfg_if.rust_sysroot",
+    crate_name: "cfg_if",
+    sysroot: true,
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libcompiler_builtins.rust_sysroot",
+    crate_name: "compiler_builtins",
+    sysroot: true,
+    rlibs: [
+        "libcore.rust_sysroot",
+        "librustc_std_workspace_alloc.rust_sysroot",
+        "librustc_std_workspace_core.rust_sysroot",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libcore.rust_sysroot",
+    crate_name: "core",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libgimli.rust_sysroot",
+    crate_name: "gimli",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libhashbrown.rust_sysroot",
+    crate_name: "hashbrown",
+    sysroot: true,
+    rlibs: [
+        "libcore.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libunwind.rust_sysroot",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "liblibc.rust_sysroot",
+    crate_name: "libc",
+    sysroot: true,
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libmemchr.rust_sysroot",
+    crate_name: "memchr",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libminiz_oxide.rust_sysroot",
+    crate_name: "miniz_oxide",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libobject.rust_sysroot",
+    crate_name: "object",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libpanic_unwind.rust_sysroot",
+    crate_name: "panic_unwind",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "librustc_demangle.rust_sysroot",
+    crate_name: "rustc_demangle",
+    sysroot: true,
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "librustc_std_workspace_alloc.rust_sysroot",
+    crate_name: "rustc_std_workspace_alloc",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "librustc_std_workspace_core.rust_sysroot",
+    crate_name: "rustc_std_workspace_core",
+    sysroot: true,
+}
+
+rust_stdlib_prebuilt_static_lib_host {
+    name: "libunwind.rust_sysroot_static",
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libunwind.rust_sysroot",
+    crate_name: "unwind",
+    sysroot: true,
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+    ],
+    static_libs: [
+        "libunwind.rust_sysroot_static",
+    ],
+}
+
+rust_stdlib_prebuilt_rlib_host {
+    name: "libstd_detect.rust_sysroot",
+    crate_name: "std_detect",
+    sysroot: true,
+    rlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+    ],
+}
+
 rust_stdlib_prebuilt_host {
     name: "libstd",
     crate_name: "std",
     sysroot: true,
+    rlibs: [
+        "libaddr2line.rust_sysroot",
+        "libadler.rust_sysroot",
+        "liballoc.rust_sysroot",
+        "libcfg_if.rust_sysroot",
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+        "libgimli.rust_sysroot",
+        "libhashbrown.rust_sysroot",
+        "liblibc.rust_sysroot",
+        "libmemchr.rust_sysroot",
+        "libminiz_oxide.rust_sysroot",
+        "libobject.rust_sysroot",
+        "libunwind.rust_sysroot",
+        "libpanic_unwind.rust_sysroot",
+        "libstd_detect.rust_sysroot",
+        "librustc_demangle.rust_sysroot",
+        "librustc_std_workspace_alloc.rust_sysroot",
+        "librustc_std_workspace_core.rust_sysroot",
+    ],
 }
 
 // stdlibs source path relative to toolchain root
@@ -88,7 +262,16 @@ rust_toolchain_library_rlib {
     name: "libcore.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "core",
-    toolchain_src: stdlibs_src_path + "/library/core/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/core/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/core/src/**/*.rs",
+        stdlibs_src_path + "/library/core/src/**/*.md",
+        stdlibs_src_path + "/library/core/primitive_docs/*.md",
+        stdlibs_src_path + "/library/stdarch/crates/core_arch/src/**/*.rs",
+        stdlibs_src_path + "/library/stdarch/crates/core_arch/src/**/*.md",
+        stdlibs_src_path + "/library/portable-simd/crates/core_simd/src/**/*.rs",
+        stdlibs_src_path + "/library/portable-simd/crates/core_simd/src/**/*.md",
+    ],
     sanitize: {
         never: true,
     },
@@ -99,7 +282,11 @@ rust_toolchain_library_rlib {
     name: "librustc_demangle.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "rustc_demangle",
-    toolchain_src: stdlibs_src_path + "/vendor/rustc-demangle/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/rustc-demangle/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/rustc-demangle/src/**/*.rs",
+        stdlibs_src_path + "/vendor/rustc-demangle/src/**/*.md",
+    ],
     features: [
         "core",
         "compiler_builtins",
@@ -120,7 +307,11 @@ rust_toolchain_library_rlib {
         "core",
         "default",
     ],
-    toolchain_src: stdlibs_src_path + "/vendor/compiler_builtins/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/compiler_builtins/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/compiler_builtins/src/**/*.rs",
+        stdlibs_src_path + "/vendor/compiler_builtins/src/**/*.md",
+    ],
     rlibs: ["libcore.rust_sysroot"],
     flags: [
         "-C",
@@ -136,7 +327,11 @@ rust_toolchain_library_rlib {
     defaults: ["rust_sysroot_defaults"],
     crate_name: "libc",
     features: ["align"],
-    toolchain_src: stdlibs_src_path + "/vendor/libc/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/libc/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/libc/src/**/*.rs",
+        stdlibs_src_path + "/vendor/libc/src/**/*.md",
+    ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -160,7 +355,11 @@ rust_toolchain_library_rlib {
     name: "liballoc.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "alloc",
-    toolchain_src: stdlibs_src_path + "/library/alloc/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/alloc/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/alloc/src/**/*.rs",
+        stdlibs_src_path + "/library/alloc/src/**/*.md",
+    ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -176,7 +375,11 @@ rust_toolchain_library_rlib {
         "compiler_builtins",
         "core",
     ],
-    toolchain_src: stdlibs_src_path + "/vendor/cfg-if/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/cfg-if/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/cfg-if/src/**/*.rs",
+        stdlibs_src_path + "/vendor/cfg-if/src/**/*.md",
+    ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -191,7 +394,11 @@ rust_toolchain_library_rlib {
         "std_detect_file_io",
         "std_detect_dlsym_getauxval",
     ],
-    toolchain_src: stdlibs_src_path + "/library/stdarch/crates/std_detect/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/stdarch/crates/std_detect/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/stdarch/crates/std_detect/src/**/*.rs",
+        stdlibs_src_path + "/library/stdarch/crates/std_detect/src/**/*.md",
+    ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -204,7 +411,11 @@ rust_toolchain_library_rlib {
     name: "libpanic_abort.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "panic_abort",
-    toolchain_src: stdlibs_src_path + "/library/panic_abort/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/panic_abort/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/panic_abort/src/**/*.rs",
+        stdlibs_src_path + "/library/panic_abort/src/**/*.md",
+    ],
     rlibs: [
         "liballoc.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
@@ -218,7 +429,11 @@ rust_toolchain_library_rlib {
     name: "libpanic_unwind.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "panic_unwind",
-    toolchain_src: stdlibs_src_path + "/library/panic_unwind/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/panic_unwind/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/panic_unwind/src/**/*.rs",
+        stdlibs_src_path + "/library/panic_unwind/src/**/*.md",
+    ],
     rlibs: [
         "liballoc.rust_sysroot",
         "libcore.rust_sysroot",
@@ -233,7 +448,11 @@ rust_toolchain_library_rlib {
     name: "libunwind.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "unwind",
-    toolchain_src: stdlibs_src_path + "/library/unwind/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/unwind/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/unwind/src/**/*.rs",
+        stdlibs_src_path + "/library/unwind/src/**/*.md",
+    ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -246,7 +465,11 @@ rust_toolchain_library_rlib {
     name: "libhashbrown.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "hashbrown",
-    toolchain_src: stdlibs_src_path + "/vendor/hashbrown/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/hashbrown/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/hashbrown/src/**/*.rs",
+        stdlibs_src_path + "/vendor/hashbrown/src/**/*.md",
+    ],
     features: [
         "alloc",
         "compiler_builtins",
@@ -280,7 +503,20 @@ rust_toolchain_library {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
     },
-    toolchain_src: stdlibs_src_path + "/library/std/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/std/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/std/src/**/*.rs",
+        stdlibs_src_path + "/library/std/src/**/*.md",
+        stdlibs_src_path + "/library/std/primitive_docs/*.md",
+        stdlibs_src_path + "/library/core/src/**/*.md",
+        stdlibs_src_path + "/library/backtrace/src/**/*.rs",
+        stdlibs_src_path + "/library/backtrace/src/**/*.md",
+        stdlibs_src_path + "/library/portable-simd/crates/std_float/src/**/*.rs",
+        stdlibs_src_path + "/library/portable-simd/crates/std_float/src/**/*.md",
+        stdlibs_src_path + "/library/stdarch/crates/core_arch/src/**/*.md",
+        stdlibs_src_path + "/library/stdarch/crates/core_simd/src/**/*.md",
+        stdlibs_src_path + "/library/portable-simd/crates/core_simd/src/**/*.md",
+    ],
     cfgs: ["backtrace_in_libstd"],
     features: [
         "default",
@@ -306,7 +542,11 @@ rust_toolchain_library_rlib {
     name: "libprofiler_builtins.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
     crate_name: "profiler_builtins",
-    toolchain_src: stdlibs_src_path + "/library/profiler_builtins/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/profiler_builtins/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/profiler_builtins/src/**/*.rs",
+        stdlibs_src_path + "/library/profiler_builtins/src/**/*.md",
+    ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -318,7 +558,11 @@ rust_toolchain_library {
     host_supported: true,
     vendor_available: true,
     crate_name: "getopts",
-    toolchain_src: stdlibs_src_path + "/vendor/getopts/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/getopts/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/getopts/src/**/*.rs",
+        stdlibs_src_path + "/vendor/getopts/src/**/*.md",
+    ],
     rlibs: ["libunicode_width.rust_toolchain"],
     edition: "2015",
     apex_available: [
@@ -332,7 +576,11 @@ rust_toolchain_library {
     crate_name: "test",
     host_supported: true,
     vendor_available: true,
-    toolchain_src: stdlibs_src_path + "/library/test/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/test/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/test/src/**/*.rs",
+        stdlibs_src_path + "/library/test/src/**/*.md",
+    ],
     rlibs: [
         "liblibc.rust_toolchain",
         "libcfg_if.rust_toolchain",
@@ -345,7 +593,11 @@ rust_toolchain_library_rlib {
     host_supported: true,
     vendor_available: true,
     crate_name: "unicode_width",
-    toolchain_src: stdlibs_src_path + "/vendor/unicode-width/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/unicode-width/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/unicode-width/src/**/*.rs",
+        stdlibs_src_path + "/vendor/unicode-width/src/**/*.md",
+    ],
     edition: "2015",
     apex_available: [
         "//apex_available:platform",
@@ -358,7 +610,11 @@ rust_toolchain_library_rlib {
     crate_name: "cfg_if",
     host_supported: true,
     vendor_available: true,
-    toolchain_src: stdlibs_src_path + "/vendor/cfg-if/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/cfg-if/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/cfg-if/src/**/*.rs",
+        stdlibs_src_path + "/vendor/cfg-if/src/**/*.md",
+    ],
 }
 
 rust_toolchain_library_rlib {
@@ -366,7 +622,11 @@ rust_toolchain_library_rlib {
     crate_name: "libc",
     host_supported: true,
     vendor_available: true,
-    toolchain_src: stdlibs_src_path + "/vendor/libc/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/vendor/libc/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/vendor/libc/src/**/*.rs",
+        stdlibs_src_path + "/vendor/libc/src/**/*.md",
+    ],
     cfgs: [
         "freebsd11",
         "libc_priv_mod_use",
@@ -392,4 +652,29 @@ cc_defaults {
     lto: {
         never: true,
     },
+}
+
+rust_toolchain_rustc_prebuilt {
+    name: "rustc",
+    toolchain_prebuilt_src: "bin/rustc",
+    toolchain_deps: [
+        "lib/*",
+        "lib64/*",
+    ],
+    deps: [
+        ":gcc.lib",
+        ":gcc.lib32",
+        ":gcc.lib64",
+        ":gcc.sysroot",
+    ],
+}
+
+rust_toolchain_rustc_prebuilt {
+    name: "clippy-driver",
+    toolchain_prebuilt_src: "bin/clippy-driver",
+}
+
+rust_toolchain_rustc_prebuilt {
+    name: "rustdoc",
+    toolchain_prebuilt_src: "bin/rustdoc",
 }
