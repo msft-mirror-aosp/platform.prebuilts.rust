@@ -103,7 +103,13 @@ func (target *targetProps) addPrebuiltToTarget(ctx android.LoadHookContext, libN
 	if solib {
 		// The suffixes are the same between the dylib and the rlib,
 		// so it's okay if we overwrite the rlib suffix
-		dylib, suffix := getPrebuilt(ctx, dir, libName, ".so")
+		var soSuffix string
+		if strings.Contains(platform, "darwin") {
+			soSuffix = ".dylib"
+		} else {
+			soSuffix = ".so"
+		}
+		dylib, suffix := getPrebuilt(ctx, dir, libName, soSuffix)
 		target.Dylib.Srcs = []string{dylib}
 		target.Suffix = proptools.StringPtr(suffix)
 	}
@@ -161,14 +167,13 @@ func constructStaticLibProps(ctx android.LoadHookContext) {
 		}
 	}
 
+	// TODO: b/299654895 - support Darwin prebuilt static libraries
 	if ctx.Config().BuildOS == android.Linux {
 		p.Target.Linux_glibc_x86_64 = addPrebuiltToTarget("linux-x86", "x86_64-unknown-linux-gnu")
 		p.Target.Linux_glibc_x86 = addPrebuiltToTarget("linux-x86", "i686-unknown-linux-gnu")
 	} else if ctx.Config().BuildOS == android.LinuxMusl {
 		p.Target.Linux_musl_x86_64 = addPrebuiltToTarget("linux-musl-x86", "x86_64-unknown-linux-musl")
 		p.Target.Linux_musl_x86 = addPrebuiltToTarget("linux-musl-x86", "i686-unknown-linux-musl")
-	} else if ctx.Config().BuildOS == android.Darwin {
-		p.Target.Darwin_x86_64 = addPrebuiltToTarget("darwin-x86", "x86_64-apple-darwin")
 	}
 
 	ctx.AppendProperties(&p)
