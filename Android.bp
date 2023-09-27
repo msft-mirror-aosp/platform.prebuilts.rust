@@ -174,9 +174,13 @@ rust_stdlib_prebuilt_rlib_host {
         "liblibc.rust_sysroot",
         "libcfg_if.rust_sysroot",
     ],
-    static_libs: [
-        "libunwind.rust_sysroot_static",
-    ],
+    target: {
+        linux: {
+            static_libs: [
+                "libunwind.rust_sysroot_static",
+            ],
+        },
+    },
 }
 
 rust_stdlib_prebuilt_rlib_host {
