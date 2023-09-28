@@ -381,8 +381,8 @@ rust_toolchain_library_rlib {
     ],
     toolchain_crate_root: stdlibs_src_path + "/vendor/cfg-if/src/lib.rs",
     toolchain_srcs: [
-        stdlibs_src_path + "/vendor/cfg_if/src/**/*.rs",
-        stdlibs_src_path + "/vendor/cfg_if/src/**/*.md",
+        stdlibs_src_path + "/vendor/cfg-if/src/**/*.rs",
+        stdlibs_src_path + "/vendor/cfg-if/src/**/*.md",
     ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
