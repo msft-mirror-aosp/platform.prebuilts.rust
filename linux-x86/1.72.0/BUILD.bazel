@@ -21,17 +21,6 @@ rust_stdlib_filegroup(
     srcs = glob(["lib/rustlib/x86_64_unknown-linux-gnu/*"]),
 )
 
-# Flags for vendored dependencies.
-COMMON_INTERNAL_CRATE_RUSTC_FLAGS = [
-    # Even though --cap-lints=allow is set at the toolchain level (b/301466790),
-    # setting it again here is needed to disble linting in all upstream deps
-    "--cap-lints=allow",
-    # TODO(b/302716992) This flag isn't set in Soong but is needed in Bazel\
-    # because rust rule emits metadata by default causing a compile error when
-    # compiling metadata if this flag is missed
-    "-Zforce-unstable-if-unmarked",
-]
-
 filegroup(
     name = "stdlib_sources",
     srcs = [
@@ -89,7 +78,7 @@ rust_library(
     rustc_env = {
         "STD_ENV_ARCH": "aarch64",
     },
-    rustc_flags = COMMON_INTERNAL_CRATE_RUSTC_FLAGS + [
+    rustc_flags = [
         "--cfg=backtrace_in_libstd",
     ],
     visibility = ["//visibility:public"],
@@ -134,7 +123,7 @@ rust_library(
         "no_std",
     ],
     crate_name = "hashbrown",
-    rustc_flags = COMMON_INTERNAL_CRATE_RUSTC_FLAGS + [
+    rustc_flags = [
         "--cfg=has_extern_crate_alloc",
     ],
     deps = [
@@ -172,7 +161,6 @@ rust_library(
     ],
     crate_name = "compiler_builtins",
     edition = "2015",
-    rustc_flags = COMMON_INTERNAL_CRATE_RUSTC_FLAGS,
     deps = [
         "libcore.rust_sysroot",
     ],
@@ -233,7 +221,6 @@ rust_library(
         "no_std",
     ],
     crate_name = "cfg_if",
-    rustc_flags = COMMON_INTERNAL_CRATE_RUSTC_FLAGS,
     deps = [
         ":libcompiler_builtins.rust_sysroot",
         ":libcore.rust_sysroot",
@@ -248,7 +235,6 @@ rust_library(
         "no_std",
     ],
     crate_name = "panic_abort",
-    rustc_flags = COMMON_INTERNAL_CRATE_RUSTC_FLAGS,
     deps = [
         ":liballoc.rust_sysroot",
         ":libcfg_if.rust_sysroot",
@@ -277,7 +263,7 @@ rust_library(
         "--cfg=libc_core_cvoid",
         "--cfg=libc_packedN",
         "--cfg=libc_thread_local",
-    ] + COMMON_INTERNAL_CRATE_RUSTC_FLAGS,
+    ],
     deps = [
         ":libcfg_if.rust_sysroot",
         ":libcompiler_builtins.rust_sysroot",
@@ -293,7 +279,6 @@ rust_library(
         "no_std",
     ],
     crate_name = "unwind",
-    rustc_flags = COMMON_INTERNAL_CRATE_RUSTC_FLAGS,
     deps = [
         ":libcfg_if.rust_sysroot",
         ":libcompiler_builtins.rust_sysroot",
