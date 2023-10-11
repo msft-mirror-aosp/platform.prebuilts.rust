@@ -36,13 +36,13 @@ filegroup(
         ":libstd_detect.rust_sysroot",
         ":libunwind.rust_sysroot",
     ] + select({
-        "//build/bazel/platforms/os:linux_musl": [
+        "//build/bazel_common_rules/platforms/os:linux_musl": [
             ":libpanic_unwind.rust_sysroot",
         ],
-        "//build/bazel/platforms/os:linux_bionic": [
+        "//build/bazel_common_rules/platforms/os:linux_bionic": [
             ":libpanic_abort.rust_sysroot",
         ],
-        "//build/bazel/platforms/os:android": [
+        "//build/bazel_common_rules/platforms/os:android": [
             ":libpanic_abort.rust_sysroot",
         ],
         "//conditions:default": [],
@@ -94,13 +94,13 @@ rust_library(
         ":libstd_detect.rust_sysroot",
         ":libunwind.rust_sysroot",
     ] + select({
-        "//build/bazel/platforms/os:linux_musl": [
+        "//build/bazel_common_rules/platforms/os:linux_musl": [
             ":libpanic_unwind.rust_sysroot",
         ],
-        "//build/bazel/platforms/os:linux_bionic": [
+        "//build/bazel_common_rules/platforms/os:linux_bionic": [
             ":libpanic_abort.rust_sysroot",
         ],
-        "//build/bazel/platforms/os:android": [
+        "//build/bazel_common_rules/platforms/os:android": [
             ":libpanic_abort.rust_sysroot",
         ],
         "//conditions:default": [],
