@@ -18,12 +18,12 @@ package rustprebuilts
 
 import (
 	"path"
+	"path/filepath"
 	"strings"
 
 	"github.com/google/blueprint/proptools"
 
 	"android/soong/android"
-	"android/soong/cc"
 	"android/soong/rust"
 	"android/soong/rust/config"
 )
@@ -34,10 +34,8 @@ import (
 func init() {
 	android.RegisterModuleType("rust_stdlib_prebuilt_host",
 		rustHostPrebuiltSysrootLibraryFactory)
-	android.RegisterModuleType("rust_stdlib_prebuilt_rlib_host",
-		rustHostPrebuiltSysrootRlibFactory)
-	android.RegisterModuleType("rust_stdlib_prebuilt_static_lib_host",
-		rustHostPrebuiltSysrootStaticLibFactory)
+	android.RegisterModuleType("rust_stdlib_prebuilt_filegroup_host",
+		rustToolchainFilegroupFactory)
 }
 
 func getRustPrebuiltVersion(ctx android.LoadHookContext) string {
@@ -138,61 +136,52 @@ func constructLibProps(rlib, solib bool) func(ctx android.LoadHookContext) {
 	}
 }
 
-func constructStaticLibProps(ctx android.LoadHookContext) {
-	rustDir := getRustLibDir(ctx)
-	name := android.RemoveOptionalPrebuiltPrefix(ctx.ModuleName())
-	name = strings.Replace(name, ".rust_sysroot_static", "", -1)
-
-	type ccTargetProps struct {
-		Enabled *bool
-		Srcs    []string
-	}
-	p := struct {
-		Enabled *bool
-		Target  struct {
-			Linux_glibc_x86_64 ccTargetProps
-			Linux_glibc_x86    ccTargetProps
-			Linux_musl_x86_64  ccTargetProps
-			Linux_musl_x86     ccTargetProps
-			Darwin_x86_64      ccTargetProps
-		}
-	}{}
-	p.Enabled = proptools.BoolPtr(false)
-
-	addPrebuiltToTarget := func(platform, arch string) ccTargetProps {
-		lib := path.Join(platform, rustDir, arch, "lib", name+".a")
-		return ccTargetProps{
-			Enabled: proptools.BoolPtr(true),
-			Srcs:    []string{lib},
-		}
-	}
-
-	// TODO: b/299654895 - support Darwin prebuilt static libraries
-	if ctx.Config().BuildOS == android.Linux {
-		p.Target.Linux_glibc_x86_64 = addPrebuiltToTarget("linux-x86", "x86_64-unknown-linux-gnu")
-		p.Target.Linux_glibc_x86 = addPrebuiltToTarget("linux-x86", "i686-unknown-linux-gnu")
-	} else if ctx.Config().BuildOS == android.LinuxMusl {
-		p.Target.Linux_musl_x86_64 = addPrebuiltToTarget("linux-musl-x86", "x86_64-unknown-linux-musl")
-		p.Target.Linux_musl_x86 = addPrebuiltToTarget("linux-musl-x86", "i686-unknown-linux-musl")
-	}
-
-	ctx.AppendProperties(&p)
-}
-
 func rustHostPrebuiltSysrootLibraryFactory() android.Module {
 	module, _ := rust.NewPrebuiltLibrary(android.HostSupported)
 	android.AddLoadHook(module, constructLibProps( /*rlib=*/ true /*solib=*/, true))
 	return module.Init()
 }
 
-func rustHostPrebuiltSysrootRlibFactory() android.Module {
-	module, _ := rust.NewPrebuiltRlib(android.HostSupported)
-	android.AddLoadHook(module, constructLibProps( /*rlib=*/ true /*solib=*/, false))
-	return module.Init()
+type toolchainFilegroupProperties struct {
+	// path to toolchain files, relative to the top of the toolchain source
+	Toolchain_srcs []string
 }
 
-func rustHostPrebuiltSysrootStaticLibFactory() android.Module {
-	module, _ := cc.NewPrebuiltStaticLibrary(android.HostSupported)
-	android.AddLoadHook(module, constructStaticLibProps)
-	return module.Init()
+func rustToolchainFilegroupFactory() android.Module {
+	module := android.FileGroupFactory()
+	module.AddProperties(&toolchainFilegroupProperties{})
+	android.AddLoadHook(module, func(ctx android.LoadHookContext) {
+		var toolchainProps *toolchainFilegroupProperties
+		for _, p := range ctx.Module().GetProperties() {
+			toolchainProperties, ok := p.(*toolchainFilegroupProperties)
+			if ok {
+				toolchainProps = toolchainProperties
+			}
+		}
+
+		var archTriple string
+		if ctx.Config().BuildOS == android.Linux {
+			archTriple = "x86_64-unknown-linux-gnu"
+			archTriple = "i686-unknown-linux-gnu"
+		} else if ctx.Config().BuildOS == android.LinuxMusl {
+			archTriple = "x86_64-unknown-linux-musl"
+			archTriple = "i686-unknown-linux-musl"
+		} else if ctx.Config().BuildOS == android.Darwin {
+			archTriple = "x86_64-apple-darwin"
+		}
+
+		prefix := filepath.Join(config.HostPrebuiltTag(ctx.Config()), rust.GetRustPrebuiltVersion(ctx), "lib", "rustlib", archTriple)
+		srcs := make([]string, 0, len(toolchainProps.Toolchain_srcs))
+		for _, s := range toolchainProps.Toolchain_srcs {
+			srcs = append(srcs, path.Join(prefix, s))
+		}
+
+		props := struct {
+			Srcs []string
+		}{
+			Srcs: srcs,
+		}
+		ctx.AppendProperties(&props)
+	})
+	return module
 }
