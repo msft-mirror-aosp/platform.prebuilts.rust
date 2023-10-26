@@ -37,188 +37,10 @@ license {
     // large-scale-change unable to identify any license_text files
 }
 
-rust_stdlib_prebuilt_rlib_host {
-    name: "libaddr2line.rust_sysroot",
-    crate_name: "addr2line",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libadler.rust_sysroot",
-    crate_name: "aadler",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "liballoc.rust_sysroot",
-    crate_name: "aalloc",
-    sysroot: true,
-    rlibs: [
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-    ],
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libcfg_if.rust_sysroot",
-    crate_name: "cfg_if",
-    sysroot: true,
-    rlibs: [
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-    ],
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libcompiler_builtins.rust_sysroot",
-    crate_name: "compiler_builtins",
-    sysroot: true,
-    rlibs: [
-        "libcore.rust_sysroot",
-        "librustc_std_workspace_alloc.rust_sysroot",
-        "librustc_std_workspace_core.rust_sysroot",
-    ],
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libcore.rust_sysroot",
-    crate_name: "core",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libgimli.rust_sysroot",
-    crate_name: "gimli",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libhashbrown.rust_sysroot",
-    crate_name: "hashbrown",
-    sysroot: true,
-    rlibs: [
-        "libcore.rust_sysroot",
-        "libcompiler_builtins.rust_sysroot",
-        "liballoc.rust_sysroot",
-        "libunwind.rust_sysroot",
-    ],
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "liblibc.rust_sysroot",
-    crate_name: "libc",
-    sysroot: true,
-    rlibs: [
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-    ],
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libmemchr.rust_sysroot",
-    crate_name: "memchr",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libminiz_oxide.rust_sysroot",
-    crate_name: "miniz_oxide",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libobject.rust_sysroot",
-    crate_name: "object",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libpanic_unwind.rust_sysroot",
-    crate_name: "panic_unwind",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "librustc_demangle.rust_sysroot",
-    crate_name: "rustc_demangle",
-    sysroot: true,
-    rlibs: [
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-    ],
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "librustc_std_workspace_alloc.rust_sysroot",
-    crate_name: "rustc_std_workspace_alloc",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "librustc_std_workspace_core.rust_sysroot",
-    crate_name: "rustc_std_workspace_core",
-    sysroot: true,
-}
-
-rust_stdlib_prebuilt_static_lib_host {
-    name: "libunwind.rust_sysroot_static",
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libunwind.rust_sysroot",
-    crate_name: "unwind",
-    sysroot: true,
-    rlibs: [
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-        "liblibc.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-    ],
-    target: {
-        linux: {
-            static_libs: [
-                "libunwind.rust_sysroot_static",
-            ],
-        },
-    },
-}
-
-rust_stdlib_prebuilt_rlib_host {
-    name: "libstd_detect.rust_sysroot",
-    crate_name: "std_detect",
-    sysroot: true,
-    rlibs: [
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-        "liballoc.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-    ],
-}
-
 rust_stdlib_prebuilt_host {
     name: "libstd",
     crate_name: "std",
     sysroot: true,
-    rlibs: [
-        "libaddr2line.rust_sysroot",
-        "libadler.rust_sysroot",
-        "liballoc.rust_sysroot",
-        "libcfg_if.rust_sysroot",
-        "libcompiler_builtins.rust_sysroot",
-        "libcore.rust_sysroot",
-        "libgimli.rust_sysroot",
-        "libhashbrown.rust_sysroot",
-        "liblibc.rust_sysroot",
-        "libmemchr.rust_sysroot",
-        "libminiz_oxide.rust_sysroot",
-        "libobject.rust_sysroot",
-        "libunwind.rust_sysroot",
-        "libpanic_unwind.rust_sysroot",
-        "libstd_detect.rust_sysroot",
-        "librustc_demangle.rust_sysroot",
-        "librustc_std_workspace_alloc.rust_sysroot",
-        "librustc_std_workspace_core.rust_sysroot",
-    ],
 }
 
 // stdlibs source path relative to toolchain root
@@ -658,6 +480,16 @@ cc_defaults {
     },
 }
 
+rust_stdlib_prebuilt_filegroup_host {
+    name: "stdlib_prebuilts",
+    srcs: [
+        "**/*.rlib",
+        "**/*.a",
+        "**/*.so",
+    ],
+    visibility: ["//visibility:private"],
+}
+
 rust_toolchain_rustc_prebuilt {
     name: "rustc",
     toolchain_prebuilt_src: "bin/rustc",
@@ -670,6 +502,7 @@ rust_toolchain_rustc_prebuilt {
         ":gcc.lib32",
         ":gcc.lib64",
         ":gcc.sysroot",
+        ":stdlib_prebuilts",
     ],
 }
 
