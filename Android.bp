@@ -173,6 +173,7 @@ rust_toolchain_library_rlib {
         "libc_core_cvoid",
         "libc_packedN",
         "libc_thread_local",
+        "libc_const_extern_fn",
     ],
     edition: "2015",
 }
