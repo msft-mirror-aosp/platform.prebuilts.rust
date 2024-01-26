@@ -145,7 +145,6 @@ pub trait IntoRawFd {
 }
 
 #[stable(feature = "raw_fd_reflexive_traits", since = "1.48.0")]
-#[cfg(not(target_os = "trusty"))]
 impl AsRawFd for RawFd {
     #[inline]
     fn as_raw_fd(&self) -> RawFd {
@@ -168,6 +167,7 @@ impl FromRawFd for RawFd {
 }
 
 #[stable(feature = "rust1", since = "1.0.0")]
+#[cfg(not(target_os = "trusty"))]
 impl AsRawFd for fs::File {
     #[inline]
     fn as_raw_fd(&self) -> RawFd {
@@ -201,7 +201,6 @@ impl AsRawFd for io::Stdin {
 }
 
 #[stable(feature = "asraw_stdio", since = "1.21.0")]
-#[cfg(not(target_os = "trusty"))]
 impl AsRawFd for io::Stdout {
     #[inline]
     fn as_raw_fd(&self) -> RawFd {
@@ -218,6 +217,7 @@ impl AsRawFd for io::Stderr {
 }
 
 #[stable(feature = "asraw_stdio_locks", since = "1.35.0")]
+#[cfg(not(target_os = "trusty"))]
 impl<'a> AsRawFd for io::StdinLock<'a> {
     #[inline]
     fn as_raw_fd(&self) -> RawFd {
