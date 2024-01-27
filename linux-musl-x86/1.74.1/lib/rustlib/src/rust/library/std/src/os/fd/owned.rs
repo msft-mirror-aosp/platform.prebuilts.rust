@@ -127,7 +127,6 @@ impl BorrowedFd<'_> {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl AsRawFd for BorrowedFd<'_> {
     #[inline]
     fn as_raw_fd(&self) -> RawFd {
@@ -136,7 +135,6 @@ impl AsRawFd for BorrowedFd<'_> {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl AsRawFd for OwnedFd {
     #[inline]
     fn as_raw_fd(&self) -> RawFd {
@@ -145,7 +143,6 @@ impl AsRawFd for OwnedFd {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl IntoRawFd for OwnedFd {
     #[inline]
     fn into_raw_fd(self) -> RawFd {
@@ -174,7 +171,6 @@ impl FromRawFd for OwnedFd {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl Drop for OwnedFd {
     #[inline]
     fn drop(&mut self) {
@@ -250,7 +246,6 @@ pub trait AsFd {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl<T: AsFd> AsFd for &T {
     #[inline]
     fn as_fd(&self) -> BorrowedFd<'_> {
@@ -259,7 +254,6 @@ impl<T: AsFd> AsFd for &T {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl<T: AsFd> AsFd for &mut T {
     #[inline]
     fn as_fd(&self) -> BorrowedFd<'_> {
@@ -268,7 +262,6 @@ impl<T: AsFd> AsFd for &mut T {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl AsFd for BorrowedFd<'_> {
     #[inline]
     fn as_fd(&self) -> BorrowedFd<'_> {
@@ -277,7 +270,6 @@ impl AsFd for BorrowedFd<'_> {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
-#[cfg(not(target_os = "trusty"))]
 impl AsFd for OwnedFd {
     #[inline]
     fn as_fd(&self) -> BorrowedFd<'_> {
@@ -325,6 +317,7 @@ impl AsFd for crate::net::TcpStream {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl From<crate::net::TcpStream> for OwnedFd {
     #[inline]
     fn from(tcp_stream: crate::net::TcpStream) -> OwnedFd {
@@ -333,6 +326,7 @@ impl From<crate::net::TcpStream> for OwnedFd {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl From<OwnedFd> for crate::net::TcpStream {
     #[inline]
     fn from(owned_fd: OwnedFd) -> Self {
@@ -343,6 +337,7 @@ impl From<OwnedFd> for crate::net::TcpStream {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl AsFd for crate::net::TcpListener {
     #[inline]
     fn as_fd(&self) -> BorrowedFd<'_> {
@@ -351,6 +346,7 @@ impl AsFd for crate::net::TcpListener {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl From<crate::net::TcpListener> for OwnedFd {
     #[inline]
     fn from(tcp_listener: crate::net::TcpListener) -> OwnedFd {
@@ -359,6 +355,7 @@ impl From<crate::net::TcpListener> for OwnedFd {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl From<OwnedFd> for crate::net::TcpListener {
     #[inline]
     fn from(owned_fd: OwnedFd) -> Self {
@@ -369,6 +366,7 @@ impl From<OwnedFd> for crate::net::TcpListener {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl AsFd for crate::net::UdpSocket {
     #[inline]
     fn as_fd(&self) -> BorrowedFd<'_> {
@@ -377,6 +375,7 @@ impl AsFd for crate::net::UdpSocket {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl From<crate::net::UdpSocket> for OwnedFd {
     #[inline]
     fn from(udp_socket: crate::net::UdpSocket) -> OwnedFd {
@@ -385,6 +384,7 @@ impl From<crate::net::UdpSocket> for OwnedFd {
 }
 
 #[stable(feature = "io_safety", since = "1.63.0")]
+#[cfg(not(target_os = "trusty"))]
 impl From<OwnedFd> for crate::net::UdpSocket {
     #[inline]
     fn from(owned_fd: OwnedFd) -> Self {
