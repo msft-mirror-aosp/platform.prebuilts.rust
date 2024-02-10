@@ -291,6 +291,7 @@ rust_toolchain_library_rlib {
 rust_toolchain_library_rlib {
     name: "libhashbrown.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
+    edition: "2021",
     crate_name: "hashbrown",
     toolchain_crate_root: stdlibs_src_path + "/vendor/hashbrown/src/lib.rs",
     toolchain_srcs: [
