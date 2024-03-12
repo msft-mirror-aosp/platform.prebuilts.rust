@@ -53,7 +53,7 @@ stdlibs_src_path = "src/stdlibs"
 rust_defaults {
     name: "rust_sysroot_defaults",
     no_stdlibs: true,
-    edition: "2018",
+    edition: "2021",
     native_coverage: false,
     host_supported: true,
     sysroot: true,
@@ -145,7 +145,7 @@ rust_toolchain_library_rlib {
         "-C",
         "overflow-checks=off",
     ],
-    edition: "2015",
+    edition: "2018",
 }
 
 rust_toolchain_library_rlib {
@@ -211,6 +211,7 @@ rust_toolchain_library_rlib {
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
     ],
+    edition: "2018",
 }
 
 rust_toolchain_library_rlib {
