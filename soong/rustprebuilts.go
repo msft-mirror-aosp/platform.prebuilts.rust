@@ -39,7 +39,7 @@ func init() {
 }
 
 func getRustPrebuiltVersion(ctx android.LoadHookContext) string {
-	return ctx.AConfig().GetenvWithDefault("RUST_PREBUILTS_VERSION", config.RustDefaultVersion)
+	return ctx.Config().GetenvWithDefault("RUST_PREBUILTS_VERSION", config.RustDefaultVersion)
 }
 
 func getRustLibDir(ctx android.LoadHookContext) string {
