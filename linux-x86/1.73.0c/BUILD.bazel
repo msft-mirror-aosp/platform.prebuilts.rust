@@ -1,0 +1,10 @@
+exports_files(["bin/*"])
+
+filegroup(
+    name = "binaries",
+    srcs = glob([
+        "bin/*",
+        "lib/*",
+        "lib64/*",
+    ]),
+)
