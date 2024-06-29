@@ -132,6 +132,7 @@ rust_toolchain_library_rlib {
         "compiler-builtins",
         "core",
         "default",
+        "weak-intrinsics",
     ],
     toolchain_crate_root: stdlibs_src_path + "/vendor/compiler_builtins/src/lib.rs",
     toolchain_srcs: [
@@ -187,6 +188,7 @@ rust_toolchain_library_rlib {
         stdlibs_src_path + "/library/alloc/src/**/*.rs",
         stdlibs_src_path + "/library/alloc/src/**/*.md",
     ],
+    features: ["compiler-builtins-weak-intrinsics"],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
@@ -352,6 +354,7 @@ rust_toolchain_library {
         "std_detect_dlsym_getauxval",
         "std_detect_file_io",
         "profiler",
+        "compiler-builtins-weak-intrinsics",
     ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
