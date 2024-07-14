@@ -71,8 +71,11 @@ rust_defaults {
         glibc: {
             enabled: false,
         },
-        darwin: {
+        darwin_x86_64: {
             enabled: false,
+        },
+        darwin_arm64: {
+            enabled: true,
         },
         musl: {
             enabled: false,
@@ -497,6 +500,7 @@ rust_stdlib_prebuilt_filegroup_host {
         "**/*.rlib",
         "**/*.a",
         "**/*.so",
+        "**/*.dylib",
     ],
     visibility: ["//visibility:private"],
 }
