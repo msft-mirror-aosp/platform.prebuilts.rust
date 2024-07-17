@@ -161,13 +161,22 @@ func rustToolchainFilegroupFactory() android.Module {
 
 		var archTriple string
 		if ctx.Config().BuildOS == android.Linux {
-			archTriple = "x86_64-unknown-linux-gnu"
-			archTriple = "i686-unknown-linux-gnu"
+			if ctx.Config().BuildArch == android.X86_64 {
+				archTriple = "x86_64-unknown-linux-gnu"
+			} else {
+				archTriple = "i686-unknown-linux-gnu"
+			}
 		} else if ctx.Config().BuildOS == android.LinuxMusl {
-			archTriple = "x86_64-unknown-linux-musl"
-			archTriple = "i686-unknown-linux-musl"
+			if ctx.Config().BuildArch == android.X86_64 {
+				archTriple = "x86_64-unknown-linux-musl"
+			} else {
+				archTriple = "i686-unknown-linux-musl"
+			}
+
 		} else if ctx.Config().BuildOS == android.Darwin {
-			archTriple = "x86_64-apple-darwin"
+			if ctx.Config().BuildArch == android.X86_64 {
+				archTriple = "x86_64-apple-darwin"
+			}
 		}
 
 		prefix := filepath.Join(config.HostPrebuiltTag(ctx.Config()), rust.GetRustPrebuiltVersion(ctx), "lib", "rustlib", archTriple)
