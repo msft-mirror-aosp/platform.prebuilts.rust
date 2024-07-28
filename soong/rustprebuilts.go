@@ -137,7 +137,7 @@ func constructLibProps(rlib, solib bool) func(ctx android.LoadHookContext) {
 }
 
 func rustHostPrebuiltSysrootLibraryFactory() android.Module {
-	module, _ := rust.NewPrebuiltLibrary(android.HostSupported)
+	module, _ := rust.NewPrebuiltLibrary(android.HostSupportedNoCross)
 	android.AddLoadHook(module, constructLibProps( /*rlib=*/ true /*solib=*/, true))
 	return module.Init()
 }
