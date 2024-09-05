@@ -11,7 +11,7 @@
 
   <project path="toolchain/rustc" name="toolchain/rustc" revision="62a5f3ea9c7ba3a36c37c0084009905baeb23989" />
 
-  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="cd252189b6244943a31c6c9557e2803ef3d7b0c7" />
+  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="3efe2adec6b9d43ac4ec0d84c5f8e3c6a1dd06ed" />
 
   <project path="toolchain/common" name="toolchain/common" revision="0bce8b062126242872e9f3fc66760d3f76773c49" />
 
@@ -19,13 +19,13 @@
 
   <project path="toolchain/cargo-vet" name="toolchain/cargo-vet" revision="464066581e19c9786440c33675de450ae30fd1c1" />
 
-  <project path="bionic" name="platform/bionic" revision="3b3786a30e7faacc0fa3ff50cc56df7d34d87122" />
+  <project path="bionic" name="platform/bionic" revision="15f834e89efe02b0fdc4b48c20af495f91e56ca9" />
 
   <project path="toolchain/binutils" name="toolchain/binutils" revision="c19795e958ed532462948fd14b1bdfd4f6e96e03" />
 
   <project path="toolchain/llvm-project" name="toolchain/llvm-project" revision="b3a530ec6537146650e42be89f1089e9a3588460" />
 
-  <project path="toolchain/llvm_android" name="toolchain/llvm_android" revision="5154513d957e42d9c6b05a190828e55035972326" />
+  <project path="toolchain/llvm_android" name="toolchain/llvm_android" revision="d71fa8285f1a926cfb4c6cf349520863d74464fd" />
 
   <project path="external/toolchain-utils" name="platform/external/toolchain-utils" revision="dd1ee45a84cb07337f9d5d0a6769d9b865c6e620" />
 
@@ -53,7 +53,7 @@
 
   <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" revision="4ac4f7cc41cf3c9e36fc3d6cf37fd1cfa9587a68" />
 
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="d64d2f7b34a6a574ca17780070c1d8b352314fd9" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="c0c8e27195a47a8b4332969bbd9a3470e0c784fa" />
 
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" clone-depth="1" revision="54c8410ade95e313e892745f14312f5e97c7bedc" />
 
@@ -81,9 +81,9 @@
 
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="6cf03be338b41e403770c097746e777c5c9ed9cb" />
 
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="3a63c8fdbfe519a0f6cfd490c26a45868f143ea7" />
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="39c15f75d2f59730a9097f272b260f4b558eb049" />
 
-  <project path="build/soong" name="platform/build/soong" revision="ffb985e9bd296255aebc876861afb182ea0bec22">
+  <project path="build/soong" name="platform/build/soong" revision="7a2a25492a73b2c031cc862745ff0273918132bb">
     <linkfile dest="Android.bp" src="root.bp" />
 
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
