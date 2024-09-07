@@ -27,8 +27,6 @@ pub mod thread_local_key;
 pub mod time;
 #[path = "../unsupported/thread.rs"]
 pub mod thread;
-#[path = "../unsupported/thread_parking.rs"]
-pub mod thread_parking;
 #[path = "../unsupported/common.rs"]
 #[deny(unsafe_op_in_unsafe_fn)]
 mod common;
