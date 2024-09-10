@@ -14,11 +14,6 @@ file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/et
 file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/etc/lldb_lookup.py
 file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/etc/lldb_providers.py
 file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/etc/rust_types.py
-file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld/ld.lld
-file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld/ld64.lld
-file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld/lld-link
-file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld/wasm-ld
-file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/lib/rustlib/x86_64-unknown-linux-gnu/bin/rust-lld
 file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/libexec/rust-analyzer-proc-macro-srv
 file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/share/doc/rustc/COPYRIGHT
 file:/mnt/disks/build-disk/src/android/rust-toolchain/out/package/share/doc/rustc/LICENSE-APACHE
