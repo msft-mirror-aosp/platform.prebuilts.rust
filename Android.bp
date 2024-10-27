@@ -534,3 +534,9 @@ rust_toolchain_rustc_prebuilt {
     name: "rustdoc",
     toolchain_prebuilt_src: "bin/rustdoc",
 }
+
+dirgroup {
+    name: "trusty_dirgroup_prebuilts_rust",
+    dirs: ["."],
+    visibility: ["//trusty/vendor/google/aosp/scripts"],
+}
