@@ -8,304 +8,1189 @@
       "path": "external/open-dice"
     },
     {
-      "path": "external/rust/crates/aho-corasick"
+      "path": "external/rust/android-crates-io/crates/aarch64-paging"
     },
     {
-      "path": "external/rust/crates/android_logger"
+      "path": "external/rust/android-crates-io/crates/acpi"
     },
     {
-      "path": "external/rust/crates/anyhow"
+      "path": "external/rust/android-crates-io/crates/ahash"
     },
     {
-      "path": "external/rust/crates/arbitrary"
+      "path": "external/rust/android-crates-io/crates/aho-corasick"
     },
     {
-      "path": "external/rust/crates/argh"
+      "path": "external/rust/android-crates-io/crates/android_logger"
     },
     {
-      "path": "external/rust/crates/ash"
+      "path": "external/rust/android-crates-io/crates/android_log-sys"
     },
     {
-      "path": "external/rust/crates/async-stream"
+      "path": "external/rust/android-crates-io/crates/anes"
     },
     {
-      "path": "external/rust/crates/bencher"
+      "path": "external/rust/android-crates-io/crates/annotate-snippets"
     },
     {
-      "path": "external/rust/crates/bitflags"
+      "path": "external/rust/android-crates-io/crates/anstyle"
     },
     {
-      "path": "external/rust/crates/bytes"
+      "path": "external/rust/android-crates-io/crates/anyhow"
     },
     {
-      "path": "external/rust/crates/cast"
+      "path": "external/rust/android-crates-io/crates/arbitrary"
     },
     {
-      "path": "external/rust/crates/cesu8"
+      "path": "external/rust/android-crates-io/crates/arc-swap"
     },
     {
-      "path": "external/rust/crates/cfg-if"
+      "path": "external/rust/android-crates-io/crates/argh"
     },
     {
-      "path": "external/rust/crates/ciborium-ll"
+      "path": "external/rust/android-crates-io/crates/argh_derive"
     },
     {
-      "path": "external/rust/crates/clap/2.33.3"
+      "path": "external/rust/android-crates-io/crates/argh_shared"
     },
     {
-      "path": "external/rust/crates/coset"
+      "path": "external/rust/android-crates-io/crates/arrayvec"
     },
     {
-      "path": "external/rust/crates/crc32fast"
+      "path": "external/rust/android-crates-io/crates/ash"
     },
     {
-      "path": "external/rust/crates/crossbeam-deque"
+      "path": "external/rust/android-crates-io/crates/async-stream"
     },
     {
-      "path": "external/rust/crates/crossbeam-epoch"
+      "path": "external/rust/android-crates-io/crates/async-stream-impl"
     },
     {
-      "path": "external/rust/crates/crossbeam-queue"
+      "path": "external/rust/android-crates-io/crates/async-task"
     },
     {
-      "path": "external/rust/crates/crossbeam-utils"
+      "path": "external/rust/android-crates-io/crates/async-trait"
     },
     {
-      "path": "external/rust/crates/downcast-rs"
+      "path": "external/rust/android-crates-io/crates/atomic"
     },
     {
-      "path": "external/rust/crates/either"
+      "path": "external/rust/android-crates-io/crates/atty"
     },
     {
-      "path": "external/rust/crates/env_logger"
+      "path": "external/rust/android-crates-io/crates/axum"
     },
     {
-      "path": "external/rust/crates/fallible-iterator"
+      "path": "external/rust/android-crates-io/crates/axum-core"
     },
     {
-      "path": "external/rust/crates/flate2"
+      "path": "external/rust/android-crates-io/crates/base64"
     },
     {
-      "path": "external/rust/crates/fnv"
+      "path": "external/rust/android-crates-io/crates/bencher"
     },
     {
-      "path": "external/rust/crates/futures-channel"
+      "path": "external/rust/android-crates-io/crates/bincode"
     },
     {
-      "path": "external/rust/crates/futures-executor"
+      "path": "external/rust/android-crates-io/crates/bindgen"
     },
     {
-      "path": "external/rust/crates/futures-task"
+      "path": "external/rust/android-crates-io/crates/bindgen-cli"
     },
     {
-      "path": "external/rust/crates/futures-test"
+      "path": "external/rust/android-crates-io/crates/bit_field"
     },
     {
-      "path": "external/rust/crates/futures-util"
+      "path": "external/rust/android-crates-io/crates/bitflags"
     },
     {
-      "path": "external/rust/crates/gdbstub_arch"
+      "path": "external/rust/android-crates-io/crates/bitreader"
     },
     {
-      "path": "external/rust/crates/getrandom"
+      "path": "external/rust/android-crates-io/crates/bstr"
     },
     {
-      "path": "external/rust/crates/grpcio-sys"
+      "path": "external/rust/android-crates-io/crates/buddy_system_allocator"
     },
     {
-      "path": "external/rust/crates/hashbrown"
+      "path": "external/rust/android-crates-io/crates/bytemuck"
     },
     {
-      "path": "external/rust/crates/hashlink"
+      "path": "external/rust/android-crates-io/crates/bytemuck_derive"
     },
     {
-      "path": "external/rust/crates/heck"
+      "path": "external/rust/android-crates-io/crates/byteorder"
     },
     {
-      "path": "external/rust/crates/itoa"
+      "path": "external/rust/android-crates-io/crates/bytes"
     },
     {
-      "path": "external/rust/crates/jni"
+      "path": "external/rust/android-crates-io/crates/camino"
     },
     {
-      "path": "external/rust/crates/lazy_static"
+      "path": "external/rust/android-crates-io/crates/cast"
     },
     {
-      "path": "external/rust/crates/lazycell"
+      "path": "external/rust/android-crates-io/crates/cesu8"
     },
     {
-      "path": "external/rust/crates/libm"
+      "path": "external/rust/android-crates-io/crates/cexpr"
     },
     {
-      "path": "external/rust/crates/libsqlite3-sys"
+      "path": "external/rust/android-crates-io/crates/cfg-if"
     },
     {
-      "path": "external/rust/crates/lru-cache"
+      "path": "external/rust/android-crates-io/crates/chrono"
     },
     {
-      "path": "external/rust/crates/managed"
+      "path": "external/rust/android-crates-io/crates/ciborium"
     },
     {
-      "path": "external/rust/crates/matches"
+      "path": "external/rust/android-crates-io/crates/ciborium-io"
     },
     {
-      "path": "external/rust/crates/memoffset"
+      "path": "external/rust/android-crates-io/crates/ciborium-ll"
     },
     {
-      "path": "external/rust/crates/minimal-lexical"
+      "path": "external/rust/android-crates-io/crates/clang-sys"
     },
     {
-      "path": "external/rust/crates/mio"
+      "path": "external/rust/android-crates-io/crates/clap"
     },
     {
-      "path": "external/rust/crates/num-bigint"
+      "path": "external/rust/android-crates-io/crates/clap_builder"
     },
     {
-      "path": "external/rust/crates/num-integer"
+      "path": "external/rust/android-crates-io/crates/clap_complete"
     },
     {
-      "path": "external/rust/crates/num-traits"
+      "path": "external/rust/android-crates-io/crates/clap_derive"
     },
     {
-      "path": "external/rust/crates/num_cpus"
+      "path": "external/rust/android-crates-io/crates/clap_lex"
     },
     {
-      "path": "external/rust/crates/octets"
+      "path": "external/rust/android-crates-io/crates/codespan-reporting"
     },
     {
-      "path": "external/rust/crates/oid-registry"
+      "path": "external/rust/android-crates-io/crates/combine"
     },
     {
-      "path": "external/rust/crates/once_cell"
+      "path": "external/rust/android-crates-io/crates/command-fds"
     },
     {
-      "path": "external/rust/crates/parking_lot_core"
+      "path": "external/rust/android-crates-io/crates/config"
     },
     {
-      "path": "external/rust/crates/peeking_take_while"
+      "path": "external/rust/android-crates-io/crates/configparser"
     },
     {
-      "path": "external/rust/crates/pin-utils"
+      "path": "external/rust/android-crates-io/crates/const-oid"
     },
     {
-      "path": "external/rust/crates/ppv-lite86"
+      "path": "external/rust/android-crates-io/crates/coset"
     },
     {
-      "path": "external/rust/crates/quiche"
+      "path": "external/rust/android-crates-io/crates/cov-mark"
     },
     {
-      "path": "external/rust/crates/quickcheck"
+      "path": "external/rust/android-crates-io/crates/crc32fast"
     },
     {
-      "path": "external/rust/crates/rand_chacha"
+      "path": "external/rust/android-crates-io/crates/criterion"
     },
     {
-      "path": "external/rust/crates/rand_core"
+      "path": "external/rust/android-crates-io/crates/criterion-plot"
     },
     {
-      "path": "external/rust/crates/rand_xorshift"
+      "path": "external/rust/android-crates-io/crates/crossbeam-channel"
     },
     {
-      "path": "external/rust/crates/regex"
+      "path": "external/rust/android-crates-io/crates/crossbeam-deque"
     },
     {
-      "path": "external/rust/crates/regex-syntax"
+      "path": "external/rust/android-crates-io/crates/crossbeam-epoch"
     },
     {
-      "path": "external/rust/crates/ring"
+      "path": "external/rust/android-crates-io/crates/crossbeam-queue"
     },
     {
-      "path": "external/rust/crates/rustc-demangle"
+      "path": "external/rust/android-crates-io/crates/crossbeam-utils"
     },
     {
-      "path": "external/rust/crates/rustc-demangle-capi"
+      "path": "external/rust/android-crates-io/crates/csv"
     },
     {
-      "path": "external/rust/crates/rusticata-macros"
+      "path": "external/rust/android-crates-io/crates/csv-core"
     },
     {
-      "path": "external/rust/crates/ryu"
+      "path": "external/rust/android-crates-io/crates/darling"
     },
     {
-      "path": "external/rust/crates/scopeguard"
+      "path": "external/rust/android-crates-io/crates/darling_core"
     },
     {
-      "path": "external/rust/crates/serde"
+      "path": "external/rust/android-crates-io/crates/darling_macro"
     },
     {
-      "path": "external/rust/crates/serde-xml-rs"
+      "path": "external/rust/android-crates-io/crates/dashmap"
     },
     {
-      "path": "external/rust/crates/serde_cbor"
+      "path": "external/rust/android-crates-io/crates/data-encoding"
     },
     {
-      "path": "external/rust/crates/shared_child"
+      "path": "external/rust/android-crates-io/crates/debug_tree"
     },
     {
-      "path": "external/rust/crates/shared_library"
+      "path": "external/rust/android-crates-io/crates/der"
     },
     {
-      "path": "external/rust/crates/slab"
+      "path": "external/rust/android-crates-io/crates/der_derive"
     },
     {
-      "path": "external/rust/crates/spin"
+      "path": "external/rust/android-crates-io/crates/derive_arbitrary"
     },
     {
-      "path": "external/rust/crates/termcolor"
+      "path": "external/rust/android-crates-io/crates/displaydoc"
     },
     {
-      "path": "external/rust/crates/terminal-size"
+      "path": "external/rust/android-crates-io/crates/document-features"
     },
     {
-      "path": "external/rust/crates/thread_local"
+      "path": "external/rust/android-crates-io/crates/downcast"
     },
     {
-      "path": "external/rust/crates/tinytemplate"
+      "path": "external/rust/android-crates-io/crates/downcast-rs"
     },
     {
-      "path": "external/rust/crates/tinyvec"
+      "path": "external/rust/android-crates-io/crates/drm"
     },
     {
-      "path": "external/rust/crates/tokio"
+      "path": "external/rust/android-crates-io/crates/drm-ffi"
     },
     {
-      "path": "external/rust/crates/tokio-test"
+      "path": "external/rust/android-crates-io/crates/drm-fourcc"
     },
     {
-      "path": "external/rust/crates/unicode-bidi"
+      "path": "external/rust/android-crates-io/crates/either"
     },
     {
-      "path": "external/rust/crates/unicode-normalization"
+      "path": "external/rust/android-crates-io/crates/enumn"
     },
     {
-      "path": "external/rust/crates/unicode-width"
+      "path": "external/rust/android-crates-io/crates/env_logger"
     },
     {
-      "path": "external/rust/crates/unicode-xid"
+      "path": "external/rust/android-crates-io/crates/epoll"
     },
     {
-      "path": "external/rust/crates/untrusted"
+      "path": "external/rust/android-crates-io/crates/equivalent"
     },
     {
-      "path": "external/rust/crates/url"
+      "path": "external/rust/android-crates-io/crates/errno"
     },
     {
-      "path": "external/rust/crates/virtio-drivers"
+      "path": "external/rust/android-crates-io/crates/etherparse"
     },
     {
-      "path": "external/rust/crates/vulkano"
+      "path": "external/rust/android-crates-io/crates/fallible-iterator"
     },
     {
-      "path": "external/rust/crates/webpki"
+      "path": "external/rust/android-crates-io/crates/fallible-streaming-iterator"
     },
     {
-      "path": "external/rust/crates/xml-rs"
+      "path": "external/rust/android-crates-io/crates/fastrand"
     },
     {
-      "path": "external/rust/crates/zerocopy"
+      "path": "external/rust/android-crates-io/crates/fixedbitset"
     },
     {
-      "path": "external/rust/crates/zeroize"
+      "path": "external/rust/android-crates-io/crates/flagset"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/flate2"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/fnv"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/foreign-types"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/foreign-types-shared"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/form_urlencoded"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/fragile"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/fs-err"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-channel"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-executor"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-io"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-macro"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-sink"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-task"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-test"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/futures-util"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/fxhash"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/gbm"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/gdbstub"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/gdbstub_arch"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/getrandom"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/glam"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/glob"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/googletest"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/googletest_macro"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/gpio-cdev"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/grpcio"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/grpcio-compiler"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/grpcio-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/h2"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/half"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/hashbrown"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/hashlink"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/heck"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/hex"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/hound"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/http"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/httparse"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/http-body"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/httpdate"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/hyper"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/hyper-timeout"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ident_case"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/idna"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/indexmap"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/instant"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/intrusive-collections"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/itertools"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/itoa"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/jni"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/jni-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/kernlog"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/lazycell"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/lazy_static"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libbpf-rs"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libbpf-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libc"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libfuzzer-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libloading"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libm"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libtest-mimic"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libusb1-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/libz-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/linked-hash-map"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/linkme"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/linkme-impl"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/litrs"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/lock_api"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/log"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/lru-cache"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/lz4_flex"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/macaddr"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/managed"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/matches"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/matchit"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/maybe-async"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/memchr"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/memmap2"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/memoffset"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/merge"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/merge_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/miette"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/miette-derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mime"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/minimal-lexical"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mio"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mls-rs"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mls-rs-codec"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mls-rs-codec-derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mls-rs-core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mls-rs-crypto-traits"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mockall"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/mockall_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/moveit"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/named-lock"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/nix"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/nom"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/no-panic"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num-bigint"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num-complex"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num_cpus"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num-derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num_enum"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num_enum_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num-integer"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/num-traits"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/octets"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/once_cell"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/oneshot-uniffi"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/oorandom"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/openssl-macros"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/os_str_bytes"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/p9"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/p9_wire_format_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/parking_lot"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/parking_lot_core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/paste"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pathdiff"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pdl-compiler"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pdl-runtime"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/percent-encoding"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/percore"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pest"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pest_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pest_generator"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pest_meta"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/petgraph"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pin-project"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pin-project-internal"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pin-project-lite"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pin-utils"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pkcs1"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/pkcs8"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/plotters"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/plotters-backend"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/plotters-svg"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/poll_token_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ppv-lite86"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/predicates"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/predicates-core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/predicates-tree"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/prettyplease"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/proc-macro2"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/protobuf"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/protobuf-codegen"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/protobuf-json-mapping"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/protobuf-parse"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/protobuf-support"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ptr_meta"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ptr_meta_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/quiche"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/quickcheck"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/quote"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rand"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rand_chacha"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rand_core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rand_xorshift"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rayon"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rayon-core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/regex"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/regex-automata"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/regex-syntax"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/remain"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ring"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rusb"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rusqlite"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rustc-demangle"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rustc-demangle-capi"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rustc-hash"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rustix"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/rustversion"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ryu"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/same-file"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/scopeguard"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/sec1"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/semver"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde_cbor"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde_json"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde_spanned"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde_test"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde-xml-rs"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/serde_yaml"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/sharded-slab"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/shared_child"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/shared_library"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/shlex"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/siphasher"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/slab"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/smallvec"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/smccc"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/socket2"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/spin"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/spki"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/static_assertions"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/strsim"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/strum"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/strum_macros"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/syn"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/sync_wrapper"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/syn-mid"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/synstructure"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tempfile"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/termcolor"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/termtree"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/textwrap"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/thiserror"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/thiserror-impl"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/thread_local"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/threadpool"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tikv-jemallocator"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tikv-jemalloc-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tinytemplate"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tinyvec"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tinyvec_macros"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio-io-timeout"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio-macros"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio-openssl"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio-stream"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio-test"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tokio-util"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/toml"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/toml_datetime"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/toml_edit"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tonic"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tower"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tower-layer"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tower-service"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tracing"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tracing-attributes"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tracing-core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tracing-subscriber"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/try-lock"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/tungstenite"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/twox-hash"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ucd-trie"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/ucs2"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uefi"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uefi-macros"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uefi-raw"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uguid"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unicode-bidi"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unicode-ident"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unicode-normalization"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unicode-segmentation"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unicode-width"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unicode-xid"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uniffi"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uniffi_checksum_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uniffi_core"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uniffi_macros"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uniffi_meta"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/unsafe-libyaml"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/untrusted"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/url"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/userfaultfd"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/userfaultfd-sys"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/utf-8"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/uuid"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vhost"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vhost-user-backend"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/virtio-bindings"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/virtio-drivers"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/virtio-queue"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/virtio-vsock"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vm-memory"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vmm-sys-util"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vsock"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vsprintf"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/vulkano"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/walkdir"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/want"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/weak-table"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/webpki"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/which"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/winnow"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/x509-cert"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/xml-rs"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/yaml-rust"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/zerocopy"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/zerocopy-derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/zeroize"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/zeroize_derive"
+    },
+    {
+      "path": "external/rust/android-crates-io/crates/zip"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/bitflags"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/clap"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/clap_lex"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/jni"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/protobuf"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/protobuf-codegen"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/zerocopy"
+    },
+    {
+      "path": "external/rust/android-crates-io/extra_versions/crates/zerocopy-derive"
     },
     {
       "path": "external/uwb/src"
