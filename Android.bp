@@ -135,7 +135,6 @@ rust_toolchain_library_rlib {
         "compiler-builtins",
         "core",
         "default",
-        "weak-intrinsics",
     ],
     toolchain_crate_root: stdlibs_src_path + "/vendor/compiler_builtins/src/lib.rs",
     toolchain_srcs: [
@@ -149,7 +148,7 @@ rust_toolchain_library_rlib {
         "-C",
         "overflow-checks=off",
     ],
-    edition: "2018",
+    edition: "2021",
 }
 
 rust_toolchain_library_rlib {
