@@ -1,0 +1,4 @@
+file:/mnt/disks/build-disk/src/android/main-plus-rust/out/package/lib/rustlib/riscv32imc-unknown-none-elf/lib/liballoc-434f52c8f425340c.rlib
+file:/mnt/disks/build-disk/src/android/main-plus-rust/out/package/lib/rustlib/riscv32imc-unknown-none-elf/lib/libcompiler_builtins-b758552d9fbce207.rlib
+file:/mnt/disks/build-disk/src/android/main-plus-rust/out/package/lib/rustlib/riscv32imc-unknown-none-elf/lib/libcore-058c50e627423a2b.rlib
+file:/mnt/disks/build-disk/src/android/main-plus-rust/out/package/lib/rustlib/riscv32imc-unknown-none-elf/lib/librustc_std_workspace_core-f333581cc9f25839.rlib
