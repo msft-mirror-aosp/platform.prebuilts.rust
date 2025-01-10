@@ -10,7 +10,9 @@ use crate::mem::ManuallyDrop;
 use crate::sys::cvt;
 #[cfg(not(target_os = "trusty"))]
 use crate::sys_common::{AsInner, FromInner, IntoInner};
-use crate::{fmt, fs, io};
+use crate::{fmt, io};
+#[cfg(not(target_os = "trusty"))]
+use crate::fs;
 
 /// A borrowed file descriptor.
 ///
