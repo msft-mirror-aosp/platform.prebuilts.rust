@@ -17,7 +17,9 @@ use crate::os::unix::io::OwnedFd;
 use crate::os::wasi::io::OwnedFd;
 #[cfg(not(target_os = "trusty"))]
 use crate::sys_common::{AsInner, IntoInner};
-use crate::{fs, io};
+#[cfg(not(target_os = "trusty"))]
+use crate::fs;
+use crate::io;
 
 /// Raw file descriptors.
 #[rustc_allowed_through_unstable_modules]
