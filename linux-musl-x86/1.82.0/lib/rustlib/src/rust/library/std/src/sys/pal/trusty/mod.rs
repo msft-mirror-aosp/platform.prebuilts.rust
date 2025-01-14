@@ -1,7 +1,5 @@
 //! System bindings for the Trusty OS.
 
-#[path = "../unix/alloc.rs"]
-pub mod alloc;
 #[path = "../unsupported/args.rs"]
 pub mod args;
 #[path = "../unsupported/env.rs"]
@@ -19,10 +17,6 @@ pub mod pipe;
 #[path = "../unsupported/process.rs"]
 pub mod process;
 pub mod stdio;
-#[cfg(target_thread_local)]
-#[path = "../unsupported/thread_local_dtor.rs"]
-pub mod thread_local_dtor;
-pub mod thread_local_key;
 #[path = "../unsupported/time.rs"]
 pub mod time;
 #[path = "../unsupported/thread.rs"]
