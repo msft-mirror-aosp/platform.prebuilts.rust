@@ -309,6 +309,7 @@ rust_toolchain_library_rlib {
         "compiler_builtins",
         "core",
         "nightly",
+        "raw-entry",
         "rustc-dep-of-std",
         "rustc-internal-api",
     ],
@@ -439,7 +440,7 @@ rust_toolchain_library_rlib {
         stdlibs_src_path + "/vendor/unicode-width/src/**/*.rs",
         stdlibs_src_path + "/vendor/unicode-width/src/**/*.md",
     ],
-    edition: "2015",
+    edition: "2021",
     apex_available: [
         "//apex_available:platform",
         "com.android.virt",
