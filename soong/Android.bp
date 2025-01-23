@@ -30,6 +30,7 @@ bootstrap_go_package {
     ],
     srcs: [
         "rustprebuilts.go",
+        "toolchain_filegroup.go",
     ],
     pluginFor: ["soong_build"],
 }
