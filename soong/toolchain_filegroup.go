@@ -18,13 +18,10 @@ package rustprebuilts
 
 import (
 	"path"
-	"runtime"
 
 	"android/soong/android"
 	"android/soong/rust"
 	"android/soong/rust/config"
-
-	"github.com/google/blueprint/proptools"
 )
 
 // This module contains logic for defining file groups inside of a Rust
@@ -54,17 +51,10 @@ func rustToolchainFileGroupFactory() android.Module {
 
 func rustSetToolchainFileGroupSource(ctx android.LoadHookContext, inProps *toolchainFilegroupProps) {
 	type props struct {
-		Srcs    []string
-		Enabled *bool
+		Srcs []string
 	}
 
 	p := &props{}
-	if runtime.GOOS == "linux" {
-		p.Enabled = proptools.BoolPtr(true)
-	} else {
-		p.Enabled = proptools.BoolPtr(false)
-	}
-
 	prebuiltsDir := path.Join(config.HostPrebuiltTag(ctx.Config()), rust.GetRustPrebuiltVersion(ctx))
 	for _, src := range inProps.Toolchain_srcs {
 		p.Srcs = append(p.Srcs, path.Join(prebuiltsDir, src))
