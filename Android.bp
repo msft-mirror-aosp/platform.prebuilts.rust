@@ -127,11 +127,6 @@ rust_toolchain_library_rlib {
     edition: "2015",
 }
 
-rust_toolchain_filegroup {
-    name: "libcompiler_builtins_outlined_atomics",
-    toolchain_srcs: ["src/stdlibs/vendor/compiler_builtins/outlined_atomics.rs"],
-}
-
 rust_toolchain_library_rlib {
     name: "libcompiler_builtins.rust_sysroot",
     defaults: ["rust_sysroot_defaults"],
@@ -145,7 +140,6 @@ rust_toolchain_library_rlib {
     toolchain_srcs: [
         stdlibs_src_path + "/vendor/compiler_builtins/src/**/*.rs",
         stdlibs_src_path + "/vendor/compiler_builtins/src/**/*.md",
-        ":libcompiler_builtins_outlined_atomics",
     ],
     rlibs: ["libcore.rust_sysroot"],
     flags: [
