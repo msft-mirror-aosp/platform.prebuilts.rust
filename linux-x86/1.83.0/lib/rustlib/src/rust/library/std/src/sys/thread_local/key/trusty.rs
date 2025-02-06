@@ -8,7 +8,9 @@ static mut STORAGE: crate::vec::Vec<(*mut u8, Option<Dtor>)> = Vec::new();
 #[inline]
 pub fn create(dtor: Option<Dtor>) -> Key {
     unsafe {
+        #[allow(static_mut_refs)]
         let key = STORAGE.len();
+        #[allow(static_mut_refs)]
         STORAGE.push((ptr::null_mut(), dtor));
         key
     }
@@ -25,5 +27,4 @@ pub unsafe fn get(key: Key) -> *mut u8 {
 }
 
 #[inline]
-pub fn destroy(_key: Key) {
-}
+pub fn destroy(_key: Key) {}
