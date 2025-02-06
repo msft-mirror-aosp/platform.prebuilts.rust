@@ -11,7 +11,7 @@
 
   <project path="toolchain/rustc" name="toolchain/rustc" revision="cf5d50735f29daa78c34624cf2b7ccf4a8128297" />
 
-  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="665a8cfdcabcceeb876e31b89d3c6339538bfad4" />
+  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="2cfa52daf59228d0f0c6ab18ef38c06f2c5aea21" />
 
   <project path="toolchain/common" name="toolchain/common" revision="0bce8b062126242872e9f3fc66760d3f76773c49" />
 
@@ -19,7 +19,7 @@
 
   <project path="toolchain/cargo-vet" name="toolchain/cargo-vet" revision="464066581e19c9786440c33675de450ae30fd1c1" />
 
-  <project path="bionic" name="platform/bionic" revision="62dd6a1498f09be4256658cbedc55b4e2e04596d" />
+  <project path="bionic" name="platform/bionic" revision="02f51c36f42d84c5d299fbc3fa322b5b0f232c68" />
 
   <project path="toolchain/binutils" name="toolchain/binutils" revision="c19795e958ed532462948fd14b1bdfd4f6e96e03" />
 
@@ -45,11 +45,11 @@
 
   <project path="toolchain/prebuilts/sysroot/platform/riscv64-linux-android" name="toolchain/prebuilts/sysroot/platform/riscv64-linux-android" revision="d19c6ae1817af6846099905de2a422eae1de5d11" />
 
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="74a173055ca2324e61969051aa42c470d38e47fc" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="30af425ee5c159ed7b9b2ac895344858396686eb" />
 
-  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="pdk,darwin" clone-depth="1" revision="cbdf83f3e2b5728930d70ef0442c484f75165ff1" />
+  <project path="prebuilts/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" groups="pdk,darwin" clone-depth="1" revision="9d7f5959b9aed937501a75c23d79f89497cddd23" />
 
-  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="5439159bcecbc897a60f4155db16c221cd9bc6cc" />
+  <project path="prebuilts/clang/host/windows-x86" name="platform/prebuilts/clang/host/windows-x86" clone-depth="1" revision="d81ed376291c4e7e055ed3e8b255d3efdc662ff0" />
 
   <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" clone-depth="1" revision="4ac4f7cc41cf3c9e36fc3d6cf37fd1cfa9587a68" />
 
@@ -81,9 +81,9 @@
 
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="6d619afe3f821388a57b7b2b473bee85debfdd7c" />
 
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="ed4dd491b11ab694ccd67951bc102637e8968d39" />
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="a16023dd722ff4ca5630e5975c98ba728e2f2c83" />
 
-  <project path="build/soong" name="platform/build/soong" revision="15df9ad8876e80ac7d1783d8314836a8eb3c20ef">
+  <project path="build/soong" name="platform/build/soong" revision="3fcc4ef8fe6a10ffd267586a49ec27261058ab7e">
     <linkfile dest="Android.bp" src="root.bp" />
 
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
