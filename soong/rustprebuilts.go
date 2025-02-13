@@ -74,8 +74,9 @@ type targetProps struct {
 	Rlib struct {
 		Srcs []string
 	}
-	Link_dirs []string
-	Enabled   *bool
+	Link_dirs          []string
+	Enabled            *bool
+	Force_use_prebuilt *bool
 }
 
 type props struct {
@@ -93,6 +94,7 @@ func (target *targetProps) addPrebuiltToTarget(ctx android.LoadHookContext, libN
 	dir := path.Join(platform, rustDir, arch, "lib")
 	target.Link_dirs = []string{dir}
 	target.Enabled = proptools.BoolPtr(true)
+	target.Force_use_prebuilt = proptools.BoolPtr(true)
 	if rlib {
 		rlib, suffix := getPrebuilt(ctx, dir, libName, ".rlib")
 		target.Rlib.Srcs = []string{rlib}
