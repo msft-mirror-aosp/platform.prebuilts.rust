@@ -1,9 +1,36 @@
 // Sysroot Libraries
 package {
-    default_applicable_licenses: ["prebuilts_rust_license"],
+    default_applicable_licenses: ["prebuilts_rust_stdlib_license"],
 }
 
-// Added automatically by a large-scale-change that took the approach of
+// Licenses for stdlib files
+// The Rust stdlib itself has an Apache-2/MIT license, and the Android build depends
+// on the following crates (from VENDORED_CRATE_REDISTRIBUTION_INFO in https://android.googlesource.com/toolchain/android_rust/+/refs/heads/main/tools/build.py#107):
+// backtrace, cfg-if, compiler_builtins, getopts, hashbrown, libc, rustc-demangle, unicode-width
+// These are also Apache-2/MIT except for compiler_builtins, which is MIT AND Apache-2.0 WITH LLVM-Exception AND NCSO
+//
+// The LLVM exception weakens the Apache license further, we don't need to list it here if we're listing Apache.
+//
+// Further licenses come from https://github.com/rust-lang/rust/blob/master/REUSE.toml for library/
+// Unicode-3.0 for unicode data, and BSD-2-clause for the Fuchsia mutex code.
+license {
+    name: "prebuilts_rust_stdlib_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-MIT",
+        "SPDX-license-identifier-NCSA",
+        "SPDX-license-identifier-BSD-2-Clause",
+        "legacy_notice",
+    ],
+    // large-scale-change unable to identify any license_text files
+}
+
+// This is the license for rustc-the-binary (and clippy/rustdoc).
+// Rustc has a lot more dependencies than the stdlib, so the licensing situation is
+// a bit more messy.
+//
+// This was added automatically by a large-scale-change that took the approach of
 // 'apply every license found to every target'. While this makes sure we respect
 // every license restriction, it may not be entirely correct.
 //
@@ -18,7 +45,7 @@ package {
 // used in the current project.
 // See: http://go/android-license-faq
 license {
-    name: "prebuilts_rust_license",
+    name: "prebuilts_rustc_license",
     visibility: [":__subpackages__"],
     license_kinds: [
         "SPDX-license-identifier-Apache-2.0",
@@ -523,16 +550,22 @@ rust_toolchain_rustc_prebuilt {
         ":gcc.sysroot",
         ":stdlib_prebuilts",
     ],
+    // Override licenses for non-stdlib binary
+    licenses: ["prebuilts_rustc_license"],
 }
 
 rust_toolchain_rustc_prebuilt {
     name: "clippy-driver",
     toolchain_prebuilt_src: "bin/clippy-driver",
+    // Override licenses for non-stdlib binary
+    licenses: ["prebuilts_rustc_license"],
 }
 
 rust_toolchain_rustc_prebuilt {
     name: "rustdoc",
     toolchain_prebuilt_src: "bin/rustdoc",
+    // Override licenses for non-stdlib binary
+    licenses: ["prebuilts_rustc_license"],
 }
 
 dirgroup {
