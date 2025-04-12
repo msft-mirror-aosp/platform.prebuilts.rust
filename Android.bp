@@ -110,6 +110,10 @@ rust_defaults {
         musl_arm64: {
             enabled: true,
         },
+        windows: {
+            enabled: true,
+            features: ["windows_net"],
+        },
     },
     min_sdk_version: "29",
 }
@@ -127,6 +131,27 @@ rust_toolchain_library_rlib {
         stdlibs_src_path + "/library/stdarch/crates/core_arch/src/**/*.md",
         stdlibs_src_path + "/library/portable-simd/crates/core_simd/src/**/*.rs",
         stdlibs_src_path + "/library/portable-simd/crates/core_simd/src/**/*.md",
+    ],
+    sanitize: {
+        never: true,
+    },
+    edition: "2021",
+}
+
+rust_toolchain_library_rlib {
+    name: "libwindows_targets.rust_sysroot",
+    defaults: ["rust_sysroot_defaults"],
+    crate_name: "windows_targets",
+    enabled: false,
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
+    toolchain_crate_root: stdlibs_src_path + "/library/windows_targets/src/lib.rs",
+    toolchain_srcs: [
+        stdlibs_src_path + "/library/windows_targets/src/**/*.rs",
+        stdlibs_src_path + "/library/windows_targets/src/**/*.md",
     ],
     sanitize: {
         never: true,
@@ -364,6 +389,13 @@ rust_toolchain_library {
                 "libpanic_unwind.rust_sysroot",
             ],
         },
+        windows: {
+            rlibs: [
+                "libpanic_abort.rust_sysroot",
+                "libwindows_targets.rust_sysroot",
+            ],
+            features: ["windows_net"],
+        },
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
@@ -513,6 +545,40 @@ rust_toolchain_library_rlib {
         "align",
     ],
     edition: "2015",
+}
+
+rust_toolchain_object_host {
+    name: "rsend.rust_sysroot",
+    crate_name: "rsend",
+    stem: "rsend",
+    toolchain_crate_root: stdlibs_src_path + "/library/rtstartup/rsend.rs",
+    defaults: ["rust_sysroot_defaults"],
+    crt: true,
+    enabled: false,
+    edition: "2015",
+    target: {
+        windows: {
+            enabled: true,
+            compile_multilib: "both",
+        },
+    },
+}
+
+rust_toolchain_object_host {
+    name: "rsbegin.rust_sysroot",
+    crate_name: "rsend",
+    stem: "rsend",
+    toolchain_crate_root: stdlibs_src_path + "/library/rtstartup/rsbegin.rs",
+    defaults: ["rust_sysroot_defaults"],
+    crt: true,
+    enabled: false,
+    edition: "2015",
+    target: {
+        windows: {
+            enabled: true,
+            compile_multilib: "both",
+        },
+    },
 }
 
 // Rustc and Clang have mismatched LLVM versions, cross language LTO may break when LLVM bitcode
