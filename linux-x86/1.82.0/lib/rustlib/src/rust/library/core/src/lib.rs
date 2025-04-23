@@ -233,7 +233,6 @@
 #![feature(negative_impls)]
 #![feature(never_type)]
 #![feature(no_core)]
-#![feature(no_sanitize)]
 #![feature(prelude_import)]
 #![feature(repr_simd)]
 #![feature(rustc_allow_const_fn_unstable)]
