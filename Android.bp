@@ -405,6 +405,7 @@ rust_toolchain_library {
         stdlibs_src_path + "/library/std/src/**/*.rs",
         stdlibs_src_path + "/library/std/src/**/*.md",
         stdlibs_src_path + "/library/std/primitive_docs/*.md",
+        stdlibs_src_path + "/library/core/src/**/*.rs",
         stdlibs_src_path + "/library/core/src/**/*.md",
         stdlibs_src_path + "/library/backtrace/src/**/*.rs",
         stdlibs_src_path + "/library/backtrace/src/**/*.md",
