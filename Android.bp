@@ -396,6 +396,9 @@ rust_toolchain_library {
             ],
             features: ["windows_net"],
         },
+        darwin_arm64: {
+            rlibs: ["libpanic_unwind.rust_sysroot"],
+        },
         android: {
             rlibs: ["libpanic_abort.rust_sysroot"],
         },
