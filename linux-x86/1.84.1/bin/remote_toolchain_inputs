@@ -1,5 +1,6 @@
 ./rustc
 ../lib/libLLVM-19.so
+../lib/libLLVM.so.19.1
 ../lib/librustc_driver-7f021cc2d19cac6f.so
 ../lib64/libunwind.so
 ../lib64/libc++.so
