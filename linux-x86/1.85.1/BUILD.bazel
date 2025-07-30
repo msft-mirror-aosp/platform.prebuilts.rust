@@ -9,7 +9,7 @@ filegroup(
     name = "binaries",
     srcs = glob([
         "bin/*",
-        "lib/*",
+        "lib/**",
         "lib64/*",
     ]),
     visibility = ["//visibility:public"],
