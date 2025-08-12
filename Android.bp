@@ -201,6 +201,9 @@ rust_toolchain_library_rlib {
         "overflow-checks=off",
     ],
     edition: "2021",
+    sanitize: {
+        never: true,
+    },
 }
 
 rust_toolchain_library_rlib {
