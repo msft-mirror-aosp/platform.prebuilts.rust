@@ -1,0 +1,4 @@
+file:/mnt/disks/build-disk/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/riscv32i-unknown-none-elf/lib/liballoc-ca73aa78134fc0c8.rlib
+file:/mnt/disks/build-disk/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/riscv32i-unknown-none-elf/lib/libcompiler_builtins-7db6d9679d584c3a.rlib
+file:/mnt/disks/build-disk/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/riscv32i-unknown-none-elf/lib/libcore-393bc48fe9d5bde0.rlib
+file:/mnt/disks/build-disk/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/riscv32i-unknown-none-elf/lib/librustc_std_workspace_core-2f3380fde432a993.rlib
