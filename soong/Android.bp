@@ -23,6 +23,7 @@ bootstrap_go_package {
     pkgPath: "android/soong/prebuilts/rust/rustprebuilts",
     deps: [
         "blueprint",
+        "blueprint-proptools",
         "soong-android",
         "soong-cc",
         "soong-rust",
