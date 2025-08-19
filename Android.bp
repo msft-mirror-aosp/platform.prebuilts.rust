@@ -116,6 +116,9 @@ rust_defaults {
         },
     },
     min_sdk_version: "29",
+
+    // 30 introduces required unwind instructions, e.g. _Unwind_GetIP
+    sdk_version: "30",
 }
 
 rust_toolchain_library_rlib {
