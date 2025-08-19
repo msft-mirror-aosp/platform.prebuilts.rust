@@ -11,7 +11,7 @@
 
   <project path="toolchain/rustc" name="toolchain/rustc" revision="4064bccf7e83b1ddbfc1bace9235c9d3eb9f512b" />
 
-  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="46a16a5be7040aadb73d3312b1d59151050051ac" />
+  <project path="toolchain/android_rust" name="toolchain/android_rust" revision="083779c7ebba8f829d4c38fe4f1ef6fd0d797e56" />
 
   <project path="toolchain/common" name="toolchain/common" revision="0bce8b062126242872e9f3fc66760d3f76773c49" />
 
@@ -25,7 +25,7 @@
 
   <project path="external/zstd" name="platform/external/zstd" revision="90212406d77e2b80b0ef0cb6ebcf2f4baf81e02f" />
 
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="f1bcc3aba10a420e28bf312b064b3f5b4f04a739" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="339cfab383c8891001ff6181214a6947018cdc8d" />
 
   <project path="prebuilts/cmake/linux-x86" name="platform/prebuilts/cmake/linux-x86" clone-depth="1" revision="e57c88d59d7d8408a32b16425158fd2aa64e2b3e" />
 
@@ -43,7 +43,7 @@
 
   <project path="toolchain/llvm-project" name="toolchain/llvm-project" revision="5e96669f06077099aa41290cdb4c5e6fa0f59349" />
 
-  <project path="toolchain/llvm_android" name="toolchain/llvm_android" revision="0d60a8c3cafd4371270eab5a50a9f753606810ba" />
+  <project path="toolchain/llvm_android" name="toolchain/llvm_android" revision="741371886943fd0ff2694ee9763796584f38f4a6" />
 
   <project path="external/libedit" name="platform/external/libedit" revision="e05eb8459b1631dcb8d2ac71bca9f6ff3dc2d95a" />
 
@@ -75,9 +75,9 @@
 
   <project path="prebuilts/python/windows-x86" name="platform/prebuilts/python/windows-x86" clone-depth="1" revision="b8d150ae7412b3375f4dcc7723d74315f2b9b0ec" />
 
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="1ad16c004ec700c64b37179f8f0c615ddee519d2" />
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" clone-depth="1" revision="aff22daf2d606f53dad61e6f1e393d4c382ee544" />
 
-  <project path="build/soong" name="platform/build/soong" revision="c2924b6c24c0d1bbf2a62f7c746ca032809194d6">
+  <project path="build/soong" name="platform/build/soong" revision="28b22b86c9d845b3bfa1f8b4663b491f27630719">
     <linkfile dest="Android.bp" src="root.bp" />
 
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
