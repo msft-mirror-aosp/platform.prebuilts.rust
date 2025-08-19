@@ -52,4 +52,3 @@ rustc-std-workspace-alloc = { path = 'rustc-std-workspace-alloc' }
 rustc-std-workspace-std = { path = 'rustc-std-workspace-std' }
 
 # Patch directory source into a path source to allow modification
-compiler_builtins = { path = '../vendor/compiler_builtins-0.1.158/' }
