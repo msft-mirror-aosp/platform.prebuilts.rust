@@ -80,7 +80,7 @@ stdlibs_src_path = "lib/rustlib/src/rust/"
 rust_defaults {
     name: "rust_sysroot_defaults",
     no_stdlibs: true,
-    edition: "2021",
+    edition: "2024",
     native_coverage: false,
     host_supported: true,
     sysroot: true,
@@ -138,7 +138,6 @@ rust_toolchain_library_rlib {
     sanitize: {
         never: true,
     },
-    edition: "2021",
 }
 
 rust_toolchain_library_rlib {
@@ -159,7 +158,6 @@ rust_toolchain_library_rlib {
     sanitize: {
         never: true,
     },
-    edition: "2021",
 }
 
 rust_toolchain_library_rlib {
@@ -236,12 +234,12 @@ rust_toolchain_library_rlib {
         "libc_thread_local",
         "libc_const_extern_fn",
     ],
-    edition: "2015",
     sanitize: {
         // Avoid a library trying to pull in both a sanitized and non-sanitized
         // version of this library.
         never: true,
     },
+    edition: "2021",
 }
 
 rust_toolchain_library_rlib {
@@ -258,7 +256,6 @@ rust_toolchain_library_rlib {
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
     ],
-    edition: "2021",
     sanitize: {
         // Avoid a library trying to pull in both a sanitized and non-sanitized
         // version of this library.
@@ -552,6 +549,7 @@ rust_toolchain_library_rlib {
         stdlibs_src_path + "/vendor/cfg-if/src/**/*.rs",
         stdlibs_src_path + "/vendor/cfg-if/src/**/*.md",
     ],
+    edition: "2018",
 }
 
 rust_toolchain_library_rlib {
@@ -579,7 +577,7 @@ rust_toolchain_library_rlib {
         "std",
         "align",
     ],
-    edition: "2015",
+    edition: "2021",
 }
 
 rust_toolchain_object_host {
