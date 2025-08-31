@@ -201,6 +201,16 @@ rust_toolchain_library_rlib {
         "-C",
         "overflow-checks=off",
     ],
+    arch: {
+        arm: {
+            flags: [
+                // b/442006346
+                "-Z",
+                "stack-protector=basic",
+            ],
+        },
+    },
+
     edition: "2021",
     sanitize: {
         never: true,
