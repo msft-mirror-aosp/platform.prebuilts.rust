@@ -189,10 +189,10 @@ rust_toolchain_library_rlib {
         "core",
         "default",
     ],
-    toolchain_crate_root: stdlibs_src_path + "/vendor/compiler_builtins/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/compiler-builtins/compiler-builtins/src/lib.rs",
     toolchain_srcs: [
-        stdlibs_src_path + "/vendor/compiler_builtins/src/**/*.rs",
-        stdlibs_src_path + "/vendor/compiler_builtins/src/**/*.md",
+        stdlibs_src_path + "/library/compiler-builtins/compiler-builtins/src/**/*.rs",
+        stdlibs_src_path + "/library/compiler-builtins/compiler-builtins/src/**/*.md",
     ],
     rlibs: ["libcore.rust_sysroot"],
     flags: [
