@@ -211,7 +211,7 @@ rust_toolchain_library_rlib {
         },
     },
 
-    edition: "2021",
+    edition: "2024",
     sanitize: {
         never: true,
     },
@@ -505,7 +505,7 @@ rust_toolchain_library {
         stdlibs_src_path + "/vendor/getopts/src/**/*.md",
     ],
     rlibs: ["libunicode_width.rust_toolchain"],
-    edition: "2015",
+    edition: "2021",
     apex_available: [
         "//apex_available:platform",
         "com.android.virt",
