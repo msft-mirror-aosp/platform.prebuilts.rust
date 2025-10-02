@@ -1,0 +1,14 @@
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llc.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-ar.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-as.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-cov.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-dis.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-link.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-nm.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-objcopy.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-objdump.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-profdata.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-readobj.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-size.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/llvm-strip.exe
+file:/proc/cygdrive/C/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-pc-windows-gnu/bin/opt.exe
