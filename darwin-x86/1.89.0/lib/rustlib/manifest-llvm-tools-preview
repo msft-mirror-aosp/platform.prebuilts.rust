@@ -1,0 +1,15 @@
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llc
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-ar
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-as
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-cov
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-dis
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-link
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-nm
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-objcopy
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-objdump
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-profdata
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-readobj
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-size
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/llvm-strip
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/bin/opt
+file:/Volumes/Android/buildbot/src/googleplex-android/main-rust-toolchain/out/package/lib/rustlib/x86_64-apple-darwin/lib/libLLVM.dylib
