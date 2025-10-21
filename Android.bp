@@ -306,10 +306,10 @@ rust_toolchain_library_rlib {
         "std_detect_file_io",
         "std_detect_dlsym_getauxval",
     ],
-    toolchain_crate_root: stdlibs_src_path + "/library/stdarch/crates/std_detect/src/lib.rs",
+    toolchain_crate_root: stdlibs_src_path + "/library/std_detect/src/lib.rs",
     toolchain_srcs: [
-        stdlibs_src_path + "/library/stdarch/crates/std_detect/src/**/*.rs",
-        stdlibs_src_path + "/library/stdarch/crates/std_detect/src/**/*.md",
+        stdlibs_src_path + "/library/std_detect/src/**/*.rs",
+        stdlibs_src_path + "/library/std_detect/src/**/*.md",
     ],
     rlibs: [
         "libcompiler_builtins.rust_sysroot",
