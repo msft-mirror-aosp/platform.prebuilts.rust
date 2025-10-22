@@ -158,6 +158,7 @@ rust_toolchain_library_rlib {
     sanitize: {
         never: true,
     },
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -178,6 +179,7 @@ rust_toolchain_library_rlib {
         "libcore.rust_sysroot",
     ],
     edition: "2015",
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -250,6 +252,7 @@ rust_toolchain_library_rlib {
         never: true,
     },
     edition: "2021",
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -296,6 +299,7 @@ rust_toolchain_library_rlib {
         // version of this library.
         never: true,
     },
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -317,6 +321,7 @@ rust_toolchain_library_rlib {
         "liballoc.rust_sysroot",
         "libcfg_if.rust_sysroot",
     ],
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -360,6 +365,7 @@ rust_toolchain_library_rlib {
         "libcompiler_builtins.rust_sysroot",
         "libcfg_if.rust_sysroot",
     ],
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -377,6 +383,7 @@ rust_toolchain_library_rlib {
         "liblibc.rust_sysroot",
         "libcfg_if.rust_sysroot",
     ],
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -405,6 +412,7 @@ rust_toolchain_library_rlib {
         "liballoc.rust_sysroot",
         "libunwind.rust_sysroot",
     ],
+    visibility: ["//visibility:private"],
 }
 
 // Top level sysroot libraries are available both as static and dynamic
@@ -546,6 +554,7 @@ rust_toolchain_library_rlib {
         "//apex_available:platform",
         "com.android.virt",
     ],
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -560,6 +569,7 @@ rust_toolchain_library_rlib {
         stdlibs_src_path + "/vendor/cfg-if/src/**/*.md",
     ],
     edition: "2018",
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_library_rlib {
@@ -588,6 +598,7 @@ rust_toolchain_library_rlib {
         "align",
     ],
     edition: "2021",
+    visibility: ["//visibility:private"],
 }
 
 rust_toolchain_object_host {
