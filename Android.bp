@@ -634,49 +634,6 @@ cc_defaults {
     },
 }
 
-rust_stdlib_prebuilt_filegroup_host {
-    name: "stdlib_prebuilts",
-    srcs: [
-        "**/*.rlib",
-        "**/*.a",
-        "**/*.so",
-        "**/*.dylib",
-    ],
-    visibility: ["//visibility:private"],
-}
-
-rust_toolchain_rustc_prebuilt {
-    name: "rustc",
-    toolchain_prebuilt_src: "bin/rustc",
-    toolchain_deps: [
-        "lib/*",
-        "lib64/*",
-    ],
-    deps: [
-        ":gcc.lib",
-        ":gcc.lib32",
-        ":gcc.lib64",
-        ":gcc.sysroot",
-        ":stdlib_prebuilts",
-    ],
-    // Override licenses for non-stdlib binary
-    licenses: ["prebuilts_rustc_license"],
-}
-
-rust_toolchain_rustc_prebuilt {
-    name: "clippy-driver",
-    toolchain_prebuilt_src: "bin/clippy-driver",
-    // Override licenses for non-stdlib binary
-    licenses: ["prebuilts_rustc_license"],
-}
-
-rust_toolchain_rustc_prebuilt {
-    name: "rustdoc",
-    toolchain_prebuilt_src: "bin/rustdoc",
-    // Override licenses for non-stdlib binary
-    licenses: ["prebuilts_rustc_license"],
-}
-
 dirgroup {
     name: "trusty_dirgroup_prebuilts_rust",
     dirs: ["."],
