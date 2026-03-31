@@ -1,0 +1,4 @@
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/aarch64-unknown-none/lib/liballoc-b9a1ea9ef96d4aea.rlib
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/aarch64-unknown-none/lib/libcompiler_builtins-c7d579749d8c4dcb.rlib
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/aarch64-unknown-none/lib/libcore-d304c600d2567dc6.rlib
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/aarch64-unknown-none/lib/librustc_std_workspace_core-ef6837830983e041.rlib
