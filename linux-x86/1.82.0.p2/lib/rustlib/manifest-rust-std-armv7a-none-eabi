@@ -1,0 +1,4 @@
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/armv7a-none-eabi/lib/liballoc-85d03e312eeec42e.rlib
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/armv7a-none-eabi/lib/libcompiler_builtins-1fc145d78c716381.rlib
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/armv7a-none-eabi/lib/libcore-ba039c9bf7565151.rlib
+file:/mnt/disks/build-disk/src/android/rust-1.82-release/out/package/lib/rustlib/armv7a-none-eabi/lib/librustc_std_workspace_core-4fa3c0a42d8a0c38.rlib
